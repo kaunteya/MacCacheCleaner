@@ -7,7 +7,7 @@
     "onClear": [
       {
         "type": "command",
-        "action": "touch complete"
+        "action": "touch ~/complete"
       }
     ]
   },

@@ -7,18 +7,7 @@
 //
 
 import Foundation
-/*
- "name": "Cocoapods",
- "image": "https://via.placeholder.com/150x150",
- "location": "~/Library/Caches/CocoaPods",
- "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
- "onClear": [
- {
- "type":"command",
- "action":"pod cache clear"
- }
- ]
-*/
+
 struct CacheItem {
     let name: String
     let imageURL: URL

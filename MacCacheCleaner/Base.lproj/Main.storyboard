@@ -691,7 +691,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="0BE909F7-8D01-42BA-961D-3EB35C55EAD9" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="LGK-Jn-E9y">
+                        <toolbar key="toolbar" implicitIdentifier="0BE909F7-8D01-42BA-961D-3EB35C55EAD9" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="LGK-Jn-E9y">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9bY-nH-I7K"/>
                                 <toolbarItem implicitItemIdentifier="6C878A68-BFB0-4123-A97C-4E5CECD6EAEE" label="Sort by" paletteLabel="Custom View" id="LfG-ux-JaW">
@@ -701,20 +701,34 @@
                                     <popUpButton key="view" verticalHuggingPriority="750" id="gZn-gP-byQ">
                                         <rect key="frame" x="0.0" y="14" width="100" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <popUpButtonCell key="cell" type="roundTextured" title="Name" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="84a-8D-XxC" id="xDJ-If-iQu">
+                                        <popUpButtonCell key="cell" type="roundTextured" title="Sort by Name" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="84a-8D-XxC" id="xDJ-If-iQu">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="j1Y-OK-XKn">
                                                 <items>
-                                                    <menuItem title="Name" state="on" id="84a-8D-XxC"/>
-                                                    <menuItem title="Size" id="B5d-zI-nbb"/>
+                                                    <menuItem title="Sort by Name" state="on" id="84a-8D-XxC"/>
+                                                    <menuItem title="Sort by Size" id="B5d-zI-nbb"/>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
                                     </popUpButton>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="ABD40858-80CA-4DA9-A909-5941BE6F1677" label="" paletteLabel="" id="mwM-sx-ulW">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="82" height="32"/>
+                                    <size key="maxSize" width="82" height="32"/>
+                                    <button key="view" verticalHuggingPriority="750" id="sXH-LX-s5P">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JjA-B7-CxI">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="mwM-sx-ulW"/>
                                 <toolbarItem reference="9bY-nH-I7K"/>
                                 <toolbarItem reference="LfG-ux-JaW"/>
                             </defaultToolbarItems>
