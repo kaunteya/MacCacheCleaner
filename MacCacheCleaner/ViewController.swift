@@ -16,6 +16,10 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         updateCacheItems()
     }
+    override func viewDidAppear() {
+        super.viewDidAppear()
+//        self.view.window!.titleVisibility = .hidden
+    }
 }
 
 extension ViewController: NSTableViewDataSource, NSTableViewDelegate {

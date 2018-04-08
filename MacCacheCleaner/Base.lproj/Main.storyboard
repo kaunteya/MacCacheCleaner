@@ -686,11 +686,39 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Cache Cleaner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Cache Cleaner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="0BE909F7-8D01-42BA-961D-3EB35C55EAD9" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="LGK-Jn-E9y">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9bY-nH-I7K"/>
+                                <toolbarItem implicitItemIdentifier="6C878A68-BFB0-4123-A97C-4E5CECD6EAEE" label="Sort by" paletteLabel="Custom View" id="LfG-ux-JaW">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="100" height="28"/>
+                                    <size key="maxSize" width="100" height="28"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="gZn-gP-byQ">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" title="Name" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="84a-8D-XxC" id="xDJ-If-iQu">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="j1Y-OK-XKn">
+                                                <items>
+                                                    <menuItem title="Name" state="on" id="84a-8D-XxC"/>
+                                                    <menuItem title="Size" id="B5d-zI-nbb"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="9bY-nH-I7K"/>
+                                <toolbarItem reference="LfG-ux-JaW"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
