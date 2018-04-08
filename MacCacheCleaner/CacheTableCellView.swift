@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SDWebImage
 
 class CacheTableCellView: NSTableCellView {
 
@@ -31,7 +32,6 @@ class CacheTableCellView: NSTableCellView {
         self.name.stringValue = cache.name
         self.cacheDescription.stringValue = cache.description
         updateSize(cache.location)
-        let imageData = try! Data(contentsOf: cache.imageURL)
-        self.image.image = NSImage(data: imageData)
+        self.image.sd_setImage(with: cache.imageURL, completed: nil)
     }
 }
