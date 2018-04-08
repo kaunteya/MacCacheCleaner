@@ -1,5 +1,17 @@
 [
   {
+    "name": "Test",
+    "image": "https://via.placeholder.com/150x150",
+    "location": "~/testcache",
+    "description": "This is a test pod.",
+    "onClear": [
+      {
+        "type": "command",
+        "action": "touch complete"
+      }
+    ]
+  },
+  {
     "name": "Cocoapods",
     "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
     "homepage": "https://cocoapods.org/",

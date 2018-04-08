@@ -8,6 +8,15 @@
 
 import Foundation
 
+func run(command: [String]) {
+    let task = Process()
+    task.launchPath = "/usr/bin/env"
+    task.arguments = command
+    task.launch()
+//    task.waitUntilExit()
+}
+
+
 extension FileManager {
     func isDirectory(_ url: URL) -> Bool {
         var isDir : ObjCBool = false

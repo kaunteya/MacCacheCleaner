@@ -14,6 +14,7 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var name: NSTextField!
     @IBOutlet weak var size: NSTextField!
     @IBOutlet weak var cacheDescription: NSTextField!
+    @IBOutlet weak var location: NSTextField!
     @IBOutlet weak var image: NSImageView!
 
     private func updateSize(_ path: String) {
@@ -30,6 +31,7 @@ class CacheTableCellView: NSTableCellView {
 
     func update(for cache: CacheItem) {
         self.name.stringValue = cache.name
+        self.location.stringValue = cache.location
         self.cacheDescription.stringValue = cache.description
         updateSize(cache.location)
         self.image.sd_setImage(with: cache.imageURL, completed: nil)
