@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -716,7 +717,7 @@
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="59" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="59" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -736,25 +737,29 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="cacheCell" id="gtr-DP-maE" customClass="CacheTableCellView" customModule="MacCacheCleaner" customModuleProvider="target">
+                                                        <tableCellView identifier="cacheCell" misplaced="YES" id="gtr-DP-maE" customClass="CacheTableCellView" customModule="MacCacheCleaner" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="475" height="59"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-67-zDA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="475" height="59"/>
+                                                                    <rect key="frame" x="5" y="5" width="465" height="50"/>
                                                                     <subviews>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="342-7Y-rNF">
-                                                                            <rect key="frame" x="0.0" y="9" width="50" height="50"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="342-7Y-rNF" secondAttribute="height" multiplier="1:1" id="5CT-Ye-n8C"/>
+                                                                                <constraint firstAttribute="width" constant="50" id="ESW-lc-Wz6"/>
+                                                                            </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="z7p-SO-8RL"/>
                                                                         </imageView>
                                                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gme-4A-yC7">
-                                                                            <rect key="frame" x="56" y="25" width="419" height="34"/>
+                                                                            <rect key="frame" x="56" y="16" width="409" height="34"/>
                                                                             <subviews>
                                                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-h8-Q6u">
-                                                                                    <rect key="frame" x="0.0" y="17" width="419" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="17" width="409" height="17"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nc7-Xg-ho1">
-                                                                                            <rect key="frame" x="-2" y="0.0" width="367" height="17"/>
+                                                                                            <rect key="frame" x="-2" y="0.0" width="357" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="APE-gE-rTt">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -762,7 +767,7 @@
                                                                                             </textFieldCell>
                                                                                         </textField>
                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="w5j-9H-BHe" userLabel="Size">
-                                                                                            <rect key="frame" x="369" y="0.0" width="52" height="17"/>
+                                                                                            <rect key="frame" x="359" y="0.0" width="52" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="947 MB" id="AF8-IP-izp">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -780,7 +785,7 @@
                                                                                     </customSpacing>
                                                                                 </stackView>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-vl-tPR">
-                                                                                    <rect key="frame" x="-2" y="0.0" width="65" height="14"/>
+                                                                                    <rect key="frame" x="-2" y="0.0" width="413" height="14"/>
                                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description" id="89A-1g-uvm">
                                                                                         <font key="font" metaFont="smallSystem"/>
                                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -790,7 +795,9 @@
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="trailing" secondItem="Bu3-h8-Q6u" secondAttribute="trailing" id="33c-Tb-MJC"/>
+                                                                                <constraint firstItem="JTW-vl-tPR" firstAttribute="leading" secondItem="gme-4A-yC7" secondAttribute="leading" id="4Q6-xq-otu"/>
                                                                                 <constraint firstItem="Bu3-h8-Q6u" firstAttribute="leading" secondItem="gme-4A-yC7" secondAttribute="leading" id="bI0-fv-O6O"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="JTW-vl-tPR" secondAttribute="trailing" id="fd7-pg-89V"/>
                                                                             </constraints>
                                                                             <visibilityPriorities>
                                                                                 <integer value="1000"/>
@@ -813,10 +820,10 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="XCZ-67-zDA" secondAttribute="bottom" id="Xr1-Fd-itR"/>
-                                                                <constraint firstItem="XCZ-67-zDA" firstAttribute="leading" secondItem="gtr-DP-maE" secondAttribute="leading" id="sW9-br-yTE"/>
-                                                                <constraint firstItem="XCZ-67-zDA" firstAttribute="top" secondItem="gtr-DP-maE" secondAttribute="top" id="xJP-lF-UmP"/>
-                                                                <constraint firstAttribute="trailing" secondItem="XCZ-67-zDA" secondAttribute="trailing" id="zuD-vd-eJn"/>
+                                                                <constraint firstAttribute="bottom" secondItem="XCZ-67-zDA" secondAttribute="bottom" constant="5" id="Xr1-Fd-itR"/>
+                                                                <constraint firstItem="XCZ-67-zDA" firstAttribute="leading" secondItem="gtr-DP-maE" secondAttribute="leading" constant="5" id="sW9-br-yTE"/>
+                                                                <constraint firstItem="XCZ-67-zDA" firstAttribute="top" secondItem="gtr-DP-maE" secondAttribute="top" constant="5" id="xJP-lF-UmP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XCZ-67-zDA" secondAttribute="trailing" constant="5" id="zuD-vd-eJn"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="cacheDescription" destination="JTW-vl-tPR" id="RiG-L3-HDJ"/>

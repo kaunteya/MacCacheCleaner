@@ -1,7 +1,31 @@
 [
   {
     "name": "Cocoapods",
-    "image": "https://via.placeholder.com/150x150",
+    "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
+    "location": "~/Library/Caches/CocoaPods",
+    "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
+    "onClear": [
+    	{
+    		"type":"command",
+    		"action":"pod cache clear"
+    	}
+    ]
+  },
+  {
+    "name": "npm",
+    "image": "https://pbs.twimg.com/profile_images/765333670366355456/q5ACQ8i3_400x400.jpg",
+    "location": "~/.npm",
+    "description": "npm is the package manager for JavaScript and the world’s largest software registry.",
+    "onClear": [
+    	{
+    		"type":"command",
+    		"action":"npm cache clear"
+    	}
+    ]
+  },
+  {
+    "name": "Cocoapods",
+    "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
     "location": "~/Library/Caches/CocoaPods",
     "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
     "onClear": [

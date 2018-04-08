@@ -27,5 +27,7 @@ class CacheTableCellView: NSTableCellView {
         self.name.stringValue = cache.name
         self.cacheDescription.stringValue = cache.description
         self.size.stringValue = getSize(at: cache.location)
+        let imageData = try! Data(contentsOf: cache.imageURL)
+        self.image.image = NSImage(data: imageData)
     }
 }

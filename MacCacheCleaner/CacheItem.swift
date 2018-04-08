@@ -21,13 +21,13 @@ import Foundation
 */
 struct CacheItem {
     let name: String
-    let image: URL
+    let imageURL: URL
     let location: String
     let description: String
 
     init(_ json: JSON) {
         name = json["name"] as! String
-        image = URL(string: json["image"] as! String)!
+        imageURL = URL(string: json["image"] as! String)!
         location = json["location"] as! String
         description  = json["description"] as! String
     }
