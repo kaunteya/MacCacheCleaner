@@ -710,14 +710,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="61" horizontalPageScroll="10" verticalLineScroll="61" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="61" horizontalPageScroll="10" verticalLineScroll="61" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="R38-HD-tUN">
+                                <clipView key="contentView" id="R38-HD-tUN">
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="59" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="59" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -846,6 +845,12 @@
                                 </scroller>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uOG-ib-TKg" secondAttribute="bottom" id="6g0-pj-WWI"/>
+                            <constraint firstItem="uOG-ib-TKg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="C79-88-JmV"/>
+                            <constraint firstAttribute="trailing" secondItem="uOG-ib-TKg" secondAttribute="trailing" id="M0g-Z1-zcQ"/>
+                            <constraint firstItem="uOG-ib-TKg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="VJB-2M-N28"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ZYc-jG-uNI" id="tdb-H1-Uo8"/>
