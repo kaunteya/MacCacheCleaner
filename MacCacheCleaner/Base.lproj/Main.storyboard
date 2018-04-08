@@ -691,7 +691,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="0BE909F7-8D01-42BA-961D-3EB35C55EAD9" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="LGK-Jn-E9y">
+                        <toolbar key="toolbar" implicitIdentifier="0BE909F7-8D01-42BA-961D-3EB35C55EAD9" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="LGK-Jn-E9y">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9bY-nH-I7K"/>
                                 <toolbarItem implicitItemIdentifier="6C878A68-BFB0-4123-A97C-4E5CECD6EAEE" label="Sort by" paletteLabel="Custom View" id="LfG-ux-JaW">
@@ -814,7 +814,7 @@
                                                                                 </stackView>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-vl-tPR">
                                                                                     <rect key="frame" x="-2" y="17" width="413" height="14"/>
-                                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description" id="89A-1g-uvm">
+                                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Location" id="89A-1g-uvm">
                                                                                         <font key="font" metaFont="smallSystem"/>
                                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
