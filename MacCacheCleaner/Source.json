@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Cocoapods",
+    "image": "https://via.placeholder.com/150x150",
+    "location": "~/Library/Caches/CocoaPods",
+    "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects. We reserve the right to suspend or terminate your account and/or any and all current or future access to or use of any and all of the Service, for any reason, without liability, at any time at our sole discretion. Such termination may result in the deactivation or deletion of your account and your access to your account, and/or the deletion, forfeiture and/or relinquishment of all Content previously made available on or through the Service under your account.",
+    "onClear": [
+    	{
+    		"type":"command",
+    		"action":"pod cache clear"
+    	}
+    ]
+  }
+]
