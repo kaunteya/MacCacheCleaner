@@ -15,7 +15,7 @@ extension FileManager {
         return isDir.boolValue
     }
 
-    func getSize(_ url: URL) -> Int64 {
+    func size(of url: URL) -> Int64 {
 
         guard FileManager.default.isDirectory(url) else {
             let gt = try! FileManager.default.attributesOfItem(atPath: url.path)

@@ -14,8 +14,6 @@ typealias JSON = [String : Any]
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let url = URL(fileURLWithPath: "/Users/kaunteya/Downloads", isDirectory: true)
-        _ = getSize(url)
     }
 }
 
