@@ -1,5 +1,6 @@
 [
   {
+  	"id" : "test",
     "name": "Test",
     "image": "https://via.placeholder.com/150x150",
     "location": "~/testcache",
@@ -12,6 +13,7 @@
     ]
   },
   {
+  	"id": "cocoapod",
     "name": "Cocoapods",
     "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
     "homepage": "https://cocoapods.org/",
@@ -25,6 +27,7 @@
     ]
   },
   {
+  	"id": "homebrew",
     "name": "Homebrew",
     "image": "https://brew.sh/img/homebrew-256x256.png",
     "homepage": "https://brew.sh/",
@@ -38,6 +41,7 @@
     ]
   },
   {
+  	"id": "npm",
     "name": "npm",
     "image": "https://pbs.twimg.com/profile_images/765333670366355456/q5ACQ8i3_400x400.jpg",
     "homepage": "https://www.npmjs.com/",
@@ -51,6 +55,7 @@
     ]
   },
   {
+  	"id": "xcode-derived",
     "name": "Xcode derived data",
     "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
     "location": "~/Library/Developer/Xcode/DerivedData",

@@ -11,6 +11,7 @@ import SDWebImage
 
 class CacheTableCellView: NSTableCellView {
 
+    var cacheId: String!
     @IBOutlet weak var name: NSTextField!
     @IBOutlet weak var size: NSTextField!
     @IBOutlet weak var cacheDescription: NSTextField!
@@ -30,6 +31,7 @@ class CacheTableCellView: NSTableCellView {
     }
 
     func update(for cache: CacheItem) {
+        self.cacheId = cache.id
         self.name.stringValue = cache.name
         self.location.stringValue = cache.location
         self.cacheDescription.stringValue = cache.description
