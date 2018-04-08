@@ -15,7 +15,7 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var cacheDescription: NSTextField!
     @IBOutlet weak var image: NSImageView!
 
-    func getSize(at path: String) -> String {
+    private func getSize(at path: String) -> String {
         let expandedPath = NSString(string: path).expandingTildeInPath
         let url = URL(fileURLWithPath: expandedPath, isDirectory: true)
         let sizeBytes = FileManager.default.size(of: url)
