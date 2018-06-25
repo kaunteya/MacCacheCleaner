@@ -18,24 +18,18 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var location: NSTextField!
     @IBOutlet weak var image: NSImageView!
 
-    private func updateSize(_ path: String) {
-        let expandedPath = NSString(string: path).expandingTildeInPath
-        let url = URL(fileURLWithPath: expandedPath, isDirectory: true)
-        self.size.stringValue = "..."
-        FileManager.default.size(of: url) { sizeBytes in
-            DispatchQueue.main.async {
-                let bfm = ByteCountFormatter()
-                self.size.stringValue = bfm.string(fromByteCount: sizeBytes)
-            }
-        }
-    }
-
     func update(for cache: CacheItem) {
         self.cacheId = cache.id
         self.name.stringValue = cache.name
-        self.location.stringValue = cache.location
+        self.location.stringValue = cache.locations.map { $0.stringVal }.joined(separator: "\n")
         self.cacheDescription.stringValue = cache.description
-        updateSize(cache.location)
+
+        self.size.stringValue = "..."
+        FileManager.default.size(of: cache.locations.map { $0.fileURL }) { (sizeBytes) in
+            DispatchQueue.main.async {
+                self.size.stringValue = sizeBytes.bytesToReadableString
+            }
+        }
         self.image.sd_setImage(with: cache.imageURL, completed: nil)
     }
 }

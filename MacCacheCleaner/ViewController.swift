@@ -8,17 +8,34 @@
 
 import Cocoa
 
+enum ListSortBy { case name, size }
+
 class ViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!
 
+    var sortedCacheList: [CacheItem]?
+    var sort: ListSortBy = .name {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    func updateSortedList(for sort: ListSortBy) {
+//        switch sort {
+//        case .name:
+//            sortedCacheList = cacheItems.sorted(by: { (a, b) -> Bool in
+//                a.name < b.name
+//            })
+//
+//            case .size
+//                sortedCacheList = cacheItems.sorted(by: { (a, b) -> Bool in
+//                    a.name < b.si
+//                })
+//        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         updateCacheItems()
-    }
-    override func viewDidAppear() {
-        super.viewDidAppear()
-//        self.view.window!.titleVisibility = .hidden
     }
 }
 

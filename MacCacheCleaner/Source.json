@@ -1,64 +1,96 @@
-[
-  {
-  	"id" : "test",
-    "name": "Test",
-    "image": "https://via.placeholder.com/150x150",
-    "location": "~/testcache",
-    "description": "This is a test pod.",
-    "onClear": [
-      {
-        "type": "command",
-        "action": "touch ~/complete"
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "test",
+      "name": "Test",
+      "image": "https://via.placeholder.com/150x150",
+      "description": "This is a test pod.",
+      "homepage": "https://cocoapods.org/",
+      "location": [
+        "~/testcache1",
+        "~/testcache2",
+        "~/testcache3",
+        "~/testcache4",
+        "~/testcache5"
+      ],
+      "delete": {
+        "actions": [
+          "touch ~/complete"
+        ]
       }
-    ]
-  },
-  {
-  	"id": "cocoapod",
-    "name": "Cocoapods",
-    "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
-    "homepage": "https://cocoapods.org/",
-    "location": "~/Library/Caches/CocoaPods",
-    "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
-    "onClear": [
-      {
-        "type": "command",
-        "action": "pod cache clear"
+    },
+    {
+      "id": "cocoapod",
+      "name": "Cocoapods",
+      "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
+      "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
+      "homepage": "https://cocoapods.org/",
+      "location": [
+        "~/Library/Caches/CocoaPods"
+      ],
+      "delete": {
+        "actions": [
+          "pod cache clear"
+        ]
       }
-    ]
-  },
-  {
-  	"id": "homebrew",
-    "name": "Homebrew",
-    "image": "https://brew.sh/img/homebrew-256x256.png",
-    "homepage": "https://brew.sh/",
-    "location": "~/Library/Caches/Homebrew",
-    "description": "The missing package manager for macOS",
-    "onClear": [
-      {
-        "type": "command",
-        "action": "brew cleanup"
+    },
+    {
+      "id": "homebrew",
+      "name": "Homebrew",
+      "image": "https://brew.sh/img/homebrew-256x256.png",
+      "homepage": "https://brew.sh/",
+      "location": [
+        "~/Library/Caches/Homebrew",
+        "~/Library/Logs/Homebrew/"
+      ],
+      "description": "The missing package manager for macOS",
+      "delete": {
+        "actions": [
+          "brew cleanup"
+        ]
       }
-    ]
-  },
-  {
-  	"id": "npm",
-    "name": "npm",
-    "image": "https://pbs.twimg.com/profile_images/765333670366355456/q5ACQ8i3_400x400.jpg",
-    "homepage": "https://www.npmjs.com/",
-    "location": "~/.npm",
-    "description": "npm is the package manager for JavaScript and the world’s largest software registry.",
-    "onClear": [
-      {
-        "type": "command",
-        "action": "npm cache clear"
+    },
+    {
+      "id": "npm",
+      "name": "npm",
+      "image": "https://pbs.twimg.com/profile_images/765333670366355456/q5ACQ8i3_400x400.jpg",
+      "description": "npm is the package manager for JavaScript and the world’s largest software registry.",
+      "homepage": "https://www.npmjs.com/",
+      "location": [
+        "~/.npm"
+      ],
+      "delete": {
+        "actions": [
+          "npm cache clear"
+        ]
       }
-    ]
-  },
-  {
-  	"id": "xcode-derived",
-    "name": "Xcode derived data",
-    "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
-    "location": "~/Library/Developer/Xcode/DerivedData",
-    "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc"
-  }
-]
+    },
+    {
+      "id": "xcode-derived",
+      "name": "Xcode derived data",
+      "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
+      "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc",
+      "location": [
+        "~/Library/Developer/Xcode/DerivedData"
+      ],
+      "delete": {
+        "paths": [
+          "~/Library/Developer/Xcode/DerivedData"
+        ]
+      }
+    },
+    {
+      "id": "yarn",
+      "name": "Yarn",
+      "image": "https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png",
+      "description": "Fast, Reliable, and Secure dependency management.",
+      "location": [
+        "~/Library/Caches/Yarn"
+      ],
+      "delete": {
+        "actions": ["yarn cache clean"]
+      }
+    }
+  ]
+}

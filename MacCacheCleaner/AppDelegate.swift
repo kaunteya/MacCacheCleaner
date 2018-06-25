@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 func updateCacheItems() {
     let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
     let data = try! Data(contentsOf: url)
-    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [JSON]
-    cacheItems = json.map { CacheItem($0) }
+    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
+    let items = json["items"] as! [JSON]
+    cacheItems = items.map { CacheItem($0) }
 }
