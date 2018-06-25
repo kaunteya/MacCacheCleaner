@@ -23,13 +23,8 @@ class CacheTableCellView: NSTableCellView {
         self.name.stringValue = cache.name
         self.location.stringValue = cache.locations.map { $0.stringVal }.joined(separator: "\n")
         self.cacheDescription.stringValue = cache.description
+        self.size.stringValue = cache.size?.bytesToReadableString ?? ""
 
-        self.size.stringValue = "..."
-        FileManager.default.size(of: cache.locations.map { $0.fileURL }) { (sizeBytes) in
-            DispatchQueue.main.async {
-                self.size.stringValue = sizeBytes.bytesToReadableString
-            }
-        }
         self.image.sd_setImage(with: cache.imageURL, completed: nil)
     }
 }

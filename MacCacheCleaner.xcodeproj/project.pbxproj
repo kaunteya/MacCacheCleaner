@@ -96,9 +96,7 @@
 				E3EFDF28207A92D50066C68A /* WindowControl.swift */,
 				E34E83132079D98000BA09DF /* CacheTableCellView.swift */,
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
-				E3F7285B20E10162007B0CB0 /* Run+Command.swift */,
-				E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */,
-				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
+				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E830F2079CE0E00BA09DF /* Source.json */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
@@ -106,6 +104,16 @@
 				E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */,
 			);
 			path = MacCacheCleaner;
+			sourceTree = "<group>";
+		};
+		E3F7285D20E10720007B0CB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3F7285B20E10162007B0CB0 /* Run+Command.swift */,
+				E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */,
+				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

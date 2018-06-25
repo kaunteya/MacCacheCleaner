@@ -8,7 +8,6 @@
 
 import Cocoa
 
-var cacheItems: [CacheItem]!
 typealias JSON = [String : Any]
 
 @NSApplicationMain
@@ -17,10 +16,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-func updateCacheItems() {
-    let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
-    let data = try! Data(contentsOf: url)
-    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-    let items = json["items"] as! [JSON]
-    cacheItems = items.map { CacheItem($0) }
-}

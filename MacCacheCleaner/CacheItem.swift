@@ -20,7 +20,7 @@ struct CacheItem {
     let id: String
     let name: String
     let imageURL: URL
-
+    var size: Int64?
     let description: String
     let locations: [Path]
     let deleteActions: [String]?
@@ -36,5 +36,19 @@ struct CacheItem {
         let del = json["delete"] as! JSON
         deleteActions = del["actions"] as? [String]
         deletePaths = del["paths"] as? [String]
+    }
+
+    func getSizeOfLocations(completion: @escaping (Int64) -> Void) {
+        var sizeBytes = 0 as Int64
+        let urls = locations.map { $0.fileURL }
+
+        DispatchQueue.global().async {
+            urls.forEach { url in
+                sizeBytes += FileManager.default.size(of: url)
+            }
+            DispatchQueue.main.async {
+                completion(sizeBytes)
+            }
+        }
     }
 }
