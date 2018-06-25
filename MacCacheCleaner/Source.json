@@ -59,6 +59,6 @@
     "name": "Xcode derived data",
     "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
     "location": "~/Library/Developer/Xcode/DerivedData",
-    "description": "It’s the location where Xcode stores all kinds of intermediate build results, generated indexes etc"
+    "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc"
   }
 ]
