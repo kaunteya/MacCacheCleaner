@@ -830,7 +830,7 @@
                                                                                     </customSpacing>
                                                                                 </stackView>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xJU-aI-Tkc">
-                                                                                    <rect key="frame" x="-2" y="17" width="65" height="14"/>
+                                                                                    <rect key="frame" x="-2" y="17" width="413" height="14"/>
                                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description" id="Kog-sm-6OW">
                                                                                         <font key="font" metaFont="smallSystem"/>
                                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -847,8 +847,10 @@
                                                                                 </textField>
                                                                             </subviews>
                                                                             <constraints>
+                                                                                <constraint firstItem="xJU-aI-Tkc" firstAttribute="leading" secondItem="gme-4A-yC7" secondAttribute="leading" id="1f2-RM-eOt"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="Bu3-h8-Q6u" secondAttribute="trailing" id="33c-Tb-MJC"/>
                                                                                 <constraint firstItem="JTW-vl-tPR" firstAttribute="leading" secondItem="gme-4A-yC7" secondAttribute="leading" id="4Q6-xq-otu"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="xJU-aI-Tkc" secondAttribute="trailing" id="AoR-uo-lcW"/>
                                                                                 <constraint firstItem="Bu3-h8-Q6u" firstAttribute="leading" secondItem="gme-4A-yC7" secondAttribute="leading" id="bI0-fv-O6O"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="JTW-vl-tPR" secondAttribute="trailing" id="fd7-pg-89V"/>
                                                                             </constraints>
