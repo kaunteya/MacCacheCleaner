@@ -21,6 +21,7 @@
 		E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285B20E10162007B0CB0 /* Run+Command.swift */; };
 		E3F7286120E1725C007B0CB0 /* CacheNetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */; };
 		E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286220E174F4007B0CB0 /* ViewModel.swift */; };
+		E3F7286720E251F0007B0CB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286620E251F0007B0CB0 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E3F7285B20E10162007B0CB0 /* Run+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Command.swift"; sourceTree = "<group>"; };
 		E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheNetworkFetcher.swift; sourceTree = "<group>"; };
 		E3F7286220E174F4007B0CB0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E3F7286620E251F0007B0CB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
 		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */,
 				E3EFDF28207A92D50066C68A /* WindowControl.swift */,
 				E34E83132079D98000BA09DF /* CacheTableCellView.swift */,
+				E3F7286620E251F0007B0CB0 /* LoadingView.swift */,
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E830F2079CE0E00BA09DF /* Source.json */,
@@ -258,6 +261,7 @@
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
 				E3EFDF29207A92D50066C68A /* WindowControl.swift in Sources */,
 				E34E83022079CD5200BA09DF /* ViewController.swift in Sources */,
+				E3F7286720E251F0007B0CB0 /* LoadingView.swift in Sources */,
 				E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */,
 				E34E83142079D98000BA09DF /* CacheTableCellView.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,

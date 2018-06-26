@@ -885,16 +885,6 @@
                                                                 <outlet property="size" destination="w5j-9H-BHe" id="8Yb-SO-Cic"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="spinnerCell" id="doQ-rF-aG4">
-                                                            <rect key="frame" x="1" y="64" width="475" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="W0U-4I-03O">
-                                                                    <rect key="frame" x="229" y="14" width="16" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                </progressIndicator>
-                                                            </subviews>
-                                                        </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
@@ -917,19 +907,59 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI" customClass="LoadingView" customModule="MacCacheCleaner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="21"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-pL-abc">
+                                        <rect key="frame" x="216" y="2" width="73" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="btx-bw-Q2N">
+                                                <rect key="frame" x="-2" y="0.0" width="53" height="17"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading" id="duX-lp-DG7">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-Z0-Fs6">
+                                                <rect key="frame" x="57" y="1" width="16" height="16"/>
+                                            </progressIndicator>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1Pk-Y8-p4D"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="progressView" destination="Q42-Z0-Fs6" id="gL9-Wr-Yxa"/>
+                                </connections>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aYI-Qu-mzI" secondAttribute="bottom" id="4rQ-rm-m9j"/>
                             <constraint firstAttribute="bottom" secondItem="uOG-ib-TKg" secondAttribute="bottom" id="6g0-pj-WWI"/>
                             <constraint firstItem="uOG-ib-TKg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="C79-88-JmV"/>
                             <constraint firstItem="uOG-ib-TKg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Dzo-9e-mMT"/>
                             <constraint firstAttribute="trailing" secondItem="uOG-ib-TKg" secondAttribute="trailing" id="M0g-Z1-zcQ"/>
+                            <constraint firstAttribute="trailing" secondItem="aYI-Qu-mzI" secondAttribute="trailing" id="Pxo-h9-rDL"/>
                             <constraint firstItem="uOG-ib-TKg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="VJB-2M-N28"/>
+                            <constraint firstItem="aYI-Qu-mzI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bpY-O4-9D5"/>
                             <constraint firstAttribute="bottom" secondItem="uOG-ib-TKg" secondAttribute="bottom" id="eev-Ju-50V"/>
                             <constraint firstItem="uOG-ib-TKg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ibK-f0-Ea7"/>
                             <constraint firstAttribute="trailing" secondItem="uOG-ib-TKg" secondAttribute="trailing" id="ufa-iJ-73d"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="aYI-Qu-mzI" id="ILF-cy-I8I"/>
                         <outlet property="tableView" destination="ZYc-jG-uNI" id="tdb-H1-Uo8"/>
                     </connections>
                 </viewController>

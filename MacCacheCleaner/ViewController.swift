@@ -10,8 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var tableView: NSTableView!
     let viewModel = ViewModel()
+
+    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var loadingView: LoadingView!
 
     override func viewDidLoad() {
         viewModel.delegate = self
@@ -26,7 +28,7 @@ extension ViewController: ListDelegate {
     }
 
     func cacheItemLoadingComplete() {
-
+        loadingView.removeFromSuperview()
     }
 }
 
