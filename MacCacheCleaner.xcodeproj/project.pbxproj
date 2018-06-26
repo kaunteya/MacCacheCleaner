@@ -9,40 +9,36 @@
 /* Begin PBXBuildFile section */
 		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
-		E34E83022079CD5200BA09DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E83012079CD5200BA09DF /* ViewController.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
 		E34E83102079CE0E00BA09DF /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E34E830F2079CE0E00BA09DF /* Source.json */; };
 		E34E83122079D41500BA09DF /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E83112079D41500BA09DF /* CacheItem.swift */; };
-		E34E83142079D98000BA09DF /* CacheTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E83132079D98000BA09DF /* CacheTableCellView.swift */; };
-		E3EFDF29207A92D50066C68A /* WindowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFDF28207A92D50066C68A /* WindowControl.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285B20E10162007B0CB0 /* Run+Command.swift */; };
-		E3F7286120E1725C007B0CB0 /* CacheNetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */; };
 		E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286220E174F4007B0CB0 /* ViewModel.swift */; };
-		E3F7286720E251F0007B0CB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286620E251F0007B0CB0 /* LoadingView.swift */; };
+		E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289520E289EE007B0CB0 /* StatusItemController.swift */; };
+		E3F7289820E28ADC007B0CB0 /* MainCacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */; };
+		E3F7289A20E28D55007B0CB0 /* CacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289920E28D55007B0CB0 /* CacheList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E34E83012079CD5200BA09DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E34E83062079CD5400BA09DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E34E83082079CD5400BA09DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacCacheCleaner.entitlements; sourceTree = "<group>"; };
 		E34E830F2079CE0E00BA09DF /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = "<group>"; };
 		E34E83112079D41500BA09DF /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
-		E34E83132079D98000BA09DF /* CacheTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTableCellView.swift; sourceTree = "<group>"; };
-		E3EFDF28207A92D50066C68A /* WindowControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowControl.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F7285B20E10162007B0CB0 /* Run+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Command.swift"; sourceTree = "<group>"; };
-		E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheNetworkFetcher.swift; sourceTree = "<group>"; };
 		E3F7286220E174F4007B0CB0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		E3F7286620E251F0007B0CB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E3F7289520E289EE007B0CB0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCacheList.swift; sourceTree = "<group>"; };
+		E3F7289920E28D55007B0CB0 /* CacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheList.swift; sourceTree = "<group>"; };
 		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
 		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,12 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
-				E34E83012079CD5200BA09DF /* ViewController.swift */,
+				E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */,
+				E3F7289920E28D55007B0CB0 /* CacheList.swift */,
+				E3F7289520E289EE007B0CB0 /* StatusItemController.swift */,
 				E3F7286220E174F4007B0CB0 /* ViewModel.swift */,
-				E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */,
-				E3EFDF28207A92D50066C68A /* WindowControl.swift */,
-				E34E83132079D98000BA09DF /* CacheTableCellView.swift */,
-				E3F7286620E251F0007B0CB0 /* LoadingView.swift */,
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E830F2079CE0E00BA09DF /* Source.json */,
@@ -259,16 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
-				E3EFDF29207A92D50066C68A /* WindowControl.swift in Sources */,
-				E34E83022079CD5200BA09DF /* ViewController.swift in Sources */,
-				E3F7286720E251F0007B0CB0 /* LoadingView.swift in Sources */,
 				E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */,
-				E34E83142079D98000BA09DF /* CacheTableCellView.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
+				E3F7289A20E28D55007B0CB0 /* CacheList.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
+				E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
 				E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */,
-				E3F7286120E1725C007B0CB0 /* CacheNetworkFetcher.swift in Sources */,
+				E3F7289820E28ADC007B0CB0 /* MainCacheList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

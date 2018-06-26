@@ -1,5 +1,5 @@
 //
-//  CacheNetworkFetcher.swift
+//  MainCacheList.swift
 //  MacCacheCleaner
 //
 //  Created by Kaunteya Suryawanshi on 26/06/18.
@@ -8,13 +8,16 @@
 
 import Foundation
 
-class CacheNetworkFetcher {
-    static func fetch(completion: @escaping ([CacheItem]) -> Void) {
+class MainCacheList {
+    var list: [CacheItem]?
+
+    func updateFromNetwork(completion: () -> Void) {
         let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
         let items = json["items"] as! [JSON]
         let cacheItemList = items.map { CacheItem($0) }
-        completion(cacheItemList)
+        list = cacheItemList
+        completion()
     }
 }

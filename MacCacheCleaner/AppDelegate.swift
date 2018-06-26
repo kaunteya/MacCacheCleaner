@@ -12,10 +12,15 @@ typealias JSON = [String : Any]
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+
+    var statusItemController = StatusItemController()
+    let mainList = MainCacheList()
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        CacheNetworkFetcher.fetch { (cacheItemList) in
-            
+        mainList.updateFromNetwork {
+            statusItemController.addNonZeroSizeItems(list: mainList.list!)
         }
     }
+
 }
 

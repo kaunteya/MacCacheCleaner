@@ -50,9 +50,3 @@ extension CacheItem {
         return sizeBytes
     }
 }
-
-extension CacheItem {
-    static var mock: CacheItem {
-        return CacheItem(id: "some", name: "Yarn", imageURL: URL(string: "https://via.placeholder.com/150x150")!, size: nil, description: "This is a test pod", locations: [], deleteActions: nil, deletePaths: nil)
-    }
-}

@@ -55,4 +55,13 @@ class ViewModel {
             self.delegate?.cacheItemLoadingComplete()
         }
     }
+
+    func remove(cacheId: String) {
+        for (index, item) in items.enumerated() {
+            if item.id == cacheId {
+                items.remove(at: index)
+                delegate?.cacheItemRemoved(at: index)
+            }
+        }
+    }
 }
