@@ -8,21 +8,10 @@
 
 import Cocoa
 
-enum ListSortBy { case name, size }
-
 class ViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!
     let viewModel = ViewModel()
-
-//    func getCacheItems() -> [CacheItem] {
-//        let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
-//        let data = try! Data(contentsOf: url)
-//        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-//        let items = json["items"] as! [JSON]
-//        return items.map { CacheItem($0) }
-//    }
-
 
     override func viewDidLoad() {
         viewModel.delegate = self
