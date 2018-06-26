@@ -10,6 +10,7 @@ import Foundation
 
 protocol ListDelegate:class {
     func cacheItemInserted(at index: Int)
+    func cacheItemRemoved(at index: Int)
     func cacheItemLoadingComplete()
 }
 
@@ -18,35 +19,40 @@ class ViewModel {
     var items = [CacheItem]()
     weak var delegate: ListDelegate?
 
-    func fetch(completion: @escaping ([CacheItem]) -> Void) {
+    func start() {
+        fetchFromNetwork { items in
+            self.loadItemsWithNonZeroSize(items)
+        }
+    }
+
+    private func fetchFromNetwork(completion: @escaping ([CacheItem]) -> Void) {
         let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
         let items = json["items"] as! [JSON]
-        let cacheItemList = items.map { CacheItem($0) }
-        completion(cacheItemList)
+        let cacheItems = items.map { CacheItem($0) }
+        completion(cacheItems)
     }
 
-    func start() {
-        self.fetch { itemList in
-            let dispatchGroup = DispatchGroup()
-            itemList.forEach { (item) in
-                DispatchQueue.global().async {
-                    dispatchGroup.enter()
-                    var item = item
-                    item.size = item.locationSize
-                    DispatchQueue.main.async {
-                        dispatchGroup.leave()
-                        if item.size! > 0 {
-                            self.items.append(item)
-                            self.delegate?.cacheItemInserted(at: self.items.count - 1)
-                        }
+    private func loadItemsWithNonZeroSize(_ allItems: [CacheItem]) {
+        assert(self.items.count == 0)
+        let dispatchGroup = DispatchGroup()
+        allItems.forEach { (item) in
+            DispatchQueue.global().async {
+                dispatchGroup.enter()
+                var item = item
+                item.size = item.locationSize
+                DispatchQueue.main.async {
+                    dispatchGroup.leave()
+                    if item.size! > 0 {
+                        self.items.append(item)
+                        self.delegate?.cacheItemInserted(at: self.items.count - 1)
                     }
                 }
             }
-            dispatchGroup.notify(queue: .main) {
-                self.delegate?.cacheItemLoadingComplete()
-            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            self.delegate?.cacheItemLoadingComplete()
         }
     }
 }

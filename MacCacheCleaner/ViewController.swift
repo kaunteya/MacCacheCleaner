@@ -22,6 +22,10 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: ListDelegate {
+    func cacheItemRemoved(at index: Int) {
+        tableView.reloadData()
+    }
+
     func cacheItemInserted(at index: Int) {
         //TODO: Update only one cell
         tableView.reloadData()
