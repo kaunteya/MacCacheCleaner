@@ -37,7 +37,6 @@ class ViewModel {
                     item.size = item.locationSize
                     DispatchQueue.main.async {
                         dispatchGroup.leave()
-                        print("Size of \(item.name) = \(item.size!)")
                         if item.size! > 0 {
                             self.items.append(item)
                             self.delegate?.cacheItemInserted(at: self.items.count - 1)
@@ -46,7 +45,6 @@ class ViewModel {
                 }
             }
             dispatchGroup.notify(queue: .main) {
-                print("Loading complete")
                 self.delegate?.cacheItemLoadingComplete()
             }
         }

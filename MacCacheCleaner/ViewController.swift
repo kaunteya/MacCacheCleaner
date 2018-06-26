@@ -34,7 +34,6 @@ extension ViewController: ListDelegate {
 
 extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        print("Count \(viewModel.items.count)")
         return viewModel.items.count
     }
 
