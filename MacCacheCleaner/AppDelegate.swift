@@ -13,6 +13,9 @@ typealias JSON = [String : Any]
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        CacheNetworkFetcher.fetch { (cacheItemList) in
+            
+        }
     }
 }
 

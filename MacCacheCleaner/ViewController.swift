@@ -13,48 +13,44 @@ enum ListSortBy { case name, size }
 class ViewController: NSViewController {
 
     @IBOutlet weak var tableView: NSTableView!
+    let viewModel = ViewModel()
 
-    var items = [CacheItem]() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
-
-    func getCacheItems() -> [CacheItem] {
-        let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-        let items = json["items"] as! [JSON]
-        return items.map { CacheItem($0) }
-    }
+//    func getCacheItems() -> [CacheItem] {
+//        let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
+//        let data = try! Data(contentsOf: url)
+//        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
+//        let items = json["items"] as! [JSON]
+//        return items.map { CacheItem($0) }
+//    }
 
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let allCacheItems = getCacheItems()
+        viewModel.delegate = self
+        viewModel.start()
+    }
+}
 
-        allCacheItems.forEach { item in
-            var item = item
-            item.getSizeOfLocations { (size) in
-                guard size > 0 else { return }
-                item.size = size
-                self.items.append(item)
-                print("Adding \(item.name)")
-            }
-        }
+extension ViewController: ListDelegate {
+    func cacheItemInserted(at index: Int) {
+        //TODO: Update only one cell
+        tableView.reloadData()
+    }
+
+    func cacheItemLoadingComplete() {
+
     }
 }
 
 extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return items.count
+        print("Count \(viewModel.items.count)")
+        return viewModel.items.count
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cacheCell"), owner: self) as! CacheTableCellView
-        cell.update(for: items[row])
+        cell.update(for: viewModel.items[row])
 
         return cell
     }
-
 }

@@ -25,7 +25,9 @@ struct CacheItem {
     let locations: [Path]
     let deleteActions: [String]?
     let deletePaths:[String]?
+}
 
+extension CacheItem {
     init(_ json: JSON) {
         id = json["id"] as! String
         name = json["name"] as! String
@@ -38,17 +40,19 @@ struct CacheItem {
         deletePaths = del["paths"] as? [String]
     }
 
-    func getSizeOfLocations(completion: @escaping (Int64) -> Void) {
+    var locationSize: Int64 {
         var sizeBytes = 0 as Int64
         let urls = locations.map { $0.fileURL }
 
-        DispatchQueue.global().async {
-            urls.forEach { url in
-                sizeBytes += FileManager.default.size(of: url)
-            }
-            DispatchQueue.main.async {
-                completion(sizeBytes)
-            }
+        urls.forEach { url in
+            sizeBytes += FileManager.default.size(of: url)
         }
+        return sizeBytes
+    }
+}
+
+extension CacheItem {
+    static var mock: CacheItem {
+        return CacheItem(id: "some", name: "Yarn", imageURL: URL(string: "https://via.placeholder.com/150x150")!, size: nil, description: "This is a test pod", locations: [], deleteActions: nil, deletePaths: nil)
     }
 }

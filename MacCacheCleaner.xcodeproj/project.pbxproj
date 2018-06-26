@@ -19,6 +19,8 @@
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285B20E10162007B0CB0 /* Run+Command.swift */; };
+		E3F7286120E1725C007B0CB0 /* CacheNetworkFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */; };
+		E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286220E174F4007B0CB0 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F7285B20E10162007B0CB0 /* Run+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Command.swift"; sourceTree = "<group>"; };
+		E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheNetworkFetcher.swift; sourceTree = "<group>"; };
+		E3F7286220E174F4007B0CB0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
 		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +97,8 @@
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E34E83012079CD5200BA09DF /* ViewController.swift */,
+				E3F7286220E174F4007B0CB0 /* ViewModel.swift */,
+				E3F7286020E1725C007B0CB0 /* CacheNetworkFetcher.swift */,
 				E3EFDF28207A92D50066C68A /* WindowControl.swift */,
 				E34E83132079D98000BA09DF /* CacheTableCellView.swift */,
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
@@ -252,11 +258,13 @@
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
 				E3EFDF29207A92D50066C68A /* WindowControl.swift in Sources */,
 				E34E83022079CD5200BA09DF /* ViewController.swift in Sources */,
+				E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */,
 				E34E83142079D98000BA09DF /* CacheTableCellView.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
 				E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */,
+				E3F7286120E1725C007B0CB0 /* CacheNetworkFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

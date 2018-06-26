@@ -9,10 +9,19 @@
 import Foundation
 
 extension FileManager {
+
     func isDirectory(_ url: URL) -> Bool {
         var isDir : ObjCBool = false
         FileManager.default.fileExists(atPath: url.path, isDirectory: &isDir)
         return isDir.boolValue
+    }
+
+    func totalSize(of urls: [URL]) -> Int64 {
+        var sizeBytes = 0 as Int64
+        urls.forEach { url in
+            sizeBytes += FileManager.default.size(of: url)
+        }
+        return sizeBytes
     }
 
     func size(of urls: [URL], completion: @escaping (Int64) -> Void) {
