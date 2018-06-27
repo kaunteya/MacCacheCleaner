@@ -18,6 +18,7 @@ class MainCacheList {
         let items = json["items"] as! [JSON]
         let cacheItemList = items.map { CacheItem($0) }
         list = cacheItemList
+        // If network fails dont call completion
         completion()
     }
 }

@@ -18,8 +18,13 @@ final class CacheView: MenuItemView, NibLoadable {
     @IBAction func clearTapped(_ sender: NSButton) {
         print("Clear tapped")
     }
-
-    func configure(with cache: CacheItem) {
+    static func initialize(with cache: CacheItem) -> CacheView {
+        let cacheView = CacheView.createFromNib()!
+        cacheView.configure(with: cache)
+        return cacheView
+    }
+    
+    private func configure(with cache: CacheItem) {
         nameLabel.stringValue = cache.name
         sizeLabel.stringValue = cache.size!.bytesToReadableString
         cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)

@@ -26,7 +26,7 @@ class StatusItemController {
                 item.size = item.locationSize
                 DispatchQueue.main.async {
                     dispatchGroup.leave()
-                    self.add(cache: item)
+                    self.addMenuItem(cache: item)
                 }
             }
         }
@@ -35,14 +35,9 @@ class StatusItemController {
         }
     }
 
-    func add(cache: CacheItem) {
+    func addMenuItem(cache: CacheItem) {
         print("Adding \(cache.name)")
-        let menu = NSMenuItem(title: "\(cache.name) (\(cache.size!.bytesToReadableString))", action: nil, keyEquivalent: "")
-
-        let cacheView = CacheView.createFromNib()!
-        cacheView.configure(with: cache)
-        menu.view = cacheView
-
+        let menu = NSMenuItem(cache: cache)
         statusItem.menu!.addItem(menu)
     }
 
