@@ -9,15 +9,17 @@
 import AppKit
 import SDWebImage
 
-final class CacheView: MenuItemView, NibLoadable {
+final class CacheView: NSView, NibLoadable {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
 
     @IBOutlet weak var cacheImageField: NSImageView?
+
     @IBAction func clearTapped(_ sender: NSButton) {
         print("Clear tapped")
     }
+
     static func initialize(with cache: CacheItem) -> CacheView {
         let cacheView = CacheView.createFromNib()!
         cacheView.configure(with: cache)
