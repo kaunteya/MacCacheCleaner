@@ -20,8 +20,8 @@ class StatusItemController {
     }
     
     init() {
-        statusItem = NSStatusBar.system.statusItem(withLength: 30)
-        statusItem.title = "AK"
+        statusItem = NSStatusBar.system.statusItem(withLength: -1)
+        statusItem.button?.image = #imageLiteral(resourceName: "StatusIcon")
         statusItem.menu = NSMenu()
         addDefaultMenuItems()
     }
