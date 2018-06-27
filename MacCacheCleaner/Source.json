@@ -44,7 +44,7 @@
     },
     {
       "id": "xcode-derived",
-      "name": "Xcode derived data",
+      "name": "Xcode Derived Data",
       "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
       "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc",
       "location": [
