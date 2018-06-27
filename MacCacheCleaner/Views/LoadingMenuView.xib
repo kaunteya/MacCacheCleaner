@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="268" height="10"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-ZV-Np2" customClass="ShootingStars" customModule="ProgressKit">
-                        <rect key="frame" x="0.0" y="0.0" width="270" height="3"/>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-ZV-Np2" customClass="ShootingStars" customModule="ProgressKit">
+                        <rect key="frame" x="0.0" y="0.0" width="268" height="3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="3" id="CnJ-ys-EQI"/>
                         </constraints>

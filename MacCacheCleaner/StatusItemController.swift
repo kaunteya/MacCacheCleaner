@@ -70,7 +70,7 @@ class StatusItemController {
         }
     }
 
-    func addMenuItem(cache: CacheItem) {
+    private func addMenuItem(cache: CacheItem) {
         let cacheMenuItem = NSMenuItem(cache: cache)
         cacheMenuItem.cacheView?.delegate = self
         let insertionIndex = self.isLoadingViewPresent ? 1 : 0
