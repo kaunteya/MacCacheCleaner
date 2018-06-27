@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="CacheView" customModule="MacCacheCleaner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="251" height="29"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-Nt-vAB">
+                    <rect key="frame" x="4" y="4" width="243" height="21"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-JR-gZH">
+                            <rect key="frame" x="-2" y="4" width="149" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Yarn" id="gdH-9R-4lH">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Eh4-3Q-CcB">
+                            <rect key="frame" x="151" y="4" width="42" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="13 MB" id="pjJ-HI-Weg">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rY2-GG-a5E">
+                            <rect key="frame" x="194" y="-3" width="54" height="28"/>
+                            <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MVW-j5-q0n">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="clearTapped:" target="c22-O7-iKe" id="U9I-Cc-s2D"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="M2D-Nt-vAB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="4" id="Glx-0k-EaI"/>
+                <constraint firstAttribute="bottom" secondItem="M2D-Nt-vAB" secondAttribute="bottom" constant="4" id="SQl-rL-bda"/>
+                <constraint firstAttribute="trailing" secondItem="M2D-Nt-vAB" secondAttribute="trailing" constant="4" id="SwB-py-ODU"/>
+                <constraint firstItem="M2D-Nt-vAB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="4" id="pfx-kq-k9C"/>
+            </constraints>
+            <connections>
+                <outlet property="nameLabel" destination="Fd0-JR-gZH" id="FNn-sW-NbS"/>
+                <outlet property="sizeLabel" destination="Eh4-3Q-CcB" id="SWi-hz-FTs"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="40.5"/>
+        </customView>
+    </objects>
+</document>

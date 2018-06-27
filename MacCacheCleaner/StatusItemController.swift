@@ -19,7 +19,7 @@ class StatusItemController {
 
     func addNonZeroSizeItems(list: [CacheItem]) {
         let dispatchGroup = DispatchGroup()
-        for (i, item) in list.enumerated() {
+        for item in list {
             DispatchQueue.global().async {
                 dispatchGroup.enter()
                 var item = item
@@ -36,7 +36,14 @@ class StatusItemController {
     }
 
     func add(cache: CacheItem) {
-        statusItem.menu?.addItem(withTitle: cache.name, action: nil, keyEquivalent: "")
+        print("Adding \(cache.name)")
+        let menu = NSMenuItem(title: "\(cache.name) (\(cache.size!.bytesToReadableString))", action: nil, keyEquivalent: "")
+
+        let cacheView = CacheView.createFromNib()!
+        cacheView.configure(with: cache)
+        menu.view = cacheView
+
+        statusItem.menu!.addItem(menu)
     }
 
     func remove(cache: CacheItem) {

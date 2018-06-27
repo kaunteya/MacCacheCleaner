@@ -973,6 +973,16 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menuItem title="Item" id="8dZ-zG-fTA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <outlet property="view" destination="KQr-Jr-pfE" id="ORx-ht-4Af"/>
+                    </connections>
+                </menuItem>
+                <customView id="KQr-Jr-pfE">
+                    <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
