@@ -50,3 +50,13 @@ extension CacheItem {
         return sizeBytes
     }
 }
+
+extension CacheItem: Hashable {
+    var hashValue: Int {
+        return id.hashValue
+    }
+
+    static func == (lhs: CacheItem, rhs: CacheItem) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

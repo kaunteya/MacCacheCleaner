@@ -7,10 +7,3 @@
 //
 
 import AppKit
-
-extension NSMenuItem {
-    convenience init(cache: CacheItem) {
-        self.init()
-        self.view = CacheMenuView.initialize(with: cache)
-    }
-}

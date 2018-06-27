@@ -37,11 +37,14 @@ class StatusItemController {
 
     func addMenuItem(cache: CacheItem) {
         print("Adding \(cache.name)")
-        let menu = NSMenuItem(cache: cache)
-        statusItem.menu!.addItem(menu)
+        let cacheMenuItem = NSMenuItem(cache: cache)
+        cacheMenuItem.cacheView?.delegate = self
+        statusItem.menu!.addItem(cacheMenuItem)
     }
+}
 
-    func remove(cache: CacheItem) {
-        
+extension StatusItemController: CacheMenuViewDelegate {
+    func itemRemoved(_ cacheId: String) {
+        statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
     }
 }

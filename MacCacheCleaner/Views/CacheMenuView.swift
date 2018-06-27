@@ -9,26 +9,30 @@
 import AppKit
 import SDWebImage
 
-final class CacheMenuView: NSView, NibLoadable {
+protocol CacheMenuViewDelegate:class {
+    func itemRemoved(_ cacheId: String)
+}
+
+class CacheMenuView: NSView, NibLoadable {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
 
     @IBOutlet weak var cacheImageField: NSImageView?
+    var cacheId: String!
+    weak var delegate: CacheMenuViewDelegate?
 
     @IBAction func clearTapped(_ sender: NSButton) {
-        print("Clear tapped")
+        print("Clear tapped \(cacheId)")
+        delegate?.itemRemoved(cacheId)
     }
 
     static func initialize(with cache: CacheItem) -> CacheMenuView {
         let cacheView = CacheMenuView.createFromNib()!
-        cacheView.configure(with: cache)
+        cacheView.cacheId = cache.id
+        cacheView.nameLabel.stringValue = cache.name
+        cacheView.sizeLabel.stringValue = cache.size!.bytesToReadableString
+        cacheView.cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)
         return cacheView
-    }
-    
-    private func configure(with cache: CacheItem) {
-        nameLabel.stringValue = cache.name
-        sizeLabel.stringValue = cache.size!.bytesToReadableString
-        cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)
     }
 }
