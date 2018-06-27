@@ -8,19 +8,15 @@
 
 import Cocoa
 
-typealias JSON = [String : Any]
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItemController = StatusItemController()
-    let mainList = MainCacheList()
+    let mainList = MainCache()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         mainList.updateFromNetwork {
             statusItemController.addNonZeroSizeItems(list: mainList.list!)
         }
     }
-
 }
-

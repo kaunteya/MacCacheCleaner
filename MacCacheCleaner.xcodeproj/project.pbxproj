@@ -17,7 +17,7 @@
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285B20E10162007B0CB0 /* Run+Command.swift */; };
 		E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289520E289EE007B0CB0 /* StatusItemController.swift */; };
-		E3F7289820E28ADC007B0CB0 /* MainCacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */; };
+		E3F7289820E28ADC007B0CB0 /* MainCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289720E28ADC007B0CB0 /* MainCache.swift */; };
 		E3F7289C20E2940F007B0CB0 /* CacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F7289B20E2940F007B0CB0 /* CacheView.xib */; };
 		E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D020E3A350007B0CB0 /* NibLoadable.swift */; };
 		E3F728D320E3A5AE007B0CB0 /* CacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D220E3A5AE007B0CB0 /* CacheView.swift */; };
@@ -39,7 +39,7 @@
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F7285B20E10162007B0CB0 /* Run+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Command.swift"; sourceTree = "<group>"; };
 		E3F7289520E289EE007B0CB0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
-		E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCacheList.swift; sourceTree = "<group>"; };
+		E3F7289720E28ADC007B0CB0 /* MainCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCache.swift; sourceTree = "<group>"; };
 		E3F7289B20E2940F007B0CB0 /* CacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheView.xib; sourceTree = "<group>"; };
 		E3F728D020E3A350007B0CB0 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		E3F728D220E3A5AE007B0CB0 /* CacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheView.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
-				E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */,
+				E3F7289720E28ADC007B0CB0 /* MainCache.swift */,
 				E3F7289520E289EE007B0CB0 /* StatusItemController.swift */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F728D720E3B038007B0CB0 /* Views */,
@@ -288,7 +288,7 @@
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
 				E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */,
 				E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */,
-				E3F7289820E28ADC007B0CB0 /* MainCacheList.swift in Sources */,
+				E3F7289820E28ADC007B0CB0 /* MainCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
