@@ -9,7 +9,7 @@
 import AppKit
 import SDWebImage
 
-final class CacheView: NSView, NibLoadable {
+final class CacheMenuView: NSView, NibLoadable {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
@@ -20,8 +20,8 @@ final class CacheView: NSView, NibLoadable {
         print("Clear tapped")
     }
 
-    static func initialize(with cache: CacheItem) -> CacheView {
-        let cacheView = CacheView.createFromNib()!
+    static func initialize(with cache: CacheItem) -> CacheMenuView {
+        let cacheView = CacheMenuView.createFromNib()!
         cacheView.configure(with: cache)
         return cacheView
     }

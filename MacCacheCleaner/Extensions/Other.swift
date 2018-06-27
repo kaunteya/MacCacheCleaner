@@ -11,6 +11,6 @@ import AppKit
 extension NSMenuItem {
     convenience init(cache: CacheItem) {
         self.init()
-        self.view = CacheView.initialize(with: cache)
+        self.view = CacheMenuView.initialize(with: cache)
     }
 }
