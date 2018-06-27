@@ -10,7 +10,15 @@ import AppKit
 
 class StatusItemController {
     let statusItem: NSStatusItem
-
+    var list: [CacheItem]? {
+        willSet {
+            assert(list == nil, "list must be set only once")
+        }
+        didSet {
+            self.addNonZeroSizeItems(list: list!)
+        }
+    }
+    
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: 30)
         statusItem.title = "AK"
@@ -45,6 +53,8 @@ class StatusItemController {
 
 extension StatusItemController: CacheMenuViewDelegate {
     func itemRemoved(_ cacheId: String) {
+        
+//        FileManager.default.removeIte
         statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
     }
 }

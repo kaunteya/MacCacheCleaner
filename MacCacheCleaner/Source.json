@@ -8,15 +8,14 @@
       "description": "This is a test pod.",
       "homepage": "https://cocoapods.org/",
       "location": [
-        "~/testcache1",
-        "~/testcache2",
-        "~/testcache3",
-        "~/testcache4",
-        "~/testcache5"
+        "~/testcache1"
       ],
       "delete": {
         "actions": [
           "touch ~/complete"
+        ],
+        "paths": [
+          "~/testcache1"
         ]
       }
     },

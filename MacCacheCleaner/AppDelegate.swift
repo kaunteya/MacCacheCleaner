@@ -12,11 +12,10 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItemController = StatusItemController()
-    let mainList = MainCache()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        mainList.updateFromNetwork {
-            statusItemController.addNonZeroSizeItems(list: mainList.list!)
+        MainCache.updateFromNetwork { list in
+            statusItemController.list = list
         }
     }
 }
