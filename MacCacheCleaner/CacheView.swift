@@ -7,12 +7,14 @@
 //
 
 import AppKit
+import SDWebImage
 
 final class CacheView: MenuItemView, NibLoadable {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
 
+    @IBOutlet weak var cacheImageField: NSImageView!
     @IBAction func clearTapped(_ sender: NSButton) {
         print("Clear tapped")
     }
@@ -20,5 +22,6 @@ final class CacheView: MenuItemView, NibLoadable {
     func configure(with cache: CacheItem) {
         nameLabel.stringValue = cache.name
         sizeLabel.stringValue = cache.size!.bytesToReadableString
+        cacheImageField.sd_setImage(with: cache.imageURL, completed: nil)
     }
 }
