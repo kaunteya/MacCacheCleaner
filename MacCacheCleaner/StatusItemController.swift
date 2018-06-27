@@ -10,7 +10,7 @@ import AppKit
 
 class StatusItemController {
     let statusItem: NSStatusItem
-    var list: [CacheItem]? {
+    var list: Set<CacheItem>? {
         willSet {
             assert(list == nil, "list must be set only once")
         }
@@ -25,7 +25,7 @@ class StatusItemController {
         statusItem.menu = NSMenu()
     }
 
-    func addNonZeroSizeItems(list: [CacheItem]) {
+    func addNonZeroSizeItems(list: Set<CacheItem>) {
         let dispatchGroup = DispatchGroup()
         for item in list {
             DispatchQueue.global().async {
@@ -34,7 +34,9 @@ class StatusItemController {
                 item.size = item.locationSize
                 DispatchQueue.main.async {
                     dispatchGroup.leave()
-                    self.addMenuItem(cache: item)
+                    if item.size! > 0 {
+                        self.addMenuItem(cache: item)
+                    }
                 }
             }
         }
@@ -44,7 +46,6 @@ class StatusItemController {
     }
 
     func addMenuItem(cache: CacheItem) {
-        print("Adding \(cache.name)")
         let cacheMenuItem = NSMenuItem(cache: cache)
         cacheMenuItem.cacheView?.delegate = self
         statusItem.menu!.addItem(cacheMenuItem)
@@ -53,8 +54,10 @@ class StatusItemController {
 
 extension StatusItemController: CacheMenuViewDelegate {
     func itemRemoved(_ cacheId: String) {
-        
-//        FileManager.default.removeIte
+        guard let cacheItem = list?.first(where: { $0.id == cacheId }) else {
+            return
+        }
+        cacheItem.deleteCache()
         statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
     }
 }

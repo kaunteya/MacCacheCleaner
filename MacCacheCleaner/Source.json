@@ -8,16 +8,8 @@
       "description": "This is a test pod.",
       "homepage": "https://cocoapods.org/",
       "location": [
-        "~/testcache1"
-      ],
-      "delete": {
-        "actions": [
-          "touch ~/complete"
-        ],
-        "paths": [
-          "~/testcache1"
-        ]
-      }
+        "~/a1"
+      ]
     },
     {
       "id": "cocoapod",
@@ -27,12 +19,7 @@
       "homepage": "https://cocoapods.org/",
       "location": [
         "~/Library/Caches/CocoaPods"
-      ],
-      "delete": {
-        "actions": [
-          "pod cache clear"
-        ]
-      }
+      ]
     },
     {
       "id": "homebrew",
@@ -43,12 +30,7 @@
         "~/Library/Caches/Homebrew",
         "~/Library/Logs/Homebrew/"
       ],
-      "description": "The missing package manager for macOS",
-      "delete": {
-        "actions": [
-          "brew cleanup"
-        ]
-      }
+      "description": "The missing package manager for macOS"
     },
     {
       "id": "npm",
@@ -58,12 +40,7 @@
       "homepage": "https://www.npmjs.com/",
       "location": [
         "~/.npm"
-      ],
-      "delete": {
-        "actions": [
-          "npm cache clear"
-        ]
-      }
+      ]
     },
     {
       "id": "xcode-derived",
@@ -72,12 +49,7 @@
       "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc",
       "location": [
         "~/Library/Developer/Xcode/DerivedData"
-      ],
-      "delete": {
-        "paths": [
-          "~/Library/Developer/Xcode/DerivedData"
-        ]
-      }
+      ]
     },
     {
       "id": "yarn",
@@ -86,10 +58,7 @@
       "description": "Fast, Reliable, and Secure dependency management.",
       "location": [
         "~/Library/Caches/Yarn"
-      ],
-      "delete": {
-        "actions": ["yarn cache clean"]
-      }
+      ]
     }
   ]
 }

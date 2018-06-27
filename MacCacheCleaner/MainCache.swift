@@ -16,12 +16,12 @@ class MainCache {
     /// Fetches all possible caches in json format.
     /// Converts them to CacheItem list
     /// Stores them in list variable
-    class func updateFromNetwork(completion: (_ list: [CacheItem]) -> Void) {
+    class func updateFromNetwork(completion: (_ list: Set<CacheItem>) -> Void) {
         let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
         let items = json["items"] as! [JSON]
         let cacheItemList = items.map { CacheItem($0) }
-        completion(cacheItemList)
+        completion(Set(cacheItemList))
     }
 }

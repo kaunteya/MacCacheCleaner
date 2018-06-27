@@ -10,6 +10,9 @@ import Foundation
 
 struct Path {
     let stringVal: String
+    init(_ stringVal: String) {
+        self.stringVal = stringVal
+    }
     var fileURL: URL {
         let expandedPath = NSString(string: stringVal).expandingTildeInPath
         return URL(fileURLWithPath: expandedPath, isDirectory: true)
@@ -23,8 +26,6 @@ struct CacheItem {
     var size: Int64?
     let description: String
     let locations: [Path]
-    let deleteActions: [String]?
-    let deletePaths:[String]?
 }
 
 extension CacheItem {
@@ -34,10 +35,7 @@ extension CacheItem {
         imageURL = URL(string: json["image"] as! String)!
 
         description  = json["description"] as! String
-        locations = (json["location"] as! [String]).map { Path(stringVal: $0)}
-        let del = json["delete"] as! JSON
-        deleteActions = del["actions"] as? [String]
-        deletePaths = del["paths"] as? [String]
+        locations = (json["location"] as! [String]).map { Path($0)}
     }
 
     var locationSize: Int64 {
@@ -48,6 +46,13 @@ extension CacheItem {
             sizeBytes += FileManager.default.size(of: url)
         }
         return sizeBytes
+    }
+    
+    func deleteCache() {
+        locations.forEach { path in
+            print("Removing \(path)")
+            try? FileManager.default.removeItem(at: path.fileURL)
+        }
     }
 }
 

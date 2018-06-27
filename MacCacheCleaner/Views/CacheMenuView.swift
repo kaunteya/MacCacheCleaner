@@ -23,7 +23,6 @@ class CacheMenuView: NSView, NibLoadable {
     weak var delegate: CacheMenuViewDelegate?
 
     @IBAction func clearTapped(_ sender: NSButton) {
-        print("Clear tapped \(cacheId)")
         delegate?.itemRemoved(cacheId)
     }
 
