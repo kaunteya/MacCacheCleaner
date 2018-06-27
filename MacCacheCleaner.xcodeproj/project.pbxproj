@@ -16,7 +16,6 @@
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F7285C20E10162007B0CB0 /* Run+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285B20E10162007B0CB0 /* Run+Command.swift */; };
-		E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7286220E174F4007B0CB0 /* ViewModel.swift */; };
 		E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289520E289EE007B0CB0 /* StatusItemController.swift */; };
 		E3F7289820E28ADC007B0CB0 /* MainCacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */; };
 		E3F7289C20E2940F007B0CB0 /* CacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F7289B20E2940F007B0CB0 /* CacheView.xib */; };
@@ -38,7 +37,6 @@
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F7285B20E10162007B0CB0 /* Run+Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Command.swift"; sourceTree = "<group>"; };
-		E3F7286220E174F4007B0CB0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E3F7289520E289EE007B0CB0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCacheList.swift; sourceTree = "<group>"; };
 		E3F7289B20E2940F007B0CB0 /* CacheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheView.xib; sourceTree = "<group>"; };
@@ -102,12 +100,8 @@
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E3F7289720E28ADC007B0CB0 /* MainCacheList.swift */,
 				E3F7289520E289EE007B0CB0 /* StatusItemController.swift */,
-				E3F728D020E3A350007B0CB0 /* NibLoadable.swift */,
-				E3F7286220E174F4007B0CB0 /* ViewModel.swift */,
-				E34E83112079D41500BA09DF /* CacheItem.swift */,
-				E3F7289B20E2940F007B0CB0 /* CacheView.xib */,
-				E3F728D220E3A5AE007B0CB0 /* CacheView.swift */,
-				E3F728D420E3A5E4007B0CB0 /* MenuItemView.swift */,
+				E3F728D620E3B02C007B0CB0 /* Models */,
+				E3F728D720E3B038007B0CB0 /* Views */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E830F2079CE0E00BA09DF /* Source.json */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
@@ -126,6 +120,25 @@
 				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3F728D620E3B02C007B0CB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E34E83112079D41500BA09DF /* CacheItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3F728D720E3B038007B0CB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3F728D020E3A350007B0CB0 /* NibLoadable.swift */,
+				E3F728D420E3A5E4007B0CB0 /* MenuItemView.swift */,
+				E3F7289B20E2940F007B0CB0 /* CacheView.xib */,
+				E3F728D220E3A5AE007B0CB0 /* CacheView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
-				E3F7286320E174F4007B0CB0 /* ViewModel.swift in Sources */,
 				E3F728D320E3A5AE007B0CB0 /* CacheView.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F728D520E3A5E4007B0CB0 /* MenuItemView.swift in Sources */,
