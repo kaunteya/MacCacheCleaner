@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -15,18 +14,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-Nt-vAB">
-                    <rect key="frame" x="4" y="4" width="243" height="30"/>
+                    <rect key="frame" x="4" y="0.0" width="243" height="38"/>
                     <subviews>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-qE-gpf">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="Hx9-jg-Smn"/>
-                                <constraint firstAttribute="width" secondItem="pXI-qE-gpf" secondAttribute="height" multiplier="1:1" id="rGB-lR-nrb"/>
-                            </constraints>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="jzF-Jg-gVk"/>
-                        </imageView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="999" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-JR-gZH">
-                            <rect key="frame" x="36" y="7" width="111" height="17"/>
+                            <rect key="frame" x="-2" y="11" width="149" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Yarn" id="gdH-9R-4lH">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -34,7 +25,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Eh4-3Q-CcB">
-                            <rect key="frame" x="151" y="7" width="42" height="17"/>
+                            <rect key="frame" x="151" y="11" width="42" height="17"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="13 MB" id="pjJ-HI-Weg">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -42,7 +33,7 @@
                             </textFieldCell>
                         </textField>
                         <button horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rY2-GG-a5E">
-                            <rect key="frame" x="194" y="0.0" width="54" height="28"/>
+                            <rect key="frame" x="194" y="4" width="54" height="28"/>
                             <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MVW-j5-q0n">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="smallSystem"/>
@@ -56,10 +47,8 @@
                         <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
-                        <integer value="1000"/>
                     </visibilityPriorities>
                     <customSpacing>
-                        <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
@@ -68,12 +57,11 @@
             </subviews>
             <constraints>
                 <constraint firstItem="M2D-Nt-vAB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="4" id="Glx-0k-EaI"/>
-                <constraint firstAttribute="bottom" secondItem="M2D-Nt-vAB" secondAttribute="bottom" constant="4" id="SQl-rL-bda"/>
+                <constraint firstAttribute="bottom" secondItem="M2D-Nt-vAB" secondAttribute="bottom" id="SQl-rL-bda"/>
                 <constraint firstAttribute="trailing" secondItem="M2D-Nt-vAB" secondAttribute="trailing" constant="4" id="SwB-py-ODU"/>
-                <constraint firstItem="M2D-Nt-vAB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="4" id="pfx-kq-k9C"/>
+                <constraint firstItem="M2D-Nt-vAB" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="pfx-kq-k9C"/>
             </constraints>
             <connections>
-                <outlet property="cacheImageField" destination="pXI-qE-gpf" id="Pt5-kf-zf8"/>
                 <outlet property="nameLabel" destination="Fd0-JR-gZH" id="FNn-sW-NbS"/>
                 <outlet property="sizeLabel" destination="Eh4-3Q-CcB" id="SWi-hz-FTs"/>
             </connections>
