@@ -23,6 +23,28 @@ class StatusItemController {
         statusItem = NSStatusBar.system.statusItem(withLength: 30)
         statusItem.title = "AK"
         statusItem.menu = NSMenu()
+        addDefaultMenuItems()
+    }
+
+    var isLoadingViewPresent: Bool {
+        return statusItem.menu?.item(at: 0)?.view is LoadingMenuView
+    }
+
+    func addDefaultMenuItems() {
+        do {
+            let infoMenuItem = NSMenuItem(view: LoadingMenuView.initialize())
+            statusItem.menu?.addItem(infoMenuItem)
+        }
+        statusItem.menu?.addItem(.separator())
+        do {
+            let menuItem = NSMenuItem(title: "Quit", action: #selector(StatusItemController.quit(sender:)), keyEquivalent: "")
+            menuItem.target = self
+            statusItem.menu?.addItem(menuItem)
+        }
+    }
+
+    @objc func quit(sender: Any) {
+        NSApp.terminate(sender)
     }
 
     func addNonZeroSizeItems(list: Set<CacheItem>) {
@@ -42,13 +64,17 @@ class StatusItemController {
         }
         dispatchGroup.notify(queue: .main) {
             print("Search complete")
+            if self.isLoadingViewPresent {
+                self.statusItem.menu?.removeItem(at: 0)
+            }
         }
     }
 
     func addMenuItem(cache: CacheItem) {
         let cacheMenuItem = NSMenuItem(cache: cache)
         cacheMenuItem.cacheView?.delegate = self
-        statusItem.menu!.addItem(cacheMenuItem)
+        let insertionIndex = self.isLoadingViewPresent ? 1 : 0
+        statusItem.menu?.insertItem(cacheMenuItem, at: insertionIndex)
     }
 }
 

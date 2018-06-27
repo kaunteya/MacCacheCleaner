@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <box borderType="none" title="Box" titlePosition="noTitle" id="oWP-eP-Qhx" customClass="LoadingMenuView" customModule="MacCacheCleaner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="10"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" id="it3-xh-W1g">
+                <rect key="frame" x="0.0" y="0.0" width="268" height="10"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jk-ZV-Np2" customClass="ShootingStars" customModule="ProgressKit">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="3" id="CnJ-ys-EQI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="foreground">
+                                <color key="value" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="background">
+                                <color key="value" white="0.5" alpha="1" colorSpace="custom" customColorSpace="deviceWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2Jk-ZV-Np2" firstAttribute="leading" secondItem="it3-xh-W1g" secondAttribute="leading" id="53v-Cf-3qW"/>
+                    <constraint firstAttribute="trailing" secondItem="2Jk-ZV-Np2" secondAttribute="trailing" id="EhU-XY-bnq"/>
+                    <constraint firstAttribute="bottom" secondItem="2Jk-ZV-Np2" secondAttribute="bottom" id="jvH-uz-lyx"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="progressView" destination="2Jk-ZV-Np2" id="T3j-PN-8kE"/>
+            </connections>
+            <point key="canvasLocation" x="-13" y="74"/>
+        </box>
+    </objects>
+</document>

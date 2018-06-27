@@ -13,7 +13,7 @@ protocol CacheMenuViewDelegate:class {
     func itemRemoved(_ cacheId: String)
 }
 
-class CacheMenuView: NSView, NibLoadable {
+class CacheMenuView: NSBox, NibLoadable {
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!

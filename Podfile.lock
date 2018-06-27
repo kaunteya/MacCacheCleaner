@@ -1,14 +1,22 @@
 PODS:
+  - ProgressKit (0.7)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
+  - ProgressKit
   - SDWebImage (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ProgressKit
+    - SDWebImage
+
 SPEC CHECKSUMS:
+  ProgressKit: 47145a4a267a9b4262c481d8c46e1d527dd9e024
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 96cc4596ed7ea73e0e5637c4c7cfa6eece77becd
+PODFILE CHECKSUM: 1f90f309822f872d1e73360613e4d568dd47440c
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
