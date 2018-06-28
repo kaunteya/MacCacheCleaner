@@ -13,7 +13,7 @@ class LoadingMenuView: NSBox, NibLoadable {
     @IBOutlet weak var progressView: ShootingStars!
 
     static func initialize() -> LoadingMenuView {
-        let view = LoadingMenuView.createFromNib()!
+        let view = LoadingMenuView.createFromNib()
         view.progressView.animate = true
         return view
     }

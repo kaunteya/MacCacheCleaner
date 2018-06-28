@@ -27,11 +27,15 @@ class CacheMenuView: NSBox, NibLoadable {
     }
 
     static func initialize(with cache: CacheItem) -> CacheMenuView {
-        let cacheView = CacheMenuView.createFromNib()!
+        let cacheView = CacheMenuView.createFromNib()
         cacheView.cacheId = cache.id
         cacheView.nameLabel.stringValue = cache.name
         cacheView.sizeLabel.stringValue = cache.size!.bytesToReadableString
         cacheView.cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)
         return cacheView
+    }
+
+    func update(size: String) {
+        sizeLabel.stringValue = size
     }
 }

@@ -14,11 +14,6 @@ extension NSMenuItem {
         self.view = view
     }
 
-    convenience init(cache: CacheItem) {
-        self.init()
-        self.view = CacheMenuView.initialize(with: cache)
-    }
-    
     var cacheView: CacheMenuView? {
         return self.view as? CacheMenuView
     }

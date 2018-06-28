@@ -14,4 +14,8 @@ extension NSMenu {
             .first(where: { $0.cacheView?.cacheId == cacheId })
             .map { removeItem($0) }
     }
+
+    func menuItem(for cacheItem: CacheItem) -> NSMenuItem? {
+        return items.first(where: { $0.cacheView?.cacheId == cacheItem.id })
+    }
 }
