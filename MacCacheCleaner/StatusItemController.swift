@@ -24,10 +24,6 @@ class StatusItemController {
         statusItem.button?.image = #imageLiteral(resourceName: "StatusIcon")
         statusItem.menu = NSMenu()
         addDefaultMenuItems()
-        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { _ in
-            print("Timer")
-            self.updateList(list: self.list!)
-        }
     }
 
     var isLoadingViewPresent: Bool {
