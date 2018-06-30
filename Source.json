@@ -2,16 +2,6 @@
   "version": 1,
   "items": [
     {
-      "id": "test",
-      "name": "Test",
-      "image": "https://via.placeholder.com/150x150",
-      "description": "This is a test pod.",
-      "homepage": "https://cocoapods.org/",
-      "location": [
-        "~/a1"
-      ]
-    },
-    {
       "id": "cocoapod",
       "name": "Cocoapods",
       "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
