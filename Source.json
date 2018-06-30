@@ -59,6 +59,15 @@
         "~/Library/Caches/Google/Chrome",
         "~/Library/Application Support/Google/Chrome"
       ]
+    },
+    {
+      "id": "firefox",
+      "name": "Mozilla Firefox",
+      "image": "https://www.mozilla.org/media/img/logos/firefox/logo-quantum-wordmark-white-high-res.3ccf0070280e.png",
+      "description": "Firefox is a free and open-source web browser.",
+      "location": [
+        "~/Library/Caches/Firefox"
+      ]
     }
   ]
 }
