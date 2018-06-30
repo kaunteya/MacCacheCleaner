@@ -11,6 +11,8 @@
 		E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3197F0920E750AC00746439 /* LoadingMenuView.xib */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
+		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
+		E3197F2820E8036200746439 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2720E8036200746439 /* JSONTests.swift */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
@@ -28,11 +30,25 @@
 		E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E3197F1F20E8008900746439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E34E82F42079CD5200BA09DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E34E82FB2079CD5200BA09DF;
+			remoteInfo = MacCacheCleaner;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
 		E3197F0920E750AC00746439 /* LoadingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
 		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
+		E3197F1520E8007500746439 /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = SOURCE_ROOT; };
+		E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacCacheCleanerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3197F2720E8036200746439 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E3197F1720E8008900746439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E34E82F92079CD5200BA09DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,10 +107,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E3197F1B20E8008900746439 /* MacCacheCleanerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3197F2720E8036200746439 /* JSONTests.swift */,
+				E3197F1E20E8008900746439 /* Info.plist */,
+			);
+			path = MacCacheCleanerTests;
+			sourceTree = "<group>";
+		};
 		E34E82F32079CD5200BA09DF = {
 			isa = PBXGroup;
 			children = (
 				E34E82FE2079CD5200BA09DF /* MacCacheCleaner */,
+				E3197F1B20E8008900746439 /* MacCacheCleanerTests */,
 				E34E82FD2079CD5200BA09DF /* Products */,
 				9937085725B1A50986AFCAFB /* Pods */,
 				23AAD12F21D5CE289AFE0B5C /* Frameworks */,
@@ -98,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */,
+				E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +147,7 @@
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
+				E3197F1520E8007500746439 /* Source.json */,
 				E34E83082079CD5400BA09DF /* Info.plist */,
 				E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */,
 			);
@@ -156,6 +191,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E3197F1920E8008900746439 /* MacCacheCleanerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "MacCacheCleanerTests" */;
+			buildPhases = (
+				E3197F1620E8008900746439 /* Sources */,
+				E3197F1720E8008900746439 /* Frameworks */,
+				E3197F1820E8008900746439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3197F2020E8008900746439 /* PBXTargetDependency */,
+			);
+			name = MacCacheCleanerTests;
+			productName = MacCacheCleanerTests;
+			productReference = E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E34E82FB2079CD5200BA09DF /* MacCacheCleaner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "MacCacheCleaner" */;
@@ -180,10 +233,14 @@
 		E34E82F42079CD5200BA09DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Kaunteya Suryawanshi";
 				TargetAttributes = {
+					E3197F1920E8008900746439 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E34E82FB2079CD5200BA09DF;
+					};
 					E34E82FB2079CD5200BA09DF = {
 						CreatedOnToolsVersion = 9.3;
 						SystemCapabilities = {
@@ -208,11 +265,20 @@
 			projectRoot = "";
 			targets = (
 				E34E82FB2079CD5200BA09DF /* MacCacheCleaner */,
+				E3197F1920E8008900746439 /* MacCacheCleanerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E3197F1820E8008900746439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3197F2420E8009500746439 /* Source.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E34E82FA2079CD5200BA09DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +314,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E3197F1620E8008900746439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3197F2820E8036200746439 /* JSONTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E34E82F82079CD5200BA09DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +345,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E3197F2020E8008900746439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E34E82FB2079CD5200BA09DF /* MacCacheCleaner */;
+			targetProxy = E3197F1F20E8008900746439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E34E83052079CD5400BA09DF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -283,6 +365,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E3197F2220E8008900746439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				INFOPLIST_FILE = MacCacheCleanerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacCacheCleaner.app/Contents/MacOS/MacCacheCleaner";
+			};
+			name = Debug;
+		};
+		E3197F2320E8008900746439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KQQ77ZBE5E;
+				INFOPLIST_FILE = MacCacheCleanerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacCacheCleaner.app/Contents/MacOS/MacCacheCleaner";
+			};
+			name = Release;
+		};
 		E34E830A2079CD5400BA09DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +561,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "MacCacheCleanerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3197F2220E8008900746439 /* Debug */,
+				E3197F2320E8008900746439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E34E82F72079CD5200BA09DF /* Build configuration list for PBXProject "MacCacheCleaner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
