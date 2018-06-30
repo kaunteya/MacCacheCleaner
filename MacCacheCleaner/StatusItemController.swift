@@ -38,7 +38,9 @@ class StatusItemController {
     }
 
     private var isLoadingViewVisible: Bool {
-        return statusItem.menu?.item(at: 0)?.view is LoadingMenuView
+        return statusItem.menu?.items
+            .contains(where: {  $0.view is LoadingMenuView })
+            ?? false
     }
 
     private func calculateSizeAndUpdate(list: Set<CacheItem>, queue: DispatchQueue) {
@@ -71,9 +73,7 @@ class StatusItemController {
             //If menu is not present, create one and add
             let cacheMenuItem = NSMenuItem(view: CacheMenuView.initialize(with: cache))
             cacheMenuItem.cacheView?.delegate = self
-            let insertionIndex = self.isLoadingViewVisible ? 1 : 0
-
-            statusItem.menu?.insertItem(cacheMenuItem, at: insertionIndex)
+            statusItem.menu?.insertItem(cacheMenuItem, at: 0)
         }
     }
 }
