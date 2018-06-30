@@ -44,7 +44,6 @@ class StatusItemController {
     }
 
     func calculateSizeAndUpdateMenu(queue: DispatchQueue) {
-        print("Updating")
         guard list != nil else { return }
         let dispatchGroup = DispatchGroup()
         for item in list! {
@@ -53,9 +52,7 @@ class StatusItemController {
                 let item = item.itemWithRelcalculatedSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    if item.size! > 0 {
                         self.addMenuItem(cache: item)
-                    }
                 }
             }
         }
@@ -68,6 +65,7 @@ class StatusItemController {
 
     private func addMenuItem(cache: CacheItem) {
         assert(cache.size != nil)
+        guard cache.size! > 0 else { return }
         if let menuItem = statusItem.menu?.menuItem(for: cache) {
             //If menu is already present, update size
             menuItem.cacheView?.update(size: cache.size!.bytesToReadableString)
