@@ -49,6 +49,16 @@
       "location": [
         "~/Library/Caches/Yarn"
       ]
+    },
+    {
+      "id": "chrome",
+      "name": "Google Chrome",
+      "image": "https://www.google.com/chrome/static/images/chrome-logo.svg",
+      "description": "One fast, simple, and secure browser for all your devices.",
+      "location": [
+        "~/Library/Caches/Google/Chrome",
+        "~/Library/Application Support/Google/Chrome"
+      ]
     }
   ]
 }
