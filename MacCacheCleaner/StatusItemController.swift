@@ -44,26 +44,25 @@ class StatusItemController {
     }
 
     func calculateSizeAndUpdateMenu(queue: DispatchQueue) {
-        guard list != nil else { return }
         let dispatchGroup = DispatchGroup()
-        for item in list! {
+        list?.forEach { item in
             queue.async {
                 dispatchGroup.enter()
                 let item = item.itemWithRelcalculatedSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                        self.addMenuItem(cache: item)
+                    self.updateMenuItemFor(cache: item)
                 }
             }
         }
         dispatchGroup.notify(queue: .main) { [unowned self] in
             if self.isLoadingViewVisible {
-                self.statusItem.menu?.removeItem((self.loadingMenuItem))
+                self.statusItem.menu?.removeItem(self.loadingMenuItem)
             }
         }
     }
 
-    private func addMenuItem(cache: CacheItem) {
+    private func updateMenuItemFor(cache: CacheItem) {
         assert(cache.size != nil)
         guard cache.size! > 0 else { return }
         if let menuItem = statusItem.menu?.menuItem(for: cache) {
