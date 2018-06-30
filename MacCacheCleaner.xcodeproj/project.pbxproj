@@ -10,6 +10,7 @@
 		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
 		E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3197F0920E750AC00746439 /* LoadingMenuView.xib */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
+		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
 		E3197F0920E750AC00746439 /* LoadingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
+		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */,
 				E3197F0F20E78B8C00746439 /* URLSession+Result.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
+				E3197F1320E7C93700746439 /* Timer+repeat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */,
 				E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
+				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
 				E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */,
 				E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,

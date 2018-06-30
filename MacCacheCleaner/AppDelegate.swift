@@ -14,9 +14,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItemController = StatusItemController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.statusItemController.updateMainListFromNetwork()
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) {
-            [unowned self] _ in
+
+        startTimerForSizeRefresh(every: 60 * 60)
+
+        let mainListUpdateInterval: Double = (60 * 60 * 24) + (60 * 3) // 1 day + 3 min
+        startTimerForNetworkReload(every: mainListUpdateInterval)
+    }
+
+    private func startTimerForNetworkReload(every timeInterval: TimeInterval) {
+        Timer.every(timeInterval) { [unowned self] _ in
+            print("Updating from network")
+            self.statusItemController.updateMainListFromNetwork()
+        }.fire()
+    }
+
+    private func startTimerForSizeRefresh(every timeInterval: TimeInterval) {
+        Timer.every(timeInterval) { [unowned self] _ in
+            print("Updating size")
             self.statusItemController.calculateSizeAndUpdateMenu(queue: .global(qos: .background))
         }
     }
