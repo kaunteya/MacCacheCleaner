@@ -49,9 +49,11 @@ extension CacheItem {
     }
     
     func deleteCache() {
-        locations.forEach { path in
-            print("Removing \(path)")
-            try? FileManager.default.removeItem(at: path.fileURL)
+        DispatchQueue.global(qos: .utility).async {
+            self.locations.forEach { path in
+                print("Removing \(path)")
+                try? FileManager.default.removeItem(at: path.fileURL)
+            }
         }
     }
 }
