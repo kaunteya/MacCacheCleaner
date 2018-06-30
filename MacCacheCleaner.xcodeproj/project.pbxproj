@@ -12,7 +12,6 @@
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
-		E34E83102079CE0E00BA09DF /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E34E830F2079CE0E00BA09DF /* Source.json */; };
 		E34E83122079D41500BA09DF /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E83112079D41500BA09DF /* CacheItem.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
@@ -36,7 +35,6 @@
 		E34E83062079CD5400BA09DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E34E83082079CD5400BA09DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacCacheCleaner.entitlements; sourceTree = "<group>"; };
-		E34E830F2079CE0E00BA09DF /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = "<group>"; };
 		E34E83112079D41500BA09DF /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F728D720E3B038007B0CB0 /* Views */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
-				E34E830F2079CE0E00BA09DF /* Source.json */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E34E83082079CD5400BA09DF /* Info.plist */,
@@ -216,7 +213,6 @@
 			files = (
 				E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */,
 				E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */,
-				E34E83102079CE0E00BA09DF /* Source.json in Resources */,
 				E3F7289C20E2940F007B0CB0 /* CacheMenuView.xib in Resources */,
 				E34E83072079CD5400BA09DF /* Main.storyboard in Resources */,
 			);
