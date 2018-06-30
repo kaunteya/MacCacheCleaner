@@ -9,6 +9,11 @@
 import AppKit
 
 extension NSMenu {
+    convenience init(items: [NSMenuItem]) {
+        self.init()
+        items.forEach(self.addItem)
+    }
+
     func removeCacheMenuItem(cacheId: String) {
         items
             .first(where: { $0.cacheView?.cacheId == cacheId })

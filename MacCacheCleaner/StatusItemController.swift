@@ -24,9 +24,9 @@ class StatusItemController {
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: -1)
         statusItem.button?.image = #imageLiteral(resourceName: "StatusIcon")
-        statusItem.menu = NSMenu()
-        addDefaultMenuItems()
+        statusItem.menu = NSMenu(items: [loadingMenuItem, .separator(), .quit])
     }
+
 
     func updateMainListFromNetwork() {
         let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
@@ -74,22 +74,6 @@ class StatusItemController {
 
             statusItem.menu?.insertItem(cacheMenuItem, at: insertionIndex)
         }
-    }
-
-    private func addDefaultMenuItems() {
-        // Loading View
-        statusItem.menu?.addItem(loadingMenuItem)
-
-        statusItem.menu?.addItem(.separator())
-
-        // Quit
-        let menuItem = NSMenuItem(title: "Quit", action: #selector(StatusItemController.quit(sender:)), keyEquivalent: "")
-        menuItem.target = self
-        statusItem.menu?.addItem(menuItem)
-    }
-
-    @objc func quit(sender: Any) {
-        NSApp.terminate(sender)
     }
 }
 

@@ -17,4 +17,18 @@ extension NSMenuItem {
     var cacheView: CacheMenuView? {
         return self.view as? CacheMenuView
     }
+
+    static var quit: NSMenuItem {
+        return QuitMenuItem()
+    }
+}
+
+fileprivate class QuitMenuItem: NSMenuItem {
+    convenience init() {
+        self.init(title: "Quit", action: #selector(QuitMenuItem.quit(sender:)), keyEquivalent: "")
+        self.target = self
+    }
+    @objc func quit(sender: Any) {
+        NSApp.terminate(sender)
+    }
 }
