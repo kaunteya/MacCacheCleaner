@@ -82,9 +82,9 @@ extension StatusItemController: CacheMenuViewDelegate {
         guard let cacheItem = list?.first(where: { $0.id == cacheId }) else {
             return
         }
-        cacheItem.deleteCache(complete: {
+        cacheItem.deleteCache(complete: { [unowned self] in
             print("Deletion complete")
+            self.statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
         })
-        statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
     }
 }

@@ -12,20 +12,20 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <box borderType="none" title="Box" titlePosition="noTitle" id="8iA-im-IZJ" customClass="CacheMenuView" customModule="MacCacheCleaner" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="270" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="270" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView" id="X1w-t3-opa">
-                <rect key="frame" x="0.0" y="0.0" width="270" height="30"/>
+                <rect key="frame" x="0.0" y="0.0" width="270" height="32"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-Nt-vAB">
-                        <rect key="frame" x="4" y="0.0" width="262" height="30"/>
+                        <rect key="frame" x="4" y="0.0" width="262" height="32"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VI4-Dl-rDT">
-                                <rect key="frame" x="0.0" y="0.0" width="193" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="193" height="32"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-fN-cz5">
-                                        <rect key="frame" x="0.0" y="8" width="15" height="15"/>
+                                        <rect key="frame" x="0.0" y="9" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UOu-fN-cz5" secondAttribute="height" multiplier="1:1" id="7s0-dE-yIb"/>
                                             <constraint firstAttribute="width" constant="15" id="NbD-9q-fza"/>
@@ -33,7 +33,7 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="RsG-m0-F7y"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="999" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-JR-gZH">
-                                        <rect key="frame" x="15" y="7" width="180" height="17"/>
+                                        <rect key="frame" x="15" y="8" width="180" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Yarn" id="gdH-9R-4lH">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -51,7 +51,7 @@
                                 </customSpacing>
                             </stackView>
                             <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Eh4-3Q-CcB">
-                                <rect key="frame" x="199" y="7" width="42" height="17"/>
+                                <rect key="frame" x="199" y="8" width="42" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="13 MB" id="pjJ-HI-Weg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -59,8 +59,8 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rY2-GG-a5E">
-                                <rect key="frame" x="247" y="0.0" width="15" height="30"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarDeleteTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="MVW-j5-q0n">
+                                <rect key="frame" x="247" y="0.0" width="15" height="32"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarDeleteTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="MVW-j5-q0n">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -93,6 +93,8 @@
                 </constraints>
             </view>
             <connections>
+                <outlet property="deleteButton" destination="rY2-GG-a5E" id="peY-9A-ABK"/>
+                <outlet property="mainStackView" destination="M2D-Nt-vAB" id="0RG-vJ-5Kz"/>
                 <outlet property="nameLabel" destination="Fd0-JR-gZH" id="ihz-Tb-aQo"/>
                 <outlet property="sizeLabel" destination="Eh4-3Q-CcB" id="u6Q-PJ-w24"/>
             </connections>

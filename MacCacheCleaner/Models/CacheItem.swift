@@ -60,7 +60,9 @@ extension CacheItem {
                 print("Removing \(path)")
                 try? FileManager.default.removeItem(at: path.fileURL)
             }
-            complete?()
+            DispatchQueue.main.async {
+                complete?()
+            }
         }
     }
 }
