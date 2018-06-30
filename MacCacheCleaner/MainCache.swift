@@ -17,17 +17,12 @@ class MainCache {
     class func getFromNetwork(urlString: String,
                         completion: @escaping(Set<CacheItem>?) -> Void
         ) {
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-        let urlRequest = URLRequest(url: url)
+        let urlRequest = URLRequest(url: URL(string: urlString)!)
         URLSession.shared.dataTask(with: urlRequest) {
             (result: Result<JSON>) in
             switch result {
             case .success(let json):
-                guard let items = json["items"] as? [JSON]
-                    else {
+                guard let items = json["items"] as? [JSON] else {
                         completion(nil)
                         return
                 }
