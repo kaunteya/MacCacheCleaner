@@ -9,15 +9,16 @@
 import AppKit
 
 class StatusItemController {
-    let statusItem: NSStatusItem
-    let loadingMenuItem = NSMenuItem(view: LoadingMenuView.initialise())
+    private let statusItem: NSStatusItem
+    private let loadingMenuItem = NSMenuItem(view: LoadingMenuView.initialise())
 
-    var list: Set<CacheItem>? {
+    private var list: Set<CacheItem>? {
         didSet {
-            if list != nil {
-                let qos: DispatchQoS.QoSClass = oldValue == nil ? .userInitiated : .background
-                self.updateList( list: list!, queue: .global(qos: qos))
-            }
+            assert(list != nil)
+
+            // If list has old value then update is done on LOW priority queue
+            let qos: DispatchQoS.QoSClass = oldValue == nil ? .userInitiated : .background
+            self.calculateSizeAndUpdate(list: list!, queue: .global(qos: qos))
         }
     }
 
@@ -40,7 +41,7 @@ class StatusItemController {
         return statusItem.menu?.item(at: 0)?.view is LoadingMenuView
     }
 
-    private func updateList(list: Set<CacheItem>, queue: DispatchQueue) {
+    private func calculateSizeAndUpdate(list: Set<CacheItem>, queue: DispatchQueue) {
         let dispatchGroup = DispatchGroup()
         for item in list {
             queue.async {
@@ -54,7 +55,7 @@ class StatusItemController {
                 }
             }
         }
-        dispatchGroup.notify(queue: .main) {[unowned self] in
+        dispatchGroup.notify(queue: .main) { [unowned self] in
             if self.isLoadingViewVisible {
                 self.statusItem.menu?.removeItem((self.loadingMenuItem))
             }
