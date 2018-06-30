@@ -7,14 +7,14 @@
 //
 
 import AppKit
-import ProgressKit
 
 class LoadingMenuView: NSBox, NibLoadable {
-    @IBOutlet weak var progressView: ShootingStars!
 
-    static func initialize() -> LoadingMenuView {
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    static func initialise() -> LoadingMenuView {
         let view = LoadingMenuView.createFromNib()
-        view.progressView.animate = true
+        view.progressIndicator.startAnimation(self)
+        view.progressIndicator.usesThreadedAnimation = true
         return view
     }
 }

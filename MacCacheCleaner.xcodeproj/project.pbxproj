@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
+		E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3197F0920E750AC00746439 /* LoadingMenuView.xib */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
@@ -24,11 +25,11 @@
 		E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DA20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift */; };
 		E3F728DD20E3CCF8007B0CB0 /* NSMenu+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */; };
 		E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */; };
-		E3F728E120E3F1D6007B0CB0 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F728E020E3F1D6007B0CB0 /* LoadingMenuView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
+		E3197F0920E750AC00746439 /* LoadingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		E3F728DA20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extras.swift"; sourceTree = "<group>"; };
 		E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extras.swift"; sourceTree = "<group>"; };
 		E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMenuView.swift; sourceTree = "<group>"; };
-		E3F728E020E3F1D6007B0CB0 /* LoadingMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
 		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,8 +144,8 @@
 				E3F728D020E3A350007B0CB0 /* NibLoadable.swift */,
 				E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */,
 				E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */,
-				E3F728E020E3F1D6007B0CB0 /* LoadingMenuView.xib */,
 				E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */,
+				E3197F0920E750AC00746439 /* LoadingMenuView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,7 +161,6 @@
 				E34E82F82079CD5200BA09DF /* Sources */,
 				E34E82F92079CD5200BA09DF /* Frameworks */,
 				E34E82FA2079CD5200BA09DF /* Resources */,
-				2B3E2E482689482F29A06122 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,37 +214,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */,
 				E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */,
 				E34E83102079CE0E00BA09DF /* Source.json in Resources */,
 				E3F7289C20E2940F007B0CB0 /* CacheMenuView.xib in Resources */,
 				E34E83072079CD5400BA09DF /* Main.storyboard in Resources */,
-				E3F728E120E3F1D6007B0CB0 /* LoadingMenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B3E2E482689482F29A06122 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ProgressKit/ProgressKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E55A8792F88778A0916E97B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,7 +401,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleaner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -438,7 +421,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleaner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

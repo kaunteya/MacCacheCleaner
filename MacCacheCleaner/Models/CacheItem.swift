@@ -48,12 +48,13 @@ extension CacheItem {
         return sizeBytes
     }
     
-    func deleteCache() {
+    func deleteCache(complete: (() -> Void)? = nil) {
         DispatchQueue.global(qos: .utility).async {
             self.locations.forEach { path in
                 print("Removing \(path)")
                 try? FileManager.default.removeItem(at: path.fileURL)
             }
+            complete?()
         }
     }
 }

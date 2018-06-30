@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import SDWebImage
+//import SDWebImage
 
 protocol CacheMenuViewDelegate:class {
     func itemRemoved(_ cacheId: String)
@@ -31,7 +31,7 @@ class CacheMenuView: NSBox, NibLoadable {
         cacheView.cacheId = cache.id
         cacheView.nameLabel.stringValue = cache.name
         cacheView.sizeLabel.stringValue = cache.size!.bytesToReadableString
-        cacheView.cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)
+//        cacheView.cacheImageField?.sd_setImage(with: cache.imageURL, completed: nil)
         return cacheView
     }
 
