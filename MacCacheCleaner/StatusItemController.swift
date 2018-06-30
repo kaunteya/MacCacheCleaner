@@ -16,14 +16,10 @@ class StatusItemController {
         didSet {
             if list != nil {
                 let qos: DispatchQoS.QoSClass = oldValue == nil ? .userInitiated : .background
-                self.updateList(
-                    list: list!,
-                    queue: .global(qos: qos))
+                self.updateList( list: list!, queue: .global(qos: qos))
             }
         }
     }
-
-    var timer: Timer!
 
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: -1)
@@ -36,15 +32,51 @@ class StatusItemController {
         let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
         MainCache.getFromNetwork(urlString: githubURL) {
             [unowned self] list in
-            self.list = list
+            if let list = list { self.list = list }
         }
     }
 
-    var isLoadingViewVisible: Bool {
+    private var isLoadingViewVisible: Bool {
         return statusItem.menu?.item(at: 0)?.view is LoadingMenuView
     }
 
-    func addDefaultMenuItems() {
+    private func updateList(list: Set<CacheItem>, queue: DispatchQueue) {
+        let dispatchGroup = DispatchGroup()
+        for item in list {
+            queue.async {
+                dispatchGroup.enter()
+                let item = item.itemWithRelcalculatedSize()
+                DispatchQueue.main.async { [unowned self] in
+                    dispatchGroup.leave()
+                    if item.size! > 0 {
+                        self.addMenuItem(cache: item)
+                    }
+                }
+            }
+        }
+        dispatchGroup.notify(queue: .main) {[unowned self] in
+            if self.isLoadingViewVisible {
+                self.statusItem.menu?.removeItem((self.loadingMenuItem))
+            }
+        }
+    }
+
+    private func addMenuItem(cache: CacheItem) {
+        assert(cache.size != nil)
+        if let menuItem = statusItem.menu?.menuItem(for: cache) {
+            //If menu is already present, update size
+            menuItem.cacheView?.update(size: cache.size!.bytesToReadableString)
+        } else {
+            //If menu is not present, create one and add
+            let cacheMenuItem = NSMenuItem(view: CacheMenuView.initialize(with: cache))
+            cacheMenuItem.cacheView?.delegate = self
+            let insertionIndex = self.isLoadingViewVisible ? 1 : 0
+
+            statusItem.menu?.insertItem(cacheMenuItem, at: insertionIndex)
+        }
+    }
+
+    private func addDefaultMenuItems() {
         // Loading View
         statusItem.menu?.addItem(loadingMenuItem)
 
@@ -58,46 +90,6 @@ class StatusItemController {
 
     @objc func quit(sender: Any) {
         NSApp.terminate(sender)
-    }
-
-    func updateList(list: Set<CacheItem>, queue: DispatchQueue) {
-        let dispatchGroup = DispatchGroup()
-        for item in list {
-            queue.async {
-                dispatchGroup.enter()
-                var item = item
-                item.size = item.locationSize
-                DispatchQueue.main.async {[weak self] in
-                    dispatchGroup.leave()
-                    if item.size! > 0 {
-                        self?.addMenuItem(cache: item)
-                    }
-                }
-            }
-        }
-        dispatchGroup.notify(queue: .main) {[unowned self] in
-            if self.isLoadingViewVisible {
-                self.statusItem.menu?.removeItem((self.loadingMenuItem))
-            }
-        }
-    }
-
-
-    private func addMenuItem(cache: CacheItem) {
-        assert(cache.size != nil)
-        if let menuItem = statusItem.menu?.menuItem(for: cache) {
-            //If menu is already present, update size
-            print("Updating size of \(cache.name)")
-            menuItem.cacheView?.update(size: cache.size!.bytesToReadableString)
-        } else {
-            //If menu is not present, create one and add
-            let cacheMenuItem = NSMenuItem(view: CacheMenuView.initialize(with: cache))
-            cacheMenuItem.cacheView?.delegate = self
-            let insertionIndex = self.isLoadingViewVisible ? 1 : 0
-            print("Creating \(cache.name) at \(insertionIndex)")
-
-            statusItem.menu?.insertItem(cacheMenuItem, at: insertionIndex)
-        }
     }
 }
 

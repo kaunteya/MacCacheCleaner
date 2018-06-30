@@ -38,7 +38,7 @@ extension CacheItem {
         locations = (json["location"] as! [String]).map { Path($0)}
     }
 
-    var locationSize: Int64 {
+    private var locationSize: Int64 {
         var sizeBytes = 0 as Int64
         let urls = locations.map { $0.fileURL }
 
@@ -47,7 +47,13 @@ extension CacheItem {
         }
         return sizeBytes
     }
-    
+
+    func itemWithRelcalculatedSize() -> CacheItem {
+        var item = self
+        item.size = item.locationSize
+        return item
+    }
+
     func deleteCache(complete: (() -> Void)? = nil) {
         DispatchQueue.global(qos: .utility).async {
             self.locations.forEach { path in
