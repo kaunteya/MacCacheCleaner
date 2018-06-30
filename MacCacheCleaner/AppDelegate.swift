@@ -13,14 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var timer: Timer!
     var statusItemController = StatusItemController()
-    let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        timer = Timer.scheduledTimer(withTimeInterval: 1113, repeats: true) { _ in
-            MainCache.getFromNetwork(urlString: self.githubURL) {
-                [unowned self] list in
-                self.statusItemController.list = list
-            }
+        timer = Timer.scheduledTimer(withTimeInterval: 1113, repeats: true) {
+            [unowned self] _ in
+            self.statusItemController.updateMainListFromNetwork()
         }
         timer.fire()
     }

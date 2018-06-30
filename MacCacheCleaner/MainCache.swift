@@ -10,29 +10,10 @@ import Foundation
 
 typealias JSON = [String : Any]
 
-/// Maintains the list of all possible caches that can be present in Mac
 class MainCache {
 
-    /// Fetches all possible caches in json format.
-    /// Converts them to CacheItem list
-    /// Stores them in list variable
-    class func updateFromNetwork(completion: (_ list: Set<CacheItem>) -> Void) {
-        let url = Bundle.main.url(forResource: "Source", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-        let items = json["items"] as! [JSON]
-        let cacheItemList = items.map { CacheItem($0) }
-        completion(Set(cacheItemList))
-    }
-
-    private class func getCacheListFromJSON(file name:String) -> Set<CacheItem> {
-        let url = Bundle.main.url(forResource: name, withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-        let items = json["items"] as! [JSON]
-        return items.mapSet { CacheItem($0) }
-    }
-
+    /// Fetches main cache list from network and invokes completion handler
+    /// Any error while fetching the list would result in error
     class func getFromNetwork(urlString: String,
                         completion: @escaping(Set<CacheItem>?) -> Void
         ) {

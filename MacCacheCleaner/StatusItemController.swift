@@ -32,6 +32,14 @@ class StatusItemController {
         addDefaultMenuItems()
     }
 
+    func updateMainListFromNetwork() {
+        let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+        MainCache.getFromNetwork(urlString: githubURL) {
+            [unowned self] list in
+            self.list = list
+        }
+    }
+
     var isLoadingViewVisible: Bool {
         return statusItem.menu?.item(at: 0)?.view is LoadingMenuView
     }
