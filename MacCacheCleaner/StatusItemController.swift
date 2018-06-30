@@ -18,7 +18,7 @@ class StatusItemController {
 
             // If list has old value then update is done on LOW priority queue
             let qos: DispatchQoS.QoSClass = oldValue == nil ? .userInitiated : .background
-            self.calculateSizeAndUpdate(list: list!, queue: .global(qos: qos))
+            self.calculateSizeAndUpdateMenu(queue: .global(qos: qos))
         }
     }
 
@@ -43,9 +43,11 @@ class StatusItemController {
             ?? false
     }
 
-    private func calculateSizeAndUpdate(list: Set<CacheItem>, queue: DispatchQueue) {
+    func calculateSizeAndUpdateMenu(queue: DispatchQueue) {
+        print("Updating")
+        guard list != nil else { return }
         let dispatchGroup = DispatchGroup()
-        for item in list {
+        for item in list! {
             queue.async {
                 dispatchGroup.enter()
                 let item = item.itemWithRelcalculatedSize()

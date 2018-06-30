@@ -11,14 +11,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var timer: Timer!
     var statusItemController = StatusItemController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        timer = Timer.scheduledTimer(withTimeInterval: 1113, repeats: true) {
+        self.statusItemController.updateMainListFromNetwork()
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) {
             [unowned self] _ in
-            self.statusItemController.updateMainListFromNetwork()
+            self.statusItemController.calculateSizeAndUpdateMenu(queue: .global(qos: .background))
         }
-        timer.fire()
     }
 }
