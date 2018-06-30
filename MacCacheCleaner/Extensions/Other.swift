@@ -7,3 +7,11 @@
 //
 
 import AppKit
+
+extension Collection {
+    // Maps elements to set after transformation
+    func mapSet<T>(f: (Element) -> T) -> Set<T> where T: Hashable {
+        let list = self.map { f($0) }
+        return Set<T>(list)
+    }
+}

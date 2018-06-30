@@ -13,13 +13,13 @@ class StatusItemController {
     let loadingMenuItem = NSMenuItem(view: LoadingMenuView.initialise())
 
     var list: Set<CacheItem>? {
-        willSet {
-            assert(list == nil, "list must be set only once")
-        }
         didSet {
-            self.updateList(
-                list: list!,
-                queue: .global(qos: .userInitiated))
+            if list != nil {
+                let qos: DispatchQoS.QoSClass = oldValue == nil ? .userInitiated : .background
+                self.updateList(
+                    list: list!,
+                    queue: .global(qos: qos))
+            }
         }
     }
 
@@ -30,12 +30,6 @@ class StatusItemController {
         statusItem.button?.image = #imageLiteral(resourceName: "StatusIcon")
         statusItem.menu = NSMenu()
         addDefaultMenuItems()
-        let timeInterval: Double = 60 * 60 * 5 //5 hours
-        Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) {
-            [unowned self] _ in
-            guard let list = self.list else { return }
-            self.updateList(list: list, queue: .global(qos: .background))
-        }
     }
 
     var isLoadingViewVisible: Bool {
@@ -74,7 +68,6 @@ class StatusItemController {
             }
         }
         dispatchGroup.notify(queue: .main) {[unowned self] in
-            print("Search complete")
             if self.isLoadingViewVisible {
                 self.statusItem.menu?.removeItem((self.loadingMenuItem))
             }
