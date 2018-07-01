@@ -30,7 +30,7 @@ class StatusItemController {
 
 
     func updateMainListFromNetwork(urlString: String) {
-        MainCache.getFromNetwork(urlString: githubURL) {
+        MainCache.getFromNetwork(urlString: urlString) {
             [unowned self] list in
             if let list = list { self.list = list }
         }
@@ -47,10 +47,10 @@ class StatusItemController {
         list?.forEach { item in
             queue.async {
                 dispatchGroup.enter()
-                let item = item.itemWithRelcalculatedSize()
+                let size = item.files.calculateSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    self.updateMenuItemFor(cache: item)
+                    self.updateMenuItemFor(cache: item, size: size)
                 }
             }
         }
@@ -61,15 +61,15 @@ class StatusItemController {
         }
     }
 
-    private func updateMenuItemFor(cache: CacheItem) {
-        assert(cache.size != nil)
-        guard cache.size! > 0 else { return }
+    private func updateMenuItemFor(cache: CacheItem, size: CacheSize) {
+
+        guard size.bytes > 0 else { return }
         if let menuItem = statusItem.menu?.menuItem(for: cache) {
             //If menu is already present, update size
-            menuItem.cacheView?.update(size: cache.size!.bytesToReadableString)
+            menuItem.cacheView?.update(size: size.readable)
         } else {
             //If menu is not present, create one and add
-            let cacheMenuItem = NSMenuItem(view: CacheMenuView.initialize(with: cache))
+            let cacheMenuItem = NSMenuItem(view: CacheMenuView.initialize(with: cache, size: size))
             cacheMenuItem.cacheView?.delegate = self
             statusItem.menu?.insertItem(cacheMenuItem, at: 0)
         }
@@ -81,7 +81,7 @@ extension StatusItemController: CacheMenuViewDelegate {
         guard let cacheItem = list?.first(where: { $0.id == cacheId }) else {
             return
         }
-        cacheItem.deleteCache(complete: { [unowned self] in
+        cacheItem.files.delete(complete: { [unowned self] in
             print("Deletion complete")
             self.statusItem.menu?.removeCacheMenuItem(cacheId: cacheId)
         })

@@ -13,6 +13,7 @@
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
 		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
 		E3197F2820E8036200746439 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2720E8036200746439 /* JSONTests.swift */; };
+		E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2920E8BE2E00746439 /* CacheSize.swift */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacCacheCleanerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3197F2720E8036200746439 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
+		E3197F2920E8BE2E00746439 /* CacheSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSize.swift; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
+				E3197F2920E8BE2E00746439 /* CacheSize.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */,
 				E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
+				E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */,
 				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
 				E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */,
 				E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */,

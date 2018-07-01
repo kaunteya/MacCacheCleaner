@@ -12,6 +12,16 @@
       ]
     },
     {
+      "id": "carthage",
+      "name": "Carthage",
+      "description": "A simple, decentralized dependency manager for Cocoa",
+      "homepage": "https://github.com/Carthage/Carthage",
+      "image": "",
+      "location": [
+        "~/Library/Caches/org.carthage.CarthageKit"
+      ]
+    },
+    {
       "id": "homebrew",
       "name": "Homebrew",
       "description": "The missing package manager for macOS",

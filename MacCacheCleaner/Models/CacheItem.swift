@@ -22,48 +22,46 @@ struct Path {
 struct CacheItem {
     let id: String
     let name: String
-    let imageURL: URL
-    var size: Int64?
+    let imageURL: URL?
     let description: String
-    let locations: [Path]
+    let files: Files
 }
+
+typealias CacheID = String
 
 extension CacheItem {
     init(_ json: JSON) {
-        id = json["id"] as! String
+        id = json["id"] as! CacheID
         name = json["name"] as! String
-        imageURL = URL(string: json["image"] as! String)!
+        imageURL = (json["image"] as? String).flatMap { URL(string: $0) }
 
         description  = json["description"] as! String
-        locations = (json["location"] as! [String]).map { Path($0)}
+        let locations = (json["location"] as! [String]).map { Path($0)}
+        files = Files(locations: locations)
     }
+    struct Files {
+        let locations: [Path]
+        func calculateSize() -> CacheSize {
+            var sizeBytes = 0 as Int64
+            let urls = locations.map { $0.fileURL }
 
-    private var locationSize: Int64 {
-        var sizeBytes = 0 as Int64
-        let urls = locations.map { $0.fileURL }
-
-        urls.forEach { url in
-            sizeBytes += FileManager.default.size(of: url)
-        }
-        return sizeBytes
-    }
-
-    func itemWithRelcalculatedSize() -> CacheItem {
-        var item = self
-        item.size = item.locationSize
-        return item
-    }
-
-    func deleteCache(complete: (() -> Void)? = nil) {
-        DispatchQueue.global(qos: .utility).async {
-            self.locations.forEach { path in
-                print("Removing \(path)")
-                try? FileManager.default.removeItem(at: path.fileURL)
+            urls.forEach { url in
+                sizeBytes += FileManager.default.size(of: url)
             }
-            DispatchQueue.main.async {
-                complete?()
+            return CacheSize(bytes: sizeBytes)
+        }
+        func delete(complete: (() -> Void)? = nil) {
+            DispatchQueue.global(qos: .utility).async {
+                self.locations.forEach { path in
+                    print("Removing \(path)")
+                    try? FileManager.default.removeItem(at: path.fileURL)
+                }
+                DispatchQueue.main.async {
+                    complete?()
+                }
             }
         }
+
     }
 }
 
