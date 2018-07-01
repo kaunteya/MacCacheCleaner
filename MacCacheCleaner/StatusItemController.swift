@@ -29,8 +29,7 @@ class StatusItemController {
     }
 
 
-    func updateMainListFromNetwork() {
-        let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+    func updateMainListFromNetwork(urlString: String) {
         MainCache.getFromNetwork(urlString: githubURL) {
             [unowned self] list in
             if let list = list { self.list = list }

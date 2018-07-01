@@ -24,7 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func startTimerForNetworkReload(every timeInterval: TimeInterval) {
         Timer.every(timeInterval) { [unowned self] _ in
             print("Updating from network")
-            self.statusItemController.updateMainListFromNetwork()
+            let githubURL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+            self.statusItemController.updateMainListFromNetwork(urlString: githubURL)
         }.fire()
     }
 

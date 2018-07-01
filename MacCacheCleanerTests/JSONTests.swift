@@ -26,7 +26,7 @@ class JSONTests: XCTestCase {
     }
 
 
-    func testVersion() {
+    func testJSONFileVersion() {
         let file = JSONFrom(file: "Source")
         XCTAssertNotNil(file["version"])
     }
@@ -39,9 +39,7 @@ class JSONTests: XCTestCase {
         let dictKeys = Set<String>([ "id", "name", "description", "location", "image" ])
         list.forEach { itemDict in
             XCTAssert(Set<String>(itemDict.keys).isSuperset(of: dictKeys))
+            XCTAssertNotNil(itemDict["location"] as! [String])
         }
-
     }
-
-
 }

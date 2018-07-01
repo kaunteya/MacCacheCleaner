@@ -69,7 +69,7 @@
       "homepage": "https://www.mozilla.org",
       "image": "https://www.mozilla.org/media/img/logos/firefox/logo-quantum-wordmark-white-high-res.3ccf0070280e.png",
       "location": [
-        "~/Library/Caches/Firefox"
+        "~/Library/Caches/Firefox",
       ]
     }
   ]
