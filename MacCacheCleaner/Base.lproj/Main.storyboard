@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -685,7 +685,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="mainWindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Cache Cleaner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -711,9 +711,6 @@
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
-                                        <connections>
-                                            <action selector="actionSortChanged:" target="B8D-0N-5wS" id="VU8-W9-ToA"/>
-                                        </connections>
                                     </popUpButton>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -734,10 +731,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="MacCacheCleaner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="299"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -745,7 +742,7 @@
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-bi-lmR">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="299"/>
                                 <subviews>
-                                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI" customClass="LoadingView" customModule="MacCacheCleaner" customModuleProvider="target">
+                                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI">
                                         <rect key="frame" x="0.0" y="278" width="480" height="21"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-pL-abc">
@@ -777,9 +774,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1Pk-Y8-p4D"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="progressView" destination="Q42-Z0-Fs6" id="gL9-Wr-Yxa"/>
-                                        </connections>
                                     </visualEffectView>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="63" horizontalPageScroll="10" verticalLineScroll="63" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="278"/>
@@ -907,7 +901,7 @@
                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <action selector="clear:" target="gtr-DP-maE" id="WB2-7f-Z5V"/>
+                                                                                <action selector="clearAction:" target="gtr-DP-maE" id="aob-FS-ZJL"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -920,11 +914,10 @@
                                                                         <constraint firstAttribute="trailing" secondItem="XCZ-67-zDA" secondAttribute="trailing" constant="5" id="zuD-vd-eJn"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="cacheDescription" destination="xJU-aI-Tkc" id="44i-9Z-c8C"/>
-                                                                        <outlet property="image" destination="342-7Y-rNF" id="CRC-6m-FY3"/>
-                                                                        <outlet property="location" destination="JTW-vl-tPR" id="QB1-Ra-ICg"/>
-                                                                        <outlet property="name" destination="nc7-Xg-ho1" id="l9d-8Z-wLn"/>
-                                                                        <outlet property="size" destination="w5j-9H-BHe" id="8Yb-SO-Cic"/>
+                                                                        <outlet property="descriptionLabel" destination="xJU-aI-Tkc" id="H0e-VI-V0i"/>
+                                                                        <outlet property="locationsLabel" destination="JTW-vl-tPR" id="3Oh-Ii-vO6"/>
+                                                                        <outlet property="nameLabel" destination="nc7-Xg-ho1" id="IMT-dW-3hR"/>
+                                                                        <outlet property="sizeLabel" destination="w5j-9H-BHe" id="P6W-Xa-BjE"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>
@@ -968,7 +961,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadingView" destination="aYI-Qu-mzI" id="ILF-cy-I8I"/>
                         <outlet property="tableView" destination="ZYc-jG-uNI" id="tdb-H1-Uo8"/>
                     </connections>
                 </viewController>

@@ -14,10 +14,12 @@
 		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
 		E3197F2820E8036200746439 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2720E8036200746439 /* JSONTests.swift */; };
 		E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2920E8BE2E00746439 /* CacheSize.swift */; };
+		E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2D20E90A6C00746439 /* MainViewController.swift */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
 		E34E83122079D41500BA09DF /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E83112079D41500BA09DF /* CacheItem.swift */; };
+		E352B6B420E90E02004C276B /* CacheTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352B6B320E90E02004C276B /* CacheTableCellView.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289520E289EE007B0CB0 /* StatusItemController.swift */; };
@@ -51,6 +53,7 @@
 		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3197F2720E8036200746439 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
 		E3197F2920E8BE2E00746439 /* CacheSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSize.swift; sourceTree = "<group>"; };
+		E3197F2D20E90A6C00746439 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCacheCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		E34E83082079CD5400BA09DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacCacheCleaner.entitlements; sourceTree = "<group>"; };
 		E34E83112079D41500BA09DF /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
+		E352B6B320E90E02004C276B /* CacheTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTableCellView.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F7289520E289EE007B0CB0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E3F7289720E28ADC007B0CB0 /* MainCache.swift */,
 				E3F7289520E289EE007B0CB0 /* StatusItemController.swift */,
+				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
+				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F728D720E3B038007B0CB0 /* Views */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
@@ -336,9 +342,11 @@
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
 				E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */,
 				E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */,
+				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
 				E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */,
 				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
+				E352B6B420E90E02004C276B /* CacheTableCellView.swift in Sources */,
 				E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */,
 				E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,
