@@ -15,3 +15,4 @@ extension Collection {
         return Set<T>(list)
     }
 }
+

@@ -12,7 +12,7 @@ class StatusItemController {
     private let statusItem: NSStatusItem
     private let loadingMenuItem = NSMenuItem(view: LoadingMenuView.initialise())
 
-    private var list: Set<CacheItem>? {
+    private var list: [CacheItem]? {
         didSet {
             assert(list != nil)
 
@@ -30,10 +30,10 @@ class StatusItemController {
 
 
     func updateMainListFromNetwork(urlString: String) {
-        MainCache.getFromNetwork(urlString: urlString) {
-            [unowned self] list in
-            if let list = list { self.list = list }
-        }
+//        MainCache.getFromNetwork(urlString: urlString) {
+//            [unowned self] list in
+//            if let list = list { self.list = list }
+//        }
     }
 
     private var isLoadingViewVisible: Bool {

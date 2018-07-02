@@ -41,6 +41,7 @@ extension CacheItem {
     }
     struct Files {
         let locations: [Path]
+
         func calculateSize() -> CacheSize {
             var sizeBytes = 0 as Int64
             let urls = locations.map { $0.fileURL }
@@ -50,6 +51,7 @@ extension CacheItem {
             }
             return CacheSize(bytes: sizeBytes)
         }
+
         func delete(complete: (() -> Void)? = nil) {
             DispatchQueue.global(qos: .utility).async {
                 self.locations.forEach { path in
@@ -61,12 +63,6 @@ extension CacheItem {
                 }
             }
         }
-    }
-    static func makeMock(name: String, pathCount: Int) -> CacheItem {
-        let paths = (0..<pathCount).map { Path("~/sdfsdfsdf/asdfsdf/asdf\($0)") }
-
-        return CacheItem(id: name.lowercased(), name: name, imageURL: URL(string: "https://brew.sh/img/homebrew-256x256.png"), description: "A test descriptino goes here!!!", files: Files(locations: paths))
-
     }
 }
 
