@@ -27,7 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     reloadTime: 60
                 )
             ),
-            sceneId: "mainWindowController")
+            sceneId: "mainWindowController"
+            )
             .showWindow(self)
     }
 }
