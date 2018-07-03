@@ -11,6 +11,8 @@ import AppKit
 class MainViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var loadingView: LoadingView!
+
     var cacheList: CacheList!
 
     class func initialize(cacheList: CacheList) -> MainViewController {
@@ -50,8 +52,7 @@ extension MainViewController: CacheListDelegate {
     }
 
     func sizeUpdateStarted() {
-        print("Delegate sizeUpdateStarted")
-        //Show loading view
+        loadingView.isHidden = false
     }
 
     func gotSizeFor(item: CacheItem) {
@@ -61,7 +62,6 @@ extension MainViewController: CacheListDelegate {
     }
 
     func sizeUpdateCompleted() {
-        print("Delegate sizeUpdateCompleted")
-        // Hide loading view
+        loadingView.isHidden = true
     }
 }

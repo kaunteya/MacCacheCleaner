@@ -739,7 +739,7 @@
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-bi-lmR">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="299"/>
                                 <subviews>
-                                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI">
+                                    <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI" customClass="LoadingView" customModule="MacCacheCleaner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="278" width="480" height="21"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-pL-abc">
@@ -771,6 +771,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1Pk-Y8-p4D"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="progressIndicator" destination="Q42-Z0-Fs6" id="2vv-to-uCO"/>
+                                        </connections>
                                     </visualEffectView>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="63" horizontalPageScroll="10" verticalLineScroll="63" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="278"/>
@@ -958,6 +961,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="aYI-Qu-mzI" id="v3B-ri-Miv"/>
                         <outlet property="tableView" destination="ZYc-jG-uNI" id="tdb-H1-Uo8"/>
                     </connections>
                 </viewController>

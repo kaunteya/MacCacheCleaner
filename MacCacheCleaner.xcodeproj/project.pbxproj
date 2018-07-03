@@ -23,9 +23,9 @@
 		E389A46320EA651B0044B20A /* CacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46220EA651B0044B20A /* CacheList.swift */; };
 		E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46420EA98470044B20A /* CacheFetcher.swift */; };
 		E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */; };
+		E389A46920EB34280044B20A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46820EB34280044B20A /* LoadingView.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
-		E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7289520E289EE007B0CB0 /* StatusItemController.swift */; };
 		E3F7289C20E2940F007B0CB0 /* CacheMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */; };
 		E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D020E3A350007B0CB0 /* NibLoadable.swift */; };
 		E3F728D320E3A5AE007B0CB0 /* CacheMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */; };
@@ -67,9 +67,9 @@
 		E389A46220EA651B0044B20A /* CacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheList.swift; sourceTree = "<group>"; };
 		E389A46420EA98470044B20A /* CacheFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFetcher.swift; sourceTree = "<group>"; };
 		E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindowController+intialize.swift"; sourceTree = "<group>"; };
+		E389A46820EB34280044B20A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
-		E3F7289520E289EE007B0CB0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheMenuView.xib; sourceTree = "<group>"; };
 		E3F728D020E3A350007B0CB0 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMenuView.swift; sourceTree = "<group>"; };
@@ -150,14 +150,14 @@
 			isa = PBXGroup;
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
-				E3F7289520E289EE007B0CB0 /* StatusItemController.swift */,
 				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
 				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
+				E389A46820EB34280044B20A /* LoadingView.swift */,
+				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F728D720E3B038007B0CB0 /* Views */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
-				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E3197F1520E8007500746439 /* Source.json */,
 				E34E83082079CD5400BA09DF /* Info.plist */,
 				E34E83092079CD5400BA09DF /* MacCacheCleaner.entitlements */,
@@ -347,7 +347,6 @@
 				E3F728DD20E3CCF8007B0CB0 /* NSMenu+Extras.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
-				E3F7289620E289EE007B0CB0 /* StatusItemController.swift in Sources */,
 				E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */,
 				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
@@ -359,6 +358,7 @@
 				E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,
 				E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */,
+				E389A46920EB34280044B20A /* LoadingView.swift in Sources */,
 				E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

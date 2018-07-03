@@ -14,17 +14,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var mainViewController: MainViewController!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        loadViewAndShowinWindow()
+    }
 
-        let urlString = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
-
+    private func loadViewAndShowinWindow() {
         NSWindowController.initialize(
             with: MainViewController.initialize(
                 cacheList: CacheList(
-                    CacheListFetcher(urlString: urlString),
+                    CacheListFetcher(
+                        urlString: "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+                    ),
                     reloadTime: 60
                 )
             ),
             sceneId: "mainWindowController")
-        .showWindow(self)
+            .showWindow(self)
     }
 }
