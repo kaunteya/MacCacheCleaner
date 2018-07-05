@@ -56,7 +56,7 @@ extension MainViewController: CacheListDelegate {
 
     func gotSizeFor(item: CacheItem) {
         // Update table for item
-        print("Delegate gotSizeFor \(item.name)")
+        Log.info("Delegate gotSizeFor \(item.name)")
         tableView.reloadData()
     }
 
