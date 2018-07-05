@@ -11,24 +11,25 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var mainViewController: MainViewController!
+    let cacheListFetcher = CacheFetcher(
+        urlString: "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+    )
+
+    let cacheList = CacheList()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        loadViewAndShowinWindow()
+        let mainVC = MainViewController.initialize(cacheList: cacheList)
+        NSWindowController.initialize( with: mainVC, sceneId: "mainWindowController")
+            .showWindow(self)
+        
+        Timer.every(60) { _ in
+            self.updateListFromNetwork()
+        }.fire()
     }
 
-    private func loadViewAndShowinWindow() {
-        NSWindowController.initialize(
-            with: MainViewController.initialize(
-                cacheList: CacheList(
-                    CacheListFetcher(
-                        urlString: "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
-                    ),
-                    reloadTime: 60
-                )
-            ),
-            sceneId: "mainWindowController"
-            )
-            .showWindow(self)
+    func updateListFromNetwork() {
+        cacheListFetcher.fromNetwork(completion: { itemList in
+            self.cacheList.list = itemList
+        }, failure: nil)
     }
 }

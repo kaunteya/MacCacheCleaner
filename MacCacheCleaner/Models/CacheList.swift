@@ -12,48 +12,33 @@ protocol CacheListDelegate: class {
     func sizeUpdateStarted()
     func gotSizeFor(item: CacheItem)
     func sizeUpdateCompleted()
-    func listUpdatedFromNetwork()
 }
 
 class CacheList {
-    var list = [CacheItem]()
-    var sizes = DictionaryType()
-    private let cacheListFetcher: CacheListFetcher
-
-    init(_ fetcher: CacheListFetcher, reloadTime: TimeInterval) {
-        self.cacheListFetcher = fetcher
+    // List info loaded from Internet
+    var list: [CacheItem]? {
+        didSet {
+            let qos: DispatchQoS.QoSClass = list == nil ? .default : .utility
+            updateSize(queue: DispatchQueue.global(qos: qos))
+        }
     }
+    private var listWithSizes = [Element]()
 
     weak var delegate: CacheListDelegate?
-
-    var cacheSizeList: [(CacheItem, CacheSize)] {
-        var arr = [(CacheItem, CacheSize)]()
-        for k in sizes.keys {
-            arr.append((k, sizes[k]!))
-        }
-        return arr
-    }
 }
 
 extension CacheList {
-    func updateList() {
-        cacheListFetcher.fromNetwork(completion: { itemList in
-            self.list = itemList
-            self.delegate?.listUpdatedFromNetwork()
-        }, failure: nil)
-    }
-
 
     func updateSize(queue: DispatchQueue) {
         delegate?.sizeUpdateStarted()
         let dispatchGroup = DispatchGroup()
-        list.forEach { item in
+        list?.forEach { item in
             queue.async {
                 dispatchGroup.enter()
                 let size = item.files.calculateSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    self.sizes[item] = size
+                    self.updateListWithSizes(element: Element(id: item.id, size: size))
                     self.delegate?.gotSizeFor(item: item)
                 }
             }
@@ -62,31 +47,37 @@ extension CacheList {
             self.delegate?.sizeUpdateCompleted()
         }
     }
+
+    subscript(id: CacheID) -> CacheItem? {
+        let item = list?.first(where: { $0.id == id })
+        return item
+    }
+
+    private func updateListWithSizes(element: Element) {
+        for (index, iElement) in listWithSizes.enumerated() where iElement.id == element.id {
+            listWithSizes[index] = element
+            return
+        }
+        listWithSizes.append(element)
+    }
 }
 
 extension CacheList: Collection {
-    subscript(position: CacheList.DictionaryType.Index) -> (key: CacheItem, value: CacheSize) {
-        return sizes[position]
+    subscript(position: Int) -> (id: CacheID, size: CacheSize) {
+        return listWithSizes[position]
     }
 
-    typealias DictionaryType = [CacheItem: CacheSize]
-    typealias Index = DictionaryType.Index
-    typealias Element = DictionaryType.Element
+    typealias Index = Int
+    typealias Element = (id: CacheID, size: CacheSize)
 
-
-    subscript(position: CacheItem) -> CacheSize {
-        return sizes[position]!
+    func index(after i: Int) -> Int {
+        return listWithSizes.index(after: i)
     }
 
-    var startIndex: Index {
-        return sizes.startIndex
+    var startIndex: CacheList.Index {
+        return listWithSizes.startIndex
     }
-
-    var endIndex: Index {
-        return sizes.endIndex
-    }
-
-    func index(after i: Index) -> Index {
-        return sizes.index(after: i)
+    var endIndex: CacheList.Index {
+        return listWithSizes.endIndex
     }
 }

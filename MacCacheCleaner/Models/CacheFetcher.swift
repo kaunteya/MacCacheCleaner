@@ -10,7 +10,7 @@ import Foundation
 
 typealias JSON = [String : Any]
 
-struct CacheListFetcher {
+struct CacheFetcher {
     let urlString: String
 
     func fromNetwork(

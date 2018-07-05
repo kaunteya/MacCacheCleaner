@@ -23,9 +23,7 @@ class MainViewController: NSViewController {
 
     override func viewDidLoad() {
         cacheList.delegate = self
-        cacheList.updateList()
     }
-
 }
 
 extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -36,20 +34,17 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cacheCell"), owner: nil) as! CacheTableCellView
-        let (item, size) = cacheList[cacheList.index(cacheList.startIndex, offsetBy: row)]
-        cell.nameLabel.stringValue = item.name
+        let (itemId, size) = cacheList[row]
+        let cacheItem = cacheList[itemId]!
+        cell.nameLabel.stringValue = cacheItem.name
         cell.sizeLabel.stringValue = size.readable
-        cell.descriptionLabel.stringValue = item.description
-        cell.locationsLabel.stringValue = item.files.locations.map { $0.stringVal }.joined(separator: "\n")
+        cell.descriptionLabel.stringValue = cacheItem.description
+        cell.locationsLabel.stringValue = cacheItem.files.locations.map { $0.stringVal }.joined(separator: "\n")
         return cell
     }
 }
 
 extension MainViewController: CacheListDelegate {
-    func listUpdatedFromNetwork() {
-        print("Delegate listUpdatedFromNetwork")
-        cacheList.updateSize(queue: DispatchQueue.global(qos: .default))
-    }
 
     func sizeUpdateStarted() {
         loadingView.isHidden = false
