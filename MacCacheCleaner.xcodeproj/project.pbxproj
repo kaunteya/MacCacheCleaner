@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
 		E309EC7820EE49B200D3D16F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EC7720EE49B200D3D16F /* Log.swift */; };
-		E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3197F0920E750AC00746439 /* LoadingMenuView.xib */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
 		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
@@ -27,13 +26,7 @@
 		E389A46920EB34280044B20A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46820EB34280044B20A /* LoadingView.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
-		E3F7289C20E2940F007B0CB0 /* CacheMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */; };
-		E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D020E3A350007B0CB0 /* NibLoadable.swift */; };
-		E3F728D320E3A5AE007B0CB0 /* CacheMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */; };
 		E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D820E3B1C1007B0CB0 /* Other.swift */; };
-		E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DA20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift */; };
-		E3F728DD20E3CCF8007B0CB0 /* NSMenu+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */; };
-		E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +42,6 @@
 /* Begin PBXFileReference section */
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
 		E309EC7720EE49B200D3D16F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		E3197F0920E750AC00746439 /* LoadingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
 		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
 		E3197F1520E8007500746439 /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = SOURCE_ROOT; };
@@ -72,13 +64,7 @@
 		E389A46820EB34280044B20A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
-		E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheMenuView.xib; sourceTree = "<group>"; };
-		E3F728D020E3A350007B0CB0 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
-		E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMenuView.swift; sourceTree = "<group>"; };
 		E3F728D820E3B1C1007B0CB0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
-		E3F728DA20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Extras.swift"; sourceTree = "<group>"; };
-		E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenu+Extras.swift"; sourceTree = "<group>"; };
-		E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMenuView.swift; sourceTree = "<group>"; };
 		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
 		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,7 +143,6 @@
 				E389A46820EB34280044B20A /* LoadingView.swift */,
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
-				E3F728D720E3B038007B0CB0 /* Views */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
 				E3197F1520E8007500746439 /* Source.json */,
@@ -173,8 +158,6 @@
 				E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */,
 				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
 				E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */,
-				E3F728DA20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift */,
-				E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */,
 				E3197F0F20E78B8C00746439 /* URLSession+Result.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
 				E309EC7720EE49B200D3D16F /* Log.swift */,
@@ -192,18 +175,6 @@
 				E389A46420EA98470044B20A /* CacheFetcher.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E3F728D720E3B038007B0CB0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E3F728D020E3A350007B0CB0 /* NibLoadable.swift */,
-				E3F7289B20E2940F007B0CB0 /* CacheMenuView.xib */,
-				E3F728D220E3A5AE007B0CB0 /* CacheMenuView.swift */,
-				E3F728DE20E3F1B4007B0CB0 /* LoadingMenuView.swift */,
-				E3197F0920E750AC00746439 /* LoadingMenuView.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,9 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */,
 				E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */,
-				E3F7289C20E2940F007B0CB0 /* CacheMenuView.xib in Resources */,
 				E34E83072079CD5400BA09DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,21 +314,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
-				E3F728D320E3A5AE007B0CB0 /* CacheMenuView.swift in Sources */,
 				E309EC7820EE49B200D3D16F /* Log.swift in Sources */,
 				E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */,
-				E3F728DD20E3CCF8007B0CB0 /* NSMenu+Extras.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
-				E3F728D120E3A350007B0CB0 /* NibLoadable.swift in Sources */,
 				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
 				E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */,
 				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
 				E352B6B420E90E02004C276B /* CacheTableCellView.swift in Sources */,
 				E389A46320EA651B0044B20A /* CacheList.swift in Sources */,
-				E3F728DB20E3CCA2007B0CB0 /* NSMenuItem+Extras.swift in Sources */,
-				E3F728DF20E3F1B4007B0CB0 /* LoadingMenuView.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,
 				E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */,
 				E389A46920EB34280044B20A /* LoadingView.swift in Sources */,

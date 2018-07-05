@@ -742,9 +742,8 @@
                                     <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="aYI-Qu-mzI" customClass="LoadingView" customModule="MacCacheCleaner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="278" width="480" height="21"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-pL-abc">
-                                                <rect key="frame" x="216" y="2" width="73" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd9-pL-abc">
+                                                <rect key="frame" x="204" y="2" width="73" height="17"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="btx-bw-Q2N">
                                                         <rect key="frame" x="-2" y="0.0" width="53" height="17"/>
@@ -770,6 +769,8 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1Pk-Y8-p4D"/>
+                                            <constraint firstItem="Kd9-pL-abc" firstAttribute="centerX" secondItem="aYI-Qu-mzI" secondAttribute="centerX" id="arB-LC-KF7"/>
+                                            <constraint firstItem="Kd9-pL-abc" firstAttribute="centerY" secondItem="aYI-Qu-mzI" secondAttribute="centerY" id="mMW-7O-FsR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="progressIndicator" destination="Q42-Z0-Fs6" id="2vv-to-uCO"/>
