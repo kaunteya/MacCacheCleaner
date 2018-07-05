@@ -9,6 +9,6 @@
 import Foundation
 enum Log {
     static func info(_ f: String) {
-        Log.info(f)
+        print(f)
     }
 }
