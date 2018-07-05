@@ -8,12 +8,12 @@
 
 import AppKit
 
-protocol CacheViewDelegate:class {
+protocol CacheCellViewDelegate:class {
     func clear(cacheId: CacheID)
 }
 
 class CacheTableCellView: NSTableCellView {
-    weak var delegate: CacheViewDelegate?
+    weak var delegate: CacheCellViewDelegate?
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
@@ -24,5 +24,15 @@ class CacheTableCellView: NSTableCellView {
 
     @IBAction func clearAction(_ sender: NSButton) {
         delegate?.clear(cacheId: id)
+    }
+
+    func updateFor(cacheItem: CacheItem, size: CacheSize) {
+        id = cacheItem.id
+        nameLabel.stringValue = cacheItem.name
+        sizeLabel.stringValue = size.readable
+        descriptionLabel.stringValue = cacheItem.description
+        locationsLabel.stringValue = cacheItem.files.locations
+            .map { $0.stringVal }
+            .joined(separator: "\n")
     }
 }

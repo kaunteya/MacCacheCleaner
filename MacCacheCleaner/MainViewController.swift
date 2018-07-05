@@ -36,11 +36,15 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cacheCell"), owner: nil) as! CacheTableCellView
         let (itemId, size) = cacheList[row]
         let cacheItem = cacheList[itemId]!
-        cell.nameLabel.stringValue = cacheItem.name
-        cell.sizeLabel.stringValue = size.readable
-        cell.descriptionLabel.stringValue = cacheItem.description
-        cell.locationsLabel.stringValue = cacheItem.files.locations.map { $0.stringVal }.joined(separator: "\n")
+        cell.updateFor(cacheItem: cacheItem, size: size)
+        cell.delegate = self
         return cell
+    }
+}
+
+extension MainViewController: CacheCellViewDelegate {
+    func clear(cacheId: CacheID) {
+        Log.info("Remove \(cacheList[cacheId]!.name)")
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
+		E309EC7820EE49B200D3D16F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EC7720EE49B200D3D16F /* Log.swift */; };
 		E3197F0A20E750AC00746439 /* LoadingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3197F0920E750AC00746439 /* LoadingMenuView.xib */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
+		E309EC7720EE49B200D3D16F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		E3197F0920E750AC00746439 /* LoadingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingMenuView.xib; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
 		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				E3F728DC20E3CCF8007B0CB0 /* NSMenu+Extras.swift */,
 				E3197F0F20E78B8C00746439 /* URLSession+Result.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
+				E309EC7720EE49B200D3D16F /* Log.swift */,
 				E3197F1320E7C93700746439 /* Timer+repeat.swift */,
 			);
 			path = Extensions;
@@ -343,6 +346,7 @@
 			files = (
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
 				E3F728D320E3A5AE007B0CB0 /* CacheMenuView.swift in Sources */,
+				E309EC7820EE49B200D3D16F /* Log.swift in Sources */,
 				E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */,
 				E3F728DD20E3CCF8007B0CB0 /* NSMenu+Extras.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,

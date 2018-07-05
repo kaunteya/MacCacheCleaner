@@ -16,7 +16,7 @@ struct CacheFetcher {
     func fromNetwork(
         completion: @escaping([CacheItem]) -> Void,
         failure: (() -> Void)?) {
-
+        Log.info("Sending network request")
         let urlRequest = URLRequest(url: URL(string: urlString)!)
         URLSession.shared.dataTask(with: urlRequest) {
             (result: Result<JSON>) in
@@ -26,6 +26,7 @@ struct CacheFetcher {
                     failure?()
                     return
                 }
+                Log.info("Network response received")
                 completion(items.map { CacheItem($0) })
 
             case .failure(_): failure?()
