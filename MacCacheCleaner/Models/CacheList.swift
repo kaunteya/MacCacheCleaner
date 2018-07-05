@@ -12,6 +12,7 @@ protocol CacheListDelegate: class {
     func sizeUpdateStarted()
     func gotSizeFor(item: CacheItem)
     func sizeUpdateCompleted()
+    func itemRemovedCompleted(item: CacheItem)
 }
 
 class CacheList {
@@ -61,6 +62,13 @@ extension CacheList {
             return
         }
         listWithSizes.append(element)
+    }
+    func delete(_ id: CacheItem.ID) {
+        let cacheItem = self[id]!
+        cacheItem.files.delete { [unowned self] in
+            self.listWithSizes = self.listWithSizes.filter { $0.id != id }
+            self.delegate?.itemRemovedCompleted(item: cacheItem)
+        }
     }
 }
 

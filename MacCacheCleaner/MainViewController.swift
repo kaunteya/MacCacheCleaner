@@ -45,10 +45,14 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
 extension MainViewController: CacheCellViewDelegate {
     func clear(cacheId: CacheItem.ID) {
         Log.info("Remove \(cacheList[cacheId]!.name)")
+        cacheList.delete(cacheId)
     }
 }
 
 extension MainViewController: CacheListDelegate {
+    func itemRemovedCompleted(item: CacheItem) {
+        tableView.reloadData()
+    }
 
     func sizeUpdateStarted() {
         loadingView.isHidden = false
