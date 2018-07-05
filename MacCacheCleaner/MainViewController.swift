@@ -11,7 +11,7 @@ import AppKit
 class MainViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var loadingView: LoadingView!
+    @IBOutlet weak var loadingView: NSVisualEffectView!
 
     var cacheList: CacheList!
 
@@ -36,15 +36,18 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cacheCell"), owner: nil) as! CacheTableCellView
         let (itemId, size) = cacheList[row]
         let cacheItem = cacheList[itemId]!
-        cell.updateFor(cacheItem: cacheItem, size: size)
+        cell.updateFor(cacheItem: cacheItem, size: size, row: row)
         cell.delegate = self
         return cell
     }
 }
 
 extension MainViewController: CacheCellViewDelegate {
-    func clear(cacheId: CacheItem.ID) {
+    func userActionClearCache(cacheId: CacheItem.ID, row: Int) {
         Log.info("Remove \(cacheList[cacheId]!.name)")
+        let view = tableView.view(atColumn: 0, row: row, makeIfNecessary: false)
+            as! CacheTableCellView
+        view.showDeleteView()
         cacheList.delete(cacheId)
     }
 }

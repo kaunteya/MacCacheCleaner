@@ -7,3 +7,10 @@
 //
 
 import AppKit
+
+class AutoStartSpinner: NSProgressIndicator {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.startAnimation(self)
+    }
+}

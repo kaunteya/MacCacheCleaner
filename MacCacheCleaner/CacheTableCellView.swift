@@ -9,30 +9,41 @@
 import AppKit
 
 protocol CacheCellViewDelegate:class {
-    func clear(cacheId: CacheItem.ID)
+    func userActionClearCache(cacheId: CacheItem.ID, row: Int)
 }
 
 class CacheTableCellView: NSTableCellView {
     weak var delegate: CacheCellViewDelegate?
+    @IBOutlet weak var deleteLoadingView: NSStackView!
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var locationsLabel: NSTextField!
+    @IBOutlet weak var clearButton: NSButton!
 
     var id: CacheItem.ID!
+    var rowIndex: Int!
 
     @IBAction func clearAction(_ sender: NSButton) {
-        delegate?.clear(cacheId: id)
+        delegate?.userActionClearCache(cacheId: id, row: rowIndex)
     }
 
-    func updateFor(cacheItem: CacheItem, size: CacheSize) {
+    func updateFor(cacheItem: CacheItem, size: CacheSize, row: Int) {
         id = cacheItem.id
+        rowIndex = row
         nameLabel.stringValue = cacheItem.name
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
         locationsLabel.stringValue = cacheItem.files.locations
             .map { $0.stringVal }
             .joined(separator: "\n")
+        clearButton.isHidden = false
+        deleteLoadingView.isHidden = true
+    }
+    
+    func showDeleteView() {
+        clearButton.isHidden = true
+        deleteLoadingView.isHidden = false
     }
 }

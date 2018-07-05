@@ -23,7 +23,6 @@
 		E389A46320EA651B0044B20A /* CacheList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46220EA651B0044B20A /* CacheList.swift */; };
 		E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46420EA98470044B20A /* CacheFetcher.swift */; };
 		E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */; };
-		E389A46920EB34280044B20A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46820EB34280044B20A /* LoadingView.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D820E3B1C1007B0CB0 /* Other.swift */; };
@@ -61,7 +60,6 @@
 		E389A46220EA651B0044B20A /* CacheList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheList.swift; sourceTree = "<group>"; };
 		E389A46420EA98470044B20A /* CacheFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFetcher.swift; sourceTree = "<group>"; };
 		E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindowController+intialize.swift"; sourceTree = "<group>"; };
-		E389A46820EB34280044B20A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F728D820E3B1C1007B0CB0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
 				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
-				E389A46820EB34280044B20A /* LoadingView.swift */,
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
@@ -326,7 +323,6 @@
 				E389A46320EA651B0044B20A /* CacheList.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,
 				E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */,
-				E389A46920EB34280044B20A /* LoadingView.swift in Sources */,
 				E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
