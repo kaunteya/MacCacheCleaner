@@ -921,6 +921,7 @@
                                                                         <constraint firstAttribute="trailing" secondItem="XCZ-67-zDA" secondAttribute="trailing" constant="5" id="zuD-vd-eJn"/>
                                                                     </constraints>
                                                                     <connections>
+                                                                        <outlet property="cacheImageView" destination="342-7Y-rNF" id="DAe-BH-wao"/>
                                                                         <outlet property="clearButton" destination="PqC-8v-Mgm" id="chs-zW-rTF"/>
                                                                         <outlet property="deleteLoadingView" destination="fiU-H9-i5p" id="rC6-sl-Mfj"/>
                                                                         <outlet property="descriptionLabel" destination="xJU-aI-Tkc" id="H0e-VI-V0i"/>

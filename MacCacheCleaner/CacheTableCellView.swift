@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import SDWebImage
 
 protocol CacheCellViewDelegate:class {
     func userActionClearCache(cacheId: CacheItem.ID, row: Int)
@@ -21,6 +22,7 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var locationsLabel: NSTextField!
     @IBOutlet weak var clearButton: NSButton!
+    @IBOutlet weak var cacheImageView: NSImageView!
 
     var id: CacheItem.ID!
     var rowIndex: Int!
@@ -38,6 +40,9 @@ class CacheTableCellView: NSTableCellView {
         locationsLabel.stringValue = cacheItem.files.locations
             .map { $0.stringVal }
             .joined(separator: "\n")
+        if let url = cacheItem.imageURL {
+//            cacheImageView.sd_setImage(with: url, completed: nil)
+        }
         clearButton.isHidden = false
         deleteLoadingView.isHidden = true
     }
