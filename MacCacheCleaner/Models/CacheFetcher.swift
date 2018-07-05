@@ -15,21 +15,22 @@ struct CacheFetcher {
 
     func fromNetwork(
         completion: @escaping([CacheItem]) -> Void,
-        failure: (() -> Void)?) {
+        failure: ((Error?) -> Void)?) {
         Log.info("Sending network request")
-        let urlRequest = URLRequest(url: URL(string: urlString)!)
+        var urlRequest = URLRequest(url: URL(string: urlString)!)
+        urlRequest.timeoutInterval = 3
         URLSession.shared.dataTask(with: urlRequest) {
             (result: Result<JSON>) in
             switch result {
             case .success(let json):
                 guard let items = json["items"] as? [JSON] else {
-                    failure?()
+                    failure?(nil)
                     return
                 }
                 Log.info("Network response received")
                 completion(items.map { CacheItem($0) })
 
-            case .failure(_): failure?()
+            case .failure(let error): failure?(error)
             }
             }.resume()
     }

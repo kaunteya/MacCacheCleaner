@@ -30,6 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateListFromNetwork() {
         cacheListFetcher.fromNetwork(completion: { itemList in
             self.cacheList.list = itemList
-        }, failure: nil)
+        }, failure: { error in
+            Log.info("Network failed \(error?.localizedDescription ?? "")")
+        })
     }
 }
