@@ -9,7 +9,7 @@
 import AppKit
 
 protocol CacheCellViewDelegate:class {
-    func clear(cacheId: CacheID)
+    func clear(cacheId: CacheItem.ID)
 }
 
 class CacheTableCellView: NSTableCellView {
@@ -20,7 +20,7 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var locationsLabel: NSTextField!
 
-    var id: CacheID!
+    var id: CacheItem.ID!
 
     @IBAction func clearAction(_ sender: NSButton) {
         delegate?.clear(cacheId: id)

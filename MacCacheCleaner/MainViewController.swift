@@ -43,7 +43,7 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
 }
 
 extension MainViewController: CacheCellViewDelegate {
-    func clear(cacheId: CacheID) {
+    func clear(cacheId: CacheItem.ID) {
         Log.info("Remove \(cacheList[cacheId]!.name)")
     }
 }

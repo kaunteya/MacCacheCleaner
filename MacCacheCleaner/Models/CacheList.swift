@@ -50,7 +50,7 @@ extension CacheList {
         }
     }
 
-    subscript(id: CacheID) -> CacheItem? {
+    subscript(id: CacheItem.ID) -> CacheItem? {
         let item = list?.first(where: { $0.id == id })
         return item
     }
@@ -65,12 +65,12 @@ extension CacheList {
 }
 
 extension CacheList: Collection {
-    subscript(position: Int) -> (id: CacheID, size: CacheSize) {
+    subscript(position: Int) -> (id: CacheItem.ID, size: CacheSize) {
         return listWithSizes[position]
     }
 
     typealias Index = Int
-    typealias Element = (id: CacheID, size: CacheSize)
+    typealias Element = (id: CacheItem.ID, size: CacheSize)
 
     func index(after i: Int) -> Int {
         return listWithSizes.index(after: i)

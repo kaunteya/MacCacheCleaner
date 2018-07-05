@@ -20,6 +20,8 @@ struct Path {
 }
 
 struct CacheItem {
+    typealias ID = String
+
     let id: String
     let name: String
     let imageURL: URL?
@@ -27,11 +29,10 @@ struct CacheItem {
     let files: Files
 }
 
-typealias CacheID = String
 
 extension CacheItem {
     init(_ json: JSON) {
-        id = json["id"] as! CacheID
+        id = json["id"] as! ID
         name = json["name"] as! String
         imageURL = (json["image"] as? String).flatMap { URL(string: $0) }
 
