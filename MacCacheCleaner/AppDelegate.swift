@@ -22,9 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWindowController.initialize( with: mainVC, sceneId: "mainWindowController")
             .showWindow(self)
         
-        Timer.every(60) { _ in
-            self.updateListFromNetwork()
-        }.fire()
+        self.updateListFromNetwork()
     }
 
     func updateListFromNetwork() {
