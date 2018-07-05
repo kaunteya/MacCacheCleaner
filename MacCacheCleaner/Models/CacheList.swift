@@ -38,8 +38,10 @@ extension CacheList {
                 let size = item.files.calculateSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    self.updateListWithSizes(element: Element(id: item.id, size: size))
-                    self.delegate?.gotSizeFor(item: item)
+                    if size.bytes > 0 {
+                        self.updateListWithSizes(element: Element(id: item.id, size: size))
+                        self.delegate?.gotSizeFor(item: item)
+                    }
                 }
             }
         }
