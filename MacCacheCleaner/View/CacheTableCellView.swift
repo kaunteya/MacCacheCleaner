@@ -38,7 +38,7 @@ class CacheTableCellView: NSTableCellView {
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
         locationsLabel.stringValue = cacheItem.files.locations
-            .map { $0.stringVal }
+            .map { "  " + $0.stringVal }
             .joined(separator: "\n")
         if let url = cacheItem.imageURL {
 //            cacheImageView.sd_setImage(with: url, completed: nil)
