@@ -112,6 +112,15 @@
 			path = MacCacheCleanerTests;
 			sourceTree = "<group>";
 		};
+		E32B71C520F083AD00158B7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34E83052079CD5400BA09DF /* Main.storyboard */,
+				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E34E82F32079CD5200BA09DF = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +146,7 @@
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
-				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
-				E34E83052079CD5400BA09DF /* Main.storyboard */,
+				E32B71C520F083AD00158B7F /* View */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
 				E34E83032079CD5400BA09DF /* Assets.xcassets */,
