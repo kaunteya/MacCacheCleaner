@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */; };
 		E309EC7820EE49B200D3D16F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EC7720EE49B200D3D16F /* Log.swift */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.debug.xcconfig"; sourceTree = "<group>"; };
 		E309EC7720EE49B200D3D16F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
 		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
@@ -63,8 +61,6 @@
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F728D820E3B1C1007B0CB0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
-		EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacCacheCleaner.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner.release.xcconfig"; sourceTree = "<group>"; };
-		F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacCacheCleaner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,30 +75,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D397D655DCA23C0F989E9D3A /* Pods_MacCacheCleaner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23AAD12F21D5CE289AFE0B5C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F81D45A96FBB3066930933D6 /* Pods_MacCacheCleaner.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9937085725B1A50986AFCAFB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */,
-				EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E3197F1B20E8008900746439 /* MacCacheCleanerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +105,6 @@
 				E34E82FE2079CD5200BA09DF /* MacCacheCleaner */,
 				E3197F1B20E8008900746439 /* MacCacheCleanerTests */,
 				E34E82FD2079CD5200BA09DF /* Products */,
-				9937085725B1A50986AFCAFB /* Pods */,
-				23AAD12F21D5CE289AFE0B5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,11 +183,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "Mac Cache Cleaner" */;
 			buildPhases = (
-				E55A8792F88778A0916E97B2 /* [CP] Check Pods Manifest.lock */,
 				E34E82F82079CD5200BA09DF /* Sources */,
 				E34E82F92079CD5200BA09DF /* Frameworks */,
 				E34E82FA2079CD5200BA09DF /* Resources */,
-				B894FD4AC62853CC0AB00E32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,45 +259,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B894FD4AC62853CC0AB00E32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacCacheCleaner/Pods-MacCacheCleaner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E55A8792F88778A0916E97B2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MacCacheCleaner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E3197F1620E8008900746439 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -384,11 +319,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleanerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -404,11 +335,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleanerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -531,7 +458,6 @@
 		};
 		E34E830D2079CD5400BA09DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4CA6AB6EB981E5ECF2961F7 /* Pods-MacCacheCleaner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -539,10 +465,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleaner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,7 +476,6 @@
 		};
 		E34E830E2079CD5400BA09DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE93E86BED93712B270A1391 /* Pods-MacCacheCleaner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -561,10 +483,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KQQ77ZBE5E;
 				INFOPLIST_FILE = MacCacheCleaner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";

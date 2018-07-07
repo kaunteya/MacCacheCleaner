@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import SDWebImage
+//import SDWebImage
 
 protocol CacheCellViewDelegate:class {
     func userActionClearCache(cacheId: CacheItem.ID, row: Int)
