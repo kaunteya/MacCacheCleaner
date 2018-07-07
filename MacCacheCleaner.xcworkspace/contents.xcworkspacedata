@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MacCacheCleaner.xcodeproj">
+      location = "group:/Users/kaunteya/work/mac/MacCacheCleaner/Mac Cache Cleaner.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

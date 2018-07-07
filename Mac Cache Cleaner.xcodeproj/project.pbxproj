@@ -44,7 +44,7 @@
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
 		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
 		E3197F1520E8007500746439 /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = SOURCE_ROOT; };
-		E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacCacheCleanerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3197F1A20E8008900746439 /* Mac Cache CleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Cache CleanerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3197F2720E8036200746439 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
 		E3197F2920E8BE2E00746439 /* CacheSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSize.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */,
-				E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */,
+				E3197F1A20E8008900746439 /* Mac Cache CleanerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3197F1920E8008900746439 /* MacCacheCleanerTests */ = {
+		E3197F1920E8008900746439 /* Mac Cache CleanerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "MacCacheCleanerTests" */;
+			buildConfigurationList = E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "Mac Cache CleanerTests" */;
 			buildPhases = (
 				E3197F1620E8008900746439 /* Sources */,
 				E3197F1720E8008900746439 /* Frameworks */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				E3197F2020E8008900746439 /* PBXTargetDependency */,
 			);
-			name = MacCacheCleanerTests;
+			name = "Mac Cache CleanerTests";
 			productName = MacCacheCleanerTests;
-			productReference = E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */;
+			productReference = E3197F1A20E8008900746439 /* Mac Cache CleanerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E34E82FB2079CD5200BA09DF /* Mac Cache Cleaner */ = {
@@ -238,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E34E82F72079CD5200BA09DF /* Build configuration list for PBXProject "MacCacheCleaner" */;
+			buildConfigurationList = E34E82F72079CD5200BA09DF /* Build configuration list for PBXProject "Mac Cache Cleaner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,7 +252,7 @@
 			projectRoot = "";
 			targets = (
 				E34E82FB2079CD5200BA09DF /* Mac Cache Cleaner */,
-				E3197F1920E8008900746439 /* MacCacheCleanerTests */,
+				E3197F1920E8008900746439 /* Mac Cache CleanerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacCacheCleaner.app/Contents/MacOS/MacCacheCleaner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Cache Cleaner.app/Contents/MacOS/Mac Cache Cleaner";
 			};
 			name = Debug;
 		};
@@ -404,7 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaunteya.MacCacheCleanerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacCacheCleaner.app/Contents/MacOS/MacCacheCleaner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Cache Cleaner.app/Contents/MacOS/Mac Cache Cleaner";
 			};
 			name = Release;
 		};
@@ -568,7 +568,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "MacCacheCleanerTests" */ = {
+		E3197F2120E8008900746439 /* Build configuration list for PBXNativeTarget "Mac Cache CleanerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3197F2220E8008900746439 /* Debug */,
@@ -577,7 +577,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E34E82F72079CD5200BA09DF /* Build configuration list for PBXProject "MacCacheCleaner" */ = {
+		E34E82F72079CD5200BA09DF /* Build configuration list for PBXProject "Mac Cache Cleaner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E34E830A2079CD5400BA09DF /* Debug */,
