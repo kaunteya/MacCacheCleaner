@@ -16,29 +16,11 @@ extension FileManager {
         return isDir.boolValue
     }
 
-    func totalSize(of urls: [URL]) -> Int64 {
-        var sizeBytes = 0 as Int64
-        urls.forEach { url in
-            sizeBytes += FileManager.default.size(of: url)
-        }
-        return sizeBytes
-    }
-
-    func size(of urls: [URL], completion: @escaping (Int64) -> Void) {
-        var sizeBytes = 0 as Int64
-        urls.forEach { url in
-            DispatchQueue.global().async {
-                sizeBytes += FileManager.default.size(of: url)
-                completion(sizeBytes)
-            }
-        }
-    }
-
     /// Calculates the size of directory
     ///
     /// - Parameter url: URL of the directory / file
     /// - Returns: Value in bytes
-    func size(of url: URL) -> Int64 {
+    func sizeOf(_ url: URL) -> Int64 {
         if FileManager.default.isDirectory(url) {
             var totalSize: Int64 = 0
 

@@ -22,12 +22,10 @@ struct CacheItem: Decodable {
 
 extension CacheItem {
     func calculateSize() -> FileSize {
-        var sizeBytes = 0 as Int64
-        let urls = locations.map { $0.rawValue }
-        
-        urls.forEach { url in
-            sizeBytes += FileManager.default.size(of: url)
-        }
+        let sizeBytes = locations
+            .map { $0.rawValue }
+            .map(FileManager.default.sizeOf)
+            .reduce(0 as Int64, +)
         return FileSize(integerLiteral: sizeBytes)
     }
 
