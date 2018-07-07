@@ -22,7 +22,7 @@ class CacheTableCellView: NSTableCellView {
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var locationsLabel: NSTextField!
     @IBOutlet weak var clearButton: NSButton!
-    @IBOutlet weak var cacheImageView: NSImageView!
+//    @IBOutlet weak var cacheImageView: NSImageView!
 
     var id: CacheItem.ID!
     var rowIndex: Int!

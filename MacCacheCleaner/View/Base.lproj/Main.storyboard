@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -778,22 +777,14 @@
                                                                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-67-zDA">
                                                                             <rect key="frame" x="5" y="5" width="465" height="51"/>
                                                                             <subviews>
-                                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="342-7Y-rNF">
-                                                                                    <rect key="frame" x="0.0" y="1" width="50" height="50"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="342-7Y-rNF" secondAttribute="height" multiplier="1:1" id="5CT-Ye-n8C"/>
-                                                                                        <constraint firstAttribute="width" constant="50" id="ESW-lc-Wz6"/>
-                                                                                    </constraints>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="z7p-SO-8RL"/>
-                                                                                </imageView>
                                                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gme-4A-yC7">
-                                                                                    <rect key="frame" x="56" y="0.0" width="409" height="51"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="465" height="51"/>
                                                                                     <subviews>
                                                                                         <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-h8-Q6u">
-                                                                                            <rect key="frame" x="0.0" y="34" width="409" height="17"/>
+                                                                                            <rect key="frame" x="0.0" y="34" width="465" height="17"/>
                                                                                             <subviews>
                                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nc7-Xg-ho1">
-                                                                                                    <rect key="frame" x="-2" y="0.0" width="357" height="17"/>
+                                                                                                    <rect key="frame" x="-2" y="0.0" width="413" height="17"/>
                                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="APE-gE-rTt">
                                                                                                         <font key="font" metaFont="system"/>
                                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -801,7 +792,7 @@
                                                                                                     </textFieldCell>
                                                                                                 </textField>
                                                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="w5j-9H-BHe" userLabel="Size">
-                                                                                                    <rect key="frame" x="359" y="0.0" width="52" height="17"/>
+                                                                                                    <rect key="frame" x="415" y="0.0" width="52" height="17"/>
                                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="947 MB" id="AF8-IP-izp">
                                                                                                         <font key="font" metaFont="system"/>
                                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -819,7 +810,7 @@
                                                                                             </customSpacing>
                                                                                         </stackView>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xJU-aI-Tkc">
-                                                                                            <rect key="frame" x="-2" y="17" width="413" height="14"/>
+                                                                                            <rect key="frame" x="-2" y="17" width="469" height="14"/>
                                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Description" id="Kog-sm-6OW">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -827,7 +818,7 @@
                                                                                             </textFieldCell>
                                                                                         </textField>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JTW-vl-tPR">
-                                                                                            <rect key="frame" x="-2" y="0.0" width="413" height="14"/>
+                                                                                            <rect key="frame" x="-2" y="0.0" width="469" height="14"/>
                                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Location" id="89A-1g-uvm">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -857,10 +848,8 @@
                                                                             </subviews>
                                                                             <visibilityPriorities>
                                                                                 <integer value="1000"/>
-                                                                                <integer value="1000"/>
                                                                             </visibilityPriorities>
                                                                             <customSpacing>
-                                                                                <real value="3.4028234663852886e+38"/>
                                                                                 <real value="3.4028234663852886e+38"/>
                                                                             </customSpacing>
                                                                         </stackView>
@@ -921,7 +910,6 @@
                                                                         <constraint firstAttribute="trailing" secondItem="XCZ-67-zDA" secondAttribute="trailing" constant="5" id="zuD-vd-eJn"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="cacheImageView" destination="342-7Y-rNF" id="DAe-BH-wao"/>
                                                                         <outlet property="clearButton" destination="PqC-8v-Mgm" id="chs-zW-rTF"/>
                                                                         <outlet property="deleteLoadingView" destination="fiU-H9-i5p" id="rC6-sl-Mfj"/>
                                                                         <outlet property="descriptionLabel" destination="xJU-aI-Tkc" id="H0e-VI-V0i"/>
