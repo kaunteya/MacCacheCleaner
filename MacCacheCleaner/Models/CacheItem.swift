@@ -40,6 +40,7 @@ extension CacheItem {
         let locations = (json["location"] as! [String]).map { Path($0)}
         files = Files(locations: locations)
     }
+    
     struct Files {
         let locations: [Path]
 
