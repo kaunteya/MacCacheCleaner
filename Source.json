@@ -7,7 +7,7 @@
       "description": "CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.",
       "homepage": "https://cocoapods.org/",
       "image": "https://pbs.twimg.com/profile_images/378800000632309165/e1cbdef9d4b11484049a033886578e54_400x400.png",
-      "location": [
+      "locations": [
         "~/Library/Caches/CocoaPods"
       ]
     },
@@ -16,8 +16,7 @@
       "name": "Carthage",
       "description": "A simple, decentralized dependency manager for Cocoa",
       "homepage": "https://github.com/Carthage/Carthage",
-      "image": "",
-      "location": [
+      "locations": [
         "~/Library/Caches/org.carthage.CarthageKit"
       ]
     },
@@ -27,7 +26,7 @@
       "description": "The missing package manager for macOS",
       "homepage": "https://brew.sh/",
       "image": "https://brew.sh/img/homebrew-256x256.png",
-      "location": [
+      "locations": [
         "~/Library/Caches/Homebrew",
         "~/Library/Logs/Homebrew/"
       ]
@@ -38,7 +37,7 @@
       "description": "npm is the package manager for JavaScript and the world’s largest software registry.",
       "homepage": "https://www.npmjs.com/",
       "image": "https://pbs.twimg.com/profile_images/765333670366355456/q5ACQ8i3_400x400.jpg",
-      "location": [
+      "locations": [
         "~/.npm"
       ]
     },
@@ -47,7 +46,7 @@
       "name": "Xcode Derived Data",
       "description": "Place where Xcode stores all kinds of intermediate build results, generated indexes etc",
       "image": "https://pbs.twimg.com/profile_images/925502788032798721/qbxHDQKt_400x400.jpg",
-      "location": [
+      "locations": [
         "~/Library/Developer/Xcode/DerivedData"
       ]
     },
@@ -57,7 +56,7 @@
       "homepage": "https://yarnpkg.com/lang/en/",
       "image": "https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png",
       "description": "Fast, Reliable, and Secure dependency management.",
-      "location": [
+      "locations": [
         "~/Library/Caches/Yarn"
       ]
     },
@@ -67,7 +66,7 @@
       "description": "One fast, simple, and secure browser for all your devices.",
       "homepage": "https://www.google.com/chrome/",
       "image": "https://www.google.com/chrome/static/images/chrome-logo.svg",
-      "location": [
+      "locations": [
         "~/Library/Caches/Google/Chrome",
         "~/Library/Application Support/Google/Chrome",
         "~/Library/Caches/com.google.Chrome"
@@ -79,7 +78,7 @@
       "description": "Firefox is a free and open-source web browser.",
       "homepage": "https://www.mozilla.org",
       "image": "https://www.mozilla.org/media/img/logos/firefox/logo-quantum-wordmark-white-high-res.3ccf0070280e.png",
-      "location": [
+      "locations": [
         "~/Library/Caches/Firefox",
         "~/Library/Caches/org.mozilla.firefox"
       ]
