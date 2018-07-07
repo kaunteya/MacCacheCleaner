@@ -9,11 +9,7 @@
 import Foundation
 
 struct Path: RawRepresentable, Hashable {
-    typealias RawValue = URL
     var rawValue: URL
-    init?(rawValue: URL) {
-        self.rawValue = rawValue
-    }
 }
 
 extension Path: Decodable {

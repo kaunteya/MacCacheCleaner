@@ -31,7 +31,7 @@ class CacheTableCellView: NSTableCellView {
         delegate?.userActionClearCache(cacheId: id, row: rowIndex)
     }
 
-    func updateFor(cacheItem: CacheItem, size: CacheSize, row: Int) {
+    func updateFor(cacheItem: CacheItem, size: CacheItem.FileSize, row: Int) {
         id = cacheItem.id
         rowIndex = row
         nameLabel.stringValue = cacheItem.name

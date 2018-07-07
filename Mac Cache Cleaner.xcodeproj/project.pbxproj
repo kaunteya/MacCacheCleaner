@@ -12,7 +12,6 @@
 		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
 		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
 		E3197F2820E8036200746439 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2720E8036200746439 /* JSONTests.swift */; };
-		E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2920E8BE2E00746439 /* CacheSize.swift */; };
 		E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2D20E90A6C00746439 /* MainViewController.swift */; };
 		E32B71DC20F11E6300158B7F /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71DB20F11E6300158B7F /* Tagged.swift */; };
 		E32B71DE20F11EE100158B7F /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71DD20F11EE100158B7F /* Path.swift */; };
@@ -47,7 +46,6 @@
 		E3197F1A20E8008900746439 /* Mac Cache CleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Cache CleanerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3197F2720E8036200746439 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
-		E3197F2920E8BE2E00746439 /* CacheSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSize.swift; sourceTree = "<group>"; };
 		E3197F2D20E90A6C00746439 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E32B71DB20F11E6300158B7F /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagged.swift; sourceTree = "<group>"; };
 		E32B71DD20F11EE100158B7F /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
 				E32B71DD20F11EE100158B7F /* Path.swift */,
-				E3197F2920E8BE2E00746439 /* CacheSize.swift */,
 				E389A46220EA651B0044B20A /* CacheList.swift */,
 				E389A46420EA98470044B20A /* CacheFetcher.swift */,
 			);
@@ -287,7 +284,6 @@
 				E32B71DC20F11E6300158B7F /* Tagged.swift in Sources */,
 				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
-				E3197F2A20E8BE2E00746439 /* CacheSize.swift in Sources */,
 				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
 				E352B6B420E90E02004C276B /* CacheTableCellView.swift in Sources */,
 				E389A46320EA651B0044B20A /* CacheList.swift in Sources */,

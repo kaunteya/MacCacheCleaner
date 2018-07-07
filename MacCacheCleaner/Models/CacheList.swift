@@ -16,7 +16,7 @@ protocol CacheListDelegate: class {
 }
 
 class CacheList {
-    typealias ItemAndSize = (id: CacheItem.ID, size: CacheSize)
+    typealias ItemAndSize = (id: CacheItem.ID, size: CacheItem.FileSize)
 
     private var listWithSizes = [ItemAndSize]()
 
@@ -48,7 +48,7 @@ extension CacheList {
                 let size = item.calculateSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    if size.bytes > 0 {
+                    if size.rawValue > 0 {
                         self.updateListWithSizes(element: ItemAndSize(id: item.id, size: size))
                         self.delegate?.gotSizeFor(item: item)
                     }
@@ -66,7 +66,7 @@ extension CacheList {
         } else {
             listWithSizes.append(element)
         }
-        listWithSizes.sort { $0.size.bytes > $1.size.bytes }
+        listWithSizes.sort { $0.size.rawValue > $1.size.rawValue }
     }
 
     func delete(_ id: CacheItem.ID) {

@@ -11,6 +11,7 @@ import Foundation
 struct CacheItem: Decodable {
 
     typealias ID = Tagged<CacheItem, String>
+    typealias FileSize = Tagged<CacheItem, Int64>
 
     let id: ID
     let name: String
@@ -20,14 +21,14 @@ struct CacheItem: Decodable {
 }
 
 extension CacheItem {
-    func calculateSize() -> CacheSize {
+    func calculateSize() -> FileSize {
         var sizeBytes = 0 as Int64
         let urls = locations.map { $0.rawValue }
         
         urls.forEach { url in
             sizeBytes += FileManager.default.size(of: url)
         }
-        return CacheSize(bytes: sizeBytes)
+        return FileSize(integerLiteral: sizeBytes)
     }
 
     func delete(complete: (() -> Void)? = nil) {
@@ -50,5 +51,11 @@ extension CacheItem: Hashable {
 
     static func == (lhs: CacheItem, rhs: CacheItem) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Tagged where Tag == CacheItem, RawValue == Int64 {
+    var readable: String {
+        return ByteCountFormatter().string(fromByteCount: rawValue)
     }
 }
