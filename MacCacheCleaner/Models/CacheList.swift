@@ -61,11 +61,12 @@ extension CacheList {
     }
 
     private func updateListWithSizes(element: ItemAndSize) {
-        for (index, iElement) in listWithSizes.enumerated() where iElement.id == element.id {
+        if let index = listWithSizes.index(where: { $0.id == element.id}) {
             listWithSizes[index] = element
-            return
+        } else {
+            listWithSizes.append(element)
         }
-        listWithSizes.append(element)
+        listWithSizes.sort { $0.size.bytes > $1.size.bytes }
     }
 
     func delete(_ id: CacheItem.ID) {
