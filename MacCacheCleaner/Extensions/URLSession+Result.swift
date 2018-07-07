@@ -13,10 +13,10 @@ enum Result<Value> {
     case failure(Error?)
 }
 
-
 extension URLSession {
-    func dataTask(with request: URLRequest,
-                  completion: @escaping (Result<JSON>) -> Void
+    func dataTask<T: Decodable>(
+        with request: URLRequest,
+        completion: @escaping (Result<T>) -> Void
         ) -> URLSessionDataTask {
 
         return self.dataTask(with: request) { (data, response, error) in
@@ -28,14 +28,9 @@ extension URLSession {
                 completion(.failure(nil))
                 return
             }
-            guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-                let json = jsonObj as? JSON
-                else {
-                    completion(.failure(nil))
-                    return
-            }
 
-            completion(.success(json))
+            let decoded = try! JSONDecoder().decode(T.self, from: data)
+            completion(.success(decoded))
         }
     }
 }

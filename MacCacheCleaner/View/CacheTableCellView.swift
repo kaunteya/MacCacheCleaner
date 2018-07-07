@@ -37,12 +37,10 @@ class CacheTableCellView: NSTableCellView {
         nameLabel.stringValue = cacheItem.name
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
-        locationsLabel.stringValue = cacheItem.files.locations
-            .map { "  " + $0.stringVal }
+        locationsLabel.stringValue = cacheItem.locations
+            .map { "  " + $0.rawValue.relativePath }
             .joined(separator: "\n")
-        if let url = cacheItem.imageURL {
-//            cacheImageView.sd_setImage(with: url, completed: nil)
-        }
+
         clearButton.isHidden = false
         deleteLoadingView.isHidden = true
     }

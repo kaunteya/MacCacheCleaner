@@ -8,30 +8,24 @@
 
 import Foundation
 
-typealias JSON = [String : Any]
+struct SourceJSON: Decodable {
+    let version: Int
+    let items: [CacheItem]
+}
 
 struct CacheFetcher {
     let urlString: String
 
-    func fromNetwork(
-        completion: @escaping([CacheItem]) -> Void,
-        failure: ((Error?) -> Void)?) {
-        Log.info("Sending network request")
-        var urlRequest = URLRequest(url: URL(string: urlString)!)
-        urlRequest.timeoutInterval = 3
-        URLSession.shared.dataTask(with: urlRequest) {
-            (result: Result<JSON>) in
+    func fromNetwork(completion: @escaping([CacheItem]) -> Void,
+                 failure: ((Error?) -> Void)?) {
+        let urlRequest = URLRequest(url: URL(string: urlString)!)
+        URLSession.shared.dataTask(with: urlRequest) { (result:Result<SourceJSON>)  in
             switch result {
-            case .success(let json):
-                guard let items = json["items"] as? [JSON] else {
-                    failure?(nil)
-                    return
-                }
-                Log.info("Network response received")
-                completion(items.map { CacheItem($0) })
-
+            case .success(let decoded):
+                assert(decoded.version == 1)
+                completion(decoded.items)
             case .failure(let error): failure?(error)
             }
-            }.resume()
+        }.resume()
     }
 }

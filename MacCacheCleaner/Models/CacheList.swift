@@ -45,7 +45,7 @@ extension CacheList {
         mainList?.forEach { item in
             queue.async {
                 dispatchGroup.enter()
-                let size = item.files.calculateSize()
+                let size = item.calculateSize()
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
                     if size.bytes > 0 {
@@ -71,7 +71,7 @@ extension CacheList {
 
     func delete(_ id: CacheItem.ID) {
         let cacheItem = self[id]!
-        cacheItem.files.delete { [unowned self] in
+        cacheItem.delete { [unowned self] in
             self.listWithSizes = self.listWithSizes.filter { $0.id != id }
             self.delegate?.itemRemovedCompleted(item: cacheItem)
         }
