@@ -32,4 +32,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Log.info("Network failed \(error?.localizedDescription ?? "")")
         })
     }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
 }
