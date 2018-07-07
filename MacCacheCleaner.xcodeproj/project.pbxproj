@@ -195,9 +195,9 @@
 			productReference = E3197F1A20E8008900746439 /* MacCacheCleanerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E34E82FB2079CD5200BA09DF /* MacCacheCleaner */ = {
+		E34E82FB2079CD5200BA09DF /* Mac Cache Cleaner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "MacCacheCleaner" */;
+			buildConfigurationList = E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "Mac Cache Cleaner" */;
 			buildPhases = (
 				E55A8792F88778A0916E97B2 /* [CP] Check Pods Manifest.lock */,
 				E34E82F82079CD5200BA09DF /* Sources */,
@@ -209,7 +209,7 @@
 			);
 			dependencies = (
 			);
-			name = MacCacheCleaner;
+			name = "Mac Cache Cleaner";
 			productName = MacCacheCleaner;
 			productReference = E34E82FC2079CD5200BA09DF /* MacCacheCleaner.app */;
 			productType = "com.apple.product-type.application";
@@ -251,7 +251,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E34E82FB2079CD5200BA09DF /* MacCacheCleaner */,
+				E34E82FB2079CD5200BA09DF /* Mac Cache Cleaner */,
 				E3197F1920E8008900746439 /* MacCacheCleanerTests */,
 			);
 		};
@@ -351,7 +351,7 @@
 /* Begin PBXTargetDependency section */
 		E3197F2020E8008900746439 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E34E82FB2079CD5200BA09DF /* MacCacheCleaner */;
+			target = E34E82FB2079CD5200BA09DF /* Mac Cache Cleaner */;
 			targetProxy = E3197F1F20E8008900746439 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -586,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "MacCacheCleaner" */ = {
+		E34E830C2079CD5400BA09DF /* Build configuration list for PBXNativeTarget "Mac Cache Cleaner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E34E830D2079CD5400BA09DF /* Debug */,
