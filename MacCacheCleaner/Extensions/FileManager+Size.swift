@@ -16,11 +16,15 @@ extension FileManager {
         return isDir.boolValue
     }
 
+    static func remove(_ item: URL) throws {
+        try FileManager.default.removeItem(at: item)
+    }
+
     /// Calculates the size of directory
     ///
     /// - Parameter url: URL of the directory / file
     /// - Returns: Value in bytes
-    func sizeOf(_ url: URL) -> Int64 {
+    static func sizeOf(_ url: URL) -> Int64 {
         if FileManager.default.isDirectory(url) {
             var totalSize: Int64 = 0
 

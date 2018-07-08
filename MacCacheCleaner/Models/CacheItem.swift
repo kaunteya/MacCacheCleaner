@@ -24,20 +24,17 @@ extension CacheItem {
     func calculateSize() -> FileSize {
         let sizeBytes = locations
             .map { $0.rawValue }
-            .map(FileManager.default.sizeOf)
+            .map(FileManager.sizeOf)
             .reduce(0 as Int64, +)
         return FileSize(integerLiteral: sizeBytes)
     }
 
     func delete(complete: (() -> Void)? = nil) {
         DispatchQueue.global(qos: .utility).async {
-            self.locations.forEach { path in
-                Log.info("Removing \(path)")
-                try? FileManager.default.removeItem(at: path.rawValue)
-            }
-            DispatchQueue.main.async {
-                complete?()
-            }
+            try? self.locations
+                .map { $0.rawValue }
+                .forEach(FileManager.remove)
+            DispatchQueue.main.async { complete?() }
         }
     }
 }
