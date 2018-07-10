@@ -36,10 +36,10 @@ class JSONTests: XCTestCase {
         XCTAssertNotNil(file["items"] as? [[String : Any]])
         let list = file["items"] as! [[String : Any]]
 
-        let dictKeys = Set<String>([ "id", "name", "description", "location", "image" ])
+        let dictKeys = Set<String>([ "id", "name", "description", "locations" ])
         list.forEach { itemDict in
-            XCTAssert(Set<String>(itemDict.keys).isSuperset(of: dictKeys))
-            XCTAssertNotNil(itemDict["location"] as! [String])
+            XCTAssert(Set<String>(itemDict.keys).isSuperset(of: dictKeys), itemDict.description)
+            XCTAssertNotNil(itemDict["locations"] as! [String])
         }
     }
 }
