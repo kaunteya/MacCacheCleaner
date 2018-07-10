@@ -8,12 +8,18 @@
 
 import AppKit
 
-class TableViewHandler: NSObject {
-    weak var cacheList: CacheList!
-    @IBOutlet weak var tableView: NSTableView!
+protocol CacheTableViewDelegate: class {
+    func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus)
+}
 
-    func reloadTable() {
-        tableView.reloadData()
+class TableViewHandler: NSObject {
+    var cacheList: CacheList!
+    @IBOutlet weak var tableView: NSTableView!
+    weak var delegate: CacheTableViewDelegate?
+
+    func setCacheList(_ cacheList: CacheList) {
+        self.cacheList = cacheList
+        self.cacheList.delegate = self
     }
 }
 
@@ -41,3 +47,20 @@ extension TableViewHandler: CacheCellViewDelegate {
         cacheList.delete(cacheId)
     }
 }
+
+extension TableViewHandler: CacheListDelegate {
+
+    func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus) {
+        delegate?.cacheListUpdateStatusChanged(status: status)
+    }
+
+    func itemRemovedCompleted(item: CacheItem) {
+        tableView.reloadData()
+    }
+
+    func gotSizeFor(item: CacheItem) {
+        Log.info("Delegate gotSizeFor \(item.name)")
+        tableView.reloadData()
+    }
+}
+

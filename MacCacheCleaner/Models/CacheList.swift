@@ -9,14 +9,14 @@
 import AppKit
 
 protocol CacheListDelegate: class {
-    func sizeUpdateStarted()
     func gotSizeFor(item: CacheItem)
-    func sizeUpdateCompleted()
     func itemRemovedCompleted(item: CacheItem)
+    func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus)
 }
 
 class CacheList {
     typealias ItemAndSize = (id: CacheItem.ID, size: CacheItem.FileSize)
+    enum UpdateStatus { case started, completed, failed }
 
     private var listWithSizes = [ItemAndSize]()
 
@@ -40,9 +40,14 @@ class CacheList {
 extension CacheList {
 
     func updateSize(queue: DispatchQueue) {
-        delegate?.sizeUpdateStarted()
+        guard let mainList = mainList else {
+            delegate?.cacheListUpdateStatusChanged(status: .failed)
+            return
+        }
+        delegate?.cacheListUpdateStatusChanged(status: .started)
+
         let dispatchGroup = DispatchGroup()
-        mainList?.forEach { item in
+        mainList.forEach { item in
             queue.async {
                 dispatchGroup.enter()
                 let size = item.calculateSize()
@@ -55,8 +60,8 @@ extension CacheList {
                 }
             }
         }
-        dispatchGroup.notify(queue: .main) {
-            self.delegate?.sizeUpdateCompleted()
+        dispatchGroup.notify(queue: .main) { [unowned self] in
+            self.delegate?.cacheListUpdateStatusChanged(status: .completed)
         }
     }
 
