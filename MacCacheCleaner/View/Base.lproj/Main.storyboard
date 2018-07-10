@@ -744,13 +744,13 @@
                                             <constraint firstItem="Kd9-pL-abc" firstAttribute="centerY" secondItem="aYI-Qu-mzI" secondAttribute="centerY" id="mMW-7O-FsR"/>
                                         </constraints>
                                     </visualEffectView>
-                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="63" horizontalPageScroll="10" verticalLineScroll="63" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
+                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="75" horizontalPageScroll="10" verticalLineScroll="75" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOG-ib-TKg">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="278"/>
                                         <clipView key="contentView" id="R38-HD-tUN">
                                             <rect key="frame" x="1" y="1" width="478" height="276"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="61" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="73" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="ZYc-jG-uNI">
                                                     <rect key="frame" x="0.0" y="0.0" width="478" height="276"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -770,8 +770,8 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView identifier="cacheCell" misplaced="YES" id="gtr-DP-maE" customClass="CacheTableCellView" customModule="Mac_Cache_Cleaner" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="475" height="61"/>
+                                                                <tableCellView identifier="cacheCell" id="gtr-DP-maE" customClass="CacheTableCellView" customModule="Mac_Cache_Cleaner" customModuleProvider="target">
+                                                                    <rect key="frame" x="1" y="1" width="475" height="73"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-67-zDA">
