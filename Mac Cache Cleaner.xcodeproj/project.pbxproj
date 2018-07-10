@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E309EC7820EE49B200D3D16F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309EC7720EE49B200D3D16F /* Log.swift */; };
 		E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F0F20E78B8C00746439 /* URLSession+Result.swift */; };
-		E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F1320E7C93700746439 /* Timer+repeat.swift */; };
 		E3197F2420E8009500746439 /* Source.json in Resources */ = {isa = PBXBuildFile; fileRef = E3197F1520E8007500746439 /* Source.json */; };
 		E3197F2820E8036200746439 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2720E8036200746439 /* JSONTests.swift */; };
 		E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2D20E90A6C00746439 /* MainViewController.swift */; };
@@ -26,7 +25,6 @@
 		E389A46520EA98470044B20A /* CacheFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46420EA98470044B20A /* CacheFetcher.swift */; };
 		E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
-		E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */; };
 		E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D820E3B1C1007B0CB0 /* Other.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +41,6 @@
 /* Begin PBXFileReference section */
 		E309EC7720EE49B200D3D16F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		E3197F0F20E78B8C00746439 /* URLSession+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Result.swift"; sourceTree = "<group>"; };
-		E3197F1320E7C93700746439 /* Timer+repeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+repeat.swift"; sourceTree = "<group>"; };
 		E3197F1520E8007500746439 /* Source.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Source.json; sourceTree = SOURCE_ROOT; };
 		E3197F1A20E8008900746439 /* Mac Cache CleanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Cache CleanerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3197F1E20E8008900746439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		E389A46420EA98470044B20A /* CacheFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFetcher.swift; sourceTree = "<group>"; };
 		E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindowController+intialize.swift"; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
-		E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+bytesToString.swift"; sourceTree = "<group>"; };
 		E3F728D820E3B1C1007B0CB0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,14 +140,12 @@
 			isa = PBXGroup;
 			children = (
 				E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */,
-				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
 				E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */,
 				E32B71E120F4A6DB00158B7F /* NSStoryboard.swift */,
 				E3197F0F20E78B8C00746439 /* URLSession+Result.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
 				E32B71DB20F11E6300158B7F /* Tagged.swift */,
 				E309EC7720EE49B200D3D16F /* Log.swift */,
-				E3197F1320E7C93700746439 /* Timer+repeat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,13 +280,11 @@
 				E32B71DE20F11EE100158B7F /* Path.swift in Sources */,
 				E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */,
 				E32B71E220F4A6DB00158B7F /* NSStoryboard.swift in Sources */,
-				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
 				E32B71E020F4A2E600158B7F /* TableViewHandler.swift in Sources */,
 				E32B71DC20F11E6300158B7F /* Tagged.swift in Sources */,
 				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
-				E3197F1420E7C93700746439 /* Timer+repeat.swift in Sources */,
 				E352B6B420E90E02004C276B /* CacheTableCellView.swift in Sources */,
 				E389A46320EA651B0044B20A /* CacheList.swift in Sources */,
 				E3197F1020E78B8C00746439 /* URLSession+Result.swift in Sources */,
