@@ -922,8 +922,8 @@
                                                         </tableColumn>
                                                     </tableColumns>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="XfG-lQ-9wD" id="5r3-H4-76p"/>
-                                                        <outlet property="delegate" destination="XfG-lQ-9wD" id="TPj-2t-SjM"/>
+                                                        <outlet property="dataSource" destination="HIi-t4-JcY" id="UPp-D1-JIE"/>
+                                                        <outlet property="delegate" destination="HIi-t4-JcY" id="Wyf-Ng-j2Z"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>
@@ -960,10 +960,15 @@
                     </view>
                     <connections>
                         <outlet property="loadingView" destination="aYI-Qu-mzI" id="8P4-wf-nvw"/>
-                        <outlet property="tableView" destination="ZYc-jG-uNI" id="tdb-H1-Uo8"/>
+                        <outlet property="tableViewHandler" destination="HIi-t4-JcY" id="PXv-Vb-x3I"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="HIi-t4-JcY" customClass="TableViewHandler" customModule="Mac_Cache_Cleaner" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tableView" destination="ZYc-jG-uNI" id="Wlu-Jb-NID"/>
+                    </connections>
+                </customObject>
                 <menuItem title="Item" id="8dZ-zG-fTA">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

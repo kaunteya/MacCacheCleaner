@@ -15,6 +15,8 @@
 		E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3197F2D20E90A6C00746439 /* MainViewController.swift */; };
 		E32B71DC20F11E6300158B7F /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71DB20F11E6300158B7F /* Tagged.swift */; };
 		E32B71DE20F11EE100158B7F /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71DD20F11EE100158B7F /* Path.swift */; };
+		E32B71E020F4A2E600158B7F /* TableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71DF20F4A2E600158B7F /* TableViewHandler.swift */; };
+		E32B71E220F4A6DB00158B7F /* NSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B71E120F4A6DB00158B7F /* NSStoryboard.swift */; };
 		E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E82FF2079CD5200BA09DF /* AppDelegate.swift */; };
 		E34E83042079CD5400BA09DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34E83032079CD5400BA09DF /* Assets.xcassets */; };
 		E34E83072079CD5400BA09DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34E83052079CD5400BA09DF /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		E3197F2D20E90A6C00746439 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E32B71DB20F11E6300158B7F /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagged.swift; sourceTree = "<group>"; };
 		E32B71DD20F11EE100158B7F /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		E32B71DF20F4A2E600158B7F /* TableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHandler.swift; sourceTree = "<group>"; };
+		E32B71E120F4A6DB00158B7F /* NSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStoryboard.swift; sourceTree = "<group>"; };
 		E34E82FC2079CD5200BA09DF /* Mac Cache Cleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Cache Cleaner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34E82FF2079CD5200BA09DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E34E83032079CD5400BA09DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				E34E82FF2079CD5200BA09DF /* AppDelegate.swift */,
 				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
+				E32B71DF20F4A2E600158B7F /* TableViewHandler.swift */,
 				E32B71C520F083AD00158B7F /* View */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3F7285D20E10720007B0CB0 /* Extensions */,
@@ -141,6 +146,7 @@
 				E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */,
 				E3F7285920E1013D007B0CB0 /* Int64+bytesToString.swift */,
 				E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */,
+				E32B71E120F4A6DB00158B7F /* NSStoryboard.swift */,
 				E3197F0F20E78B8C00746439 /* URLSession+Result.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
 				E32B71DB20F11E6300158B7F /* Tagged.swift */,
@@ -279,8 +285,10 @@
 				E309EC7820EE49B200D3D16F /* Log.swift in Sources */,
 				E32B71DE20F11EE100158B7F /* Path.swift in Sources */,
 				E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */,
+				E32B71E220F4A6DB00158B7F /* NSStoryboard.swift in Sources */,
 				E3F7285A20E1013D007B0CB0 /* Int64+bytesToString.swift in Sources */,
 				E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */,
+				E32B71E020F4A2E600158B7F /* TableViewHandler.swift in Sources */,
 				E32B71DC20F11E6300158B7F /* Tagged.swift in Sources */,
 				E3197F2E20E90A6C00746439 /* MainViewController.swift in Sources */,
 				E34E83002079CD5200BA09DF /* AppDelegate.swift in Sources */,
