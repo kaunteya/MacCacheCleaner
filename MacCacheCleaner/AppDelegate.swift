@@ -8,6 +8,7 @@
 
 import Cocoa
 let sourceJSONPath: URL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+let latestVersion: URL = "https://api.github.com/repos/kaunteya/maccachecleaner/releases/latest"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -22,12 +23,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .showWindow(self)
         
         self.updateListFromNetwork()
+
+        VersionHandler(githubURL: latestVersion).showAlertForOldVersion()
     }
 
     func updateListFromNetwork() {
         cacheListFetcher.fromNetwork(completion: { itemList in
             self.cacheList.mainList = itemList
         }, failure: { error in
+            if let error = error { NSAlert(error: error).runModal() }
             Log.info("Network failed \(error?.localizedDescription ?? "")")
         })
     }

@@ -8,10 +8,3 @@
 
 import AppKit
 
-extension URL : ExpressibleByStringLiteral {
-    public typealias StringLiteralType = String
-
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(string: value)!
-    }
-}
