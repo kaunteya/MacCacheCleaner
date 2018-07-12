@@ -7,13 +7,11 @@
 //
 
 import Cocoa
-let sourceJSONPath: URL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
-let latestVersion: URL = "https://api.github.com/repos/kaunteya/maccachecleaner/releases/latest"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let cacheListFetcher = CacheFetcher.init(url: sourceJSONPath)
+    let cacheListFetcher = CacheFetcher.init(url: .sourceJSONPath)
 
     let cacheList = CacheList()
 
@@ -24,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         self.updateListFromNetwork()
 
-        VersionHandler(githubURL: latestVersion).showAlertForOldVersion()
+        VersionHandler(githubURL: .latestVersion).showAlertForOldVersion()
     }
 
     func updateListFromNetwork() {

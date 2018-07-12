@@ -26,6 +26,7 @@
 		E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */; };
 		E399416D20F7BD49004BD4A4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399416C20F7BD48004BD4A4 /* URL.swift */; };
 		E399416F20F7C105004BD4A4 /* VersionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399416E20F7C105004BD4A4 /* VersionHandler.swift */; };
+		E399417120F7C336004BD4A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399417020F7C336004BD4A4 /* Constants.swift */; };
 		E3B073B720F75E94009DA160 /* AutoStartSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B073B620F75E94009DA160 /* AutoStartSpinner.swift */; };
 		E3F7285820E0FF6F007B0CB0 /* FileManager+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */; };
 		E3F728D920E3B1C1007B0CB0 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F728D820E3B1C1007B0CB0 /* Other.swift */; };
@@ -66,6 +67,7 @@
 		E389A46620EAA0A20044B20A /* NSWindowController+intialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindowController+intialize.swift"; sourceTree = "<group>"; };
 		E399416C20F7BD48004BD4A4 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		E399416E20F7C105004BD4A4 /* VersionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHandler.swift; sourceTree = "<group>"; };
+		E399417020F7C336004BD4A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E3B073B620F75E94009DA160 /* AutoStartSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoStartSpinner.swift; sourceTree = "<group>"; };
 		E3F7285720E0FF6F007B0CB0 /* FileManager+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Size.swift"; sourceTree = "<group>"; };
 		E3F728D820E3B1C1007B0CB0 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				E3197F2D20E90A6C00746439 /* MainViewController.swift */,
 				E32B71DF20F4A2E600158B7F /* TableViewHandler.swift */,
 				E399416E20F7C105004BD4A4 /* VersionHandler.swift */,
+				E399417020F7C336004BD4A4 /* Constants.swift */,
 				E32B71C520F083AD00158B7F /* View */,
 				E3F728D620E3B02C007B0CB0 /* Models */,
 				E3B073B520F75E3D009DA160 /* Others */,
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34E83122079D41500BA09DF /* CacheItem.swift in Sources */,
+				E399417120F7C336004BD4A4 /* Constants.swift in Sources */,
 				E309EC7820EE49B200D3D16F /* Log.swift in Sources */,
 				E32B71DE20F11EE100158B7F /* Path.swift in Sources */,
 				E389A46720EAA0A20044B20A /* NSWindowController+intialize.swift in Sources */,
