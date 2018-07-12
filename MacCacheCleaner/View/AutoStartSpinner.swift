@@ -1,8 +1,8 @@
 //
-//  Other.swift
-//  MacCacheCleaner
+//  AutoStartSpinner.swift
+//  Mac Cache Cleaner
 //
-//  Created by Kaunteya Suryawanshi on 27/06/18.
+//  Created by Kaunteya Suryawanshi on 12/07/18.
 //  Copyright © 2018 Kaunteya Suryawanshi. All rights reserved.
 //
 
