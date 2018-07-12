@@ -7,12 +7,12 @@
 //
 
 import Cocoa
-let sourceJSONPath = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
+let sourceJSONPath: URL = "https://raw.githubusercontent.com/kaunteya/MacCacheCleaner/master/Source.json"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let cacheListFetcher = CacheFetcher(urlString: sourceJSONPath)
+    let cacheListFetcher = CacheFetcher.init(url: sourceJSONPath)
 
     let cacheList = CacheList()
 

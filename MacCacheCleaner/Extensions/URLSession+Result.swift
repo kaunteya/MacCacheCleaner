@@ -14,8 +14,32 @@ enum Result<Value> {
 }
 
 extension URLSession {
-    func dataTask<T: Decodable>(
-        with request: URLRequest,
+
+    func jsonDecodableTask<T: Decodable>(
+        with url: URL,
+        completion: @escaping (Result<T>) -> Void
+        ) -> URLSessionDataTask {
+
+        return self.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            guard let data = data, let _ = response else {
+                completion(.failure(nil))
+                return
+            }
+
+            if let decoded = try? JSONDecoder().decode(T.self, from: data) {
+                completion(.success(decoded))
+            } else {
+                completion(.failure(nil))
+            }
+        }
+    }
+
+    func jsonSerializedTask<T>(
+        with request: URL,
         completion: @escaping (Result<T>) -> Void
         ) -> URLSessionDataTask {
 
@@ -28,9 +52,11 @@ extension URLSession {
                 completion(.failure(nil))
                 return
             }
-
-            let decoded = try! JSONDecoder().decode(T.self, from: data)
-            completion(.success(decoded))
+            if let json = try! JSONSerialization.jsonObject(with: data, options: []) as? T {
+                completion(.success(json))
+            } else {
+                completion(.failure(nil))
+            }
         }
     }
 }

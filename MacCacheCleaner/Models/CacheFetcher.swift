@@ -14,12 +14,12 @@ struct SourceJSON: Decodable {
 }
 
 struct CacheFetcher {
-    let urlString: String
+    let url: URL
 
     func fromNetwork(completion: @escaping([CacheItem]) -> Void,
                  failure: ((Error?) -> Void)?) {
-        let urlRequest = URLRequest(url: URL(string: urlString)!)
-        URLSession.shared.dataTask(with: urlRequest) { (result:Result<SourceJSON>)  in
+
+        URLSession.shared.jsonDecodableTask(with: url) { (result:Result<SourceJSON>)  in
             switch result {
             case .success(let decoded):
                 assert(decoded.version == 1)
