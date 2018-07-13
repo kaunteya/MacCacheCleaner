@@ -8,3 +8,8 @@
 
 import AppKit
 
+extension NSStackView {
+    func removeAllArrangedSubViews() {
+        arrangedSubviews.forEach(removeView)
+    }
+}

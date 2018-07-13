@@ -37,21 +37,26 @@ class CacheTableCellView: NSTableCellView {
         nameLabel.stringValue = cacheItem.name
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
-        locationsStackView.arrangedSubviews.forEach(locationsStackView.removeView)
 
-        cacheItem.locations.forEach { loc in
-            let label = NSTextField(labelWithString: loc)
-            label.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
-            label.textColor = NSColor.tertiaryLabelColor
-            locationsStackView.addArrangedSubview(label)
-        }
+        locationsStackView.removeAllArrangedSubViews()
+        cacheItem.locations
+            .map(LocationLabel.init)
+            .forEach(locationsStackView.addArrangedSubview)
 
         clearButton.isHidden = false
         deleteLoadingView.isHidden = true
     }
-    
+
     func showDeleteView() {
         clearButton.isHidden = true
         deleteLoadingView.isHidden = false
+    }
+}
+
+fileprivate class LocationLabel: NSTextField {
+    convenience init(_ str: String) {
+        self.init(labelWithString: str)
+        self.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        self.textColor = NSColor.tertiaryLabelColor
     }
 }

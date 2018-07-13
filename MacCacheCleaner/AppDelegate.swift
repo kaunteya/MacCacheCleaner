@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func setCacheMainList() {
         cacheListFetcher.fromNetwork(completion: { itemList in
+            Log.info("Cache definitions fetch completed")
             self.cacheList.mainList = itemList
         }, failure: { error in
             if let error = error { NSAlert(error: error).runModal() }
