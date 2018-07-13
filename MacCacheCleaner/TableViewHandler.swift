@@ -42,6 +42,9 @@ extension TableViewHandler: NSTableViewDelegate, NSTableViewDataSource {
 }
 
 extension TableViewHandler: CacheCellViewDelegate {
+    func userActionClearLocation(cacheId: CacheItem.ID, location: String, row: Int) {
+    }
+
     func userActionClearCache(cacheId: CacheItem.ID, row: Int) {
         Log.info("Remove \(cacheList[cacheId]!.name)")
         let view = tableView.view(atColumn: 0, row: row, makeIfNecessary: false)

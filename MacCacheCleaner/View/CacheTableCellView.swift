@@ -11,6 +11,7 @@ import AppKit
 
 protocol CacheCellViewDelegate:class {
     func userActionClearCache(cacheId: CacheItem.ID, row: Int)
+    func userActionClearLocation(cacheId: CacheItem.ID, location: String, row: Int)
 }
 
 class CacheTableCellView: NSTableCellView {
@@ -40,7 +41,10 @@ class CacheTableCellView: NSTableCellView {
 
         locationsStackView.removeAllArrangedSubViews()
         cacheItem.locations
-            .map(LocationLabel.init)
+            .map {location in
+                LocationView(location, onDelete: { [unowned self] in
+                    self.delegate?.userActionClearLocation(cacheId: cacheItem.id, location: location, row: row)
+            }) }
             .forEach(locationsStackView.addArrangedSubview)
 
         clearButton.isHidden = false
@@ -50,6 +54,30 @@ class CacheTableCellView: NSTableCellView {
     func showDeleteView() {
         clearButton.isHidden = true
         deleteLoadingView.isHidden = false
+    }
+}
+
+class LocationView: NSStackView {
+    let onDelete: () -> Void
+    let strValue: String
+    init(_ str: String, onDelete: @escaping () -> Void) {
+        self.strValue = str
+        self.onDelete = onDelete
+        super.init(frame: .zero)
+        let button = NSButton(image: NSImage(named: .touchBarDeleteTemplate)!, target: self, action: #selector(deleteAction))
+        button.isBordered = false
+        button.bezelStyle = .roundRect
+        self.addArrangedSubview(LocationLabel(str))
+        self.addArrangedSubview(button)
+        self.orientation = .horizontal
+        self.spacing = 2
+    }
+
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    @objc func deleteAction() {
+        print("Delete \(strValue)")
     }
 }
 
