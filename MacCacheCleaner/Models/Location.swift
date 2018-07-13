@@ -41,11 +41,9 @@ extension Tagged where Tag == Location, RawValue == Int64 {
 
 extension Array where Element == Location {
     var sizeMap: Location.SizeMap {
-        var dict = Location.SizeMap()
-        forEach { location in
-            dict[location] = location.size
+        return reduce(Location.SizeMap()) {
+            return $0.merging([$1 : $1.size], uniquingKeysWith: {a, b  in return a })
         }
-        return dict
     }
 }
 
