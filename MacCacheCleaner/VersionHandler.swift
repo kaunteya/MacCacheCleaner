@@ -28,22 +28,24 @@ struct VersionHandler {
             let current = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
             if version != current {
                 Log.info("Latest Version = \(version) current = \(current)")
-                DispatchQueue.main.async {
-                    let alert = NSAlert()
-                    alert.alertStyle = .warning
-
-                    alert.addButton(withTitle: "Close")
-                    alert.addButton(withTitle: "Download")
-
-                    alert.messageText = "New version \(version) available!!"
-                    alert.informativeText = "Please update your app for latest features & bug fixes"
-                    let response = alert.runModal()
-
-                    if response == .alertSecondButtonReturn {
-                        NSWorkspace.shared.open("https://github.com/kaunteya/MacCacheCleaner")
-                    }
-                }
+                DispatchQueue.main.async(execute: self.showAlert)
             }
+        }
+    }
+
+    private func showAlert() {
+        let alert = NSAlert()
+        alert.alertStyle = .warning
+
+        alert.addButton(withTitle: "Close")
+        alert.addButton(withTitle: "Download")
+
+        alert.messageText = "New version available!!"
+        alert.informativeText = "Please update your app for latest features & bug fixes"
+        let response = alert.runModal()
+
+        if response == .alertSecondButtonReturn {
+            NSWorkspace.shared.open("https://github.com/kaunteya/MacCacheCleaner")
         }
     }
 }
