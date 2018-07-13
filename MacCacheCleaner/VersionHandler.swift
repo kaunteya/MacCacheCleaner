@@ -26,8 +26,8 @@ struct VersionHandler {
     func showAlertForOldVersion() {
         latestVersion { version in
             let current = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            Log.info("Latest Version = \(version) current = \(current)")
             if version != current {
+                Log.info("Latest Version = \(version) current = \(current)")
                 DispatchQueue.main.async {
                     let alert = NSAlert()
                     alert.alertStyle = .warning
