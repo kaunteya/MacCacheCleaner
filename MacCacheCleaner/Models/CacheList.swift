@@ -15,7 +15,7 @@ protocol CacheListDelegate: class {
 }
 
 class CacheList {
-    typealias ItemAndSize = (id: CacheItem.ID, size: CacheItem.FileSize)
+    typealias ItemAndSize = (id: CacheItem.ID, totalSize: Location.Size, sizeMap: Location.SizeMap)
     enum UpdateStatus { case started, completed, failed }
 
     private var listWithSizes = [ItemAndSize]()
@@ -49,11 +49,14 @@ extension CacheList {
         mainList.forEach { item in
             queue.async {
                 dispatchGroup.enter()
-                let size = item.size
+                let sizeMap = item.locations.sizeMap
+                let totalSize = sizeMap.totalSize
+
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
-                    if size.rawValue > 0 {
-                        self.updateListWithSizes(element: ItemAndSize(id: item.id, size: size))
+                    if totalSize.rawValue > 0 {
+                        let itemSize = ItemAndSize(id: item.id, totalSize: totalSize, sizeMap: sizeMap)
+                        self.updateListWithSizes(element: itemSize)
                         self.delegate?.gotSizeFor(item: item)
                     }
                 }
@@ -70,7 +73,7 @@ extension CacheList {
         } else {
             listWithSizes.append(element)
         }
-        listWithSizes.sort { $0.size.rawValue > $1.size.rawValue }
+        listWithSizes.sort { $0.totalSize.rawValue > $1.totalSize.rawValue }
     }
 
     func delete(_ id: CacheItem.ID) {

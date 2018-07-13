@@ -32,19 +32,18 @@ class CacheTableCellView: NSTableCellView {
         delegate?.userActionClearCache(cacheId: id, row: rowIndex)
     }
 
-    func updateFor(cacheItem: CacheItem, size: CacheItem.FileSize, row: Int) {
+    func updateFor(cacheItem: CacheItem, totalSize: Location.Size, sizeMap: Location.SizeMap, row: Int) {
         id = cacheItem.id
         rowIndex = row
         nameLabel.stringValue = cacheItem.name
-        sizeLabel.stringValue = size.readable
+        sizeLabel.stringValue = totalSize.readable
         descriptionLabel.stringValue = cacheItem.description
 
         locationsStackView.removeAllArrangedSubViews()
         cacheItem.locations
             .map {location in
-                LocationView(location, onDelete: { [unowned self] in
-                    self.delegate?.userActionClearLocation(cacheId: cacheItem.id, location: location, row: row)
-            }) }
+                let readableSize = sizeMap[location]!.readable
+                return LocationView(location.rawValue.relativePath, size: readableSize, onDelete: { }) }
             .forEach(locationsStackView.addArrangedSubview)
 
         clearButton.isHidden = false
@@ -60,14 +59,15 @@ class CacheTableCellView: NSTableCellView {
 class LocationView: NSStackView {
     let onDelete: () -> Void
     let strValue: String
-    init(_ str: String, onDelete: @escaping () -> Void) {
-        self.strValue = str
+    init(_ location: String, size: String, onDelete: @escaping () -> Void) {
+        self.strValue = location
         self.onDelete = onDelete
         super.init(frame: .zero)
         let button = NSButton(image: NSImage(named: .touchBarDeleteTemplate)!, target: self, action: #selector(deleteAction))
         button.isBordered = false
         button.bezelStyle = .roundRect
-        self.addArrangedSubview(LocationLabel(str))
+        self.addArrangedSubview(LocationLabel(location))
+        self.addArrangedSubview(LocationLabel(size))
         self.addArrangedSubview(button)
         self.orientation = .horizontal
         self.spacing = 2

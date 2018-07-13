@@ -33,9 +33,10 @@ extension TableViewHandler: NSTableViewDelegate, NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.makeView(withIdentifier: cacheTableCell, owner: nil) as! CacheTableCellView
-        let (itemId, size) = cacheList[row]
+        let (itemId, totalSize, sizeMap) = cacheList[row]
         let cacheItem = cacheList[itemId]!
-        cell.updateFor(cacheItem: cacheItem, size: size, row: row)
+
+        cell.updateFor(cacheItem: cacheItem, totalSize: totalSize, sizeMap: sizeMap, row: row)
         cell.delegate = self
         return cell
     }
@@ -50,6 +51,7 @@ extension TableViewHandler: CacheCellViewDelegate {
         let view = tableView.view(atColumn: 0, row: row, makeIfNecessary: false)
             as! CacheTableCellView
         view.showDeleteView()
+
         cacheList.delete(cacheId)
     }
 }
