@@ -16,11 +16,11 @@ protocol CacheCellViewDelegate:class {
 class CacheTableCellView: NSTableCellView {
     weak var delegate: CacheCellViewDelegate?
     @IBOutlet weak var deleteLoadingView: NSStackView!
+    @IBOutlet weak var locationsStackView: NSStackView!
 
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var sizeLabel: NSTextField!
     @IBOutlet weak var descriptionLabel: NSTextField!
-    @IBOutlet weak var locationsLabel: NSTextField!
     @IBOutlet weak var clearButton: NSButton!
 //    @IBOutlet weak var cacheImageView: NSImageView!
 
@@ -37,9 +37,14 @@ class CacheTableCellView: NSTableCellView {
         nameLabel.stringValue = cacheItem.name
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
-        locationsLabel.stringValue = cacheItem.locations
-            .map { "  " + $0 }
-            .joined(separator: "\n")
+        locationsStackView.arrangedSubviews.forEach(locationsStackView.removeView)
+
+        cacheItem.locations.forEach { loc in
+            let label = NSTextField(labelWithString: loc)
+            label.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+            label.textColor = NSColor.tertiaryLabelColor
+            locationsStackView.addArrangedSubview(label)
+        }
 
         clearButton.isHidden = false
         deleteLoadingView.isHidden = true
