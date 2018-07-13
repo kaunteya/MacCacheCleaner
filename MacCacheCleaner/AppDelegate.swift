@@ -11,21 +11,23 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let cacheListFetcher = CacheFetcher.init(url: .sourceJSONPath)
+    private let cacheListFetcher = CacheFetcher.init(url: .sourceJSONPath)
 
-    let cacheList = CacheList()
+    private let cacheList = CacheList()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let mainVC = MainViewController.initialize(cacheList: cacheList)
-        NSWindowController.initialize( with: mainVC, sceneId: "mainWindowController")
+
+        NSWindowController
+            .makeWindowController(contentViewController: mainVC, sceneId: "mainWindowController")
             .showWindow(self)
-        
-        self.updateListFromNetwork()
+
+        self.setCacheMainList()
 
         VersionHandler(githubURL: .latestVersion).showAlertForOldVersion()
     }
 
-    func updateListFromNetwork() {
+    private func setCacheMainList() {
         cacheListFetcher.fromNetwork(completion: { itemList in
             self.cacheList.mainList = itemList
         }, failure: { error in

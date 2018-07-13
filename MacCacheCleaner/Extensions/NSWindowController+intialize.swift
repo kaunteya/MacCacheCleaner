@@ -9,9 +9,17 @@
 import AppKit
 
 extension NSWindowController {
-    class func initialize(with viewController: NSViewController, sceneId: String) -> NSWindowController {
-        let windowController = NSStoryboard.main?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: sceneId)) as! NSWindowController
-        windowController.contentViewController = viewController
+
+    class func makeWindowController(
+        contentViewController: NSViewController,
+        sceneId: String
+        ) -> NSWindowController {
+
+        let windowController = NSStoryboard.main?.instantiateController(
+            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: sceneId)
+            ) as! NSWindowController
+
+        windowController.contentViewController = contentViewController
         return windowController
     }
 }
