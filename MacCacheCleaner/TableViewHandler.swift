@@ -9,13 +9,14 @@
 import AppKit
 
 protocol CacheTableViewDelegate: class {
+    /// Status update is notified when started, completed, failed
     func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus)
 }
 
 class TableViewHandler: NSObject {
-    private let cacheCell = NSUserInterfaceItemIdentifier(rawValue: "cacheCell")
     var cacheList: CacheList!
     weak var delegate: CacheTableViewDelegate?
+    private let cacheTableCell = NSUserInterfaceItemIdentifier(rawValue: "cacheCell")
 
     @IBOutlet weak var tableView: NSTableView!
 
@@ -31,7 +32,7 @@ extension TableViewHandler: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cell = tableView.makeView(withIdentifier: cacheCell, owner: nil) as! CacheTableCellView
+        let cell = tableView.makeView(withIdentifier: cacheTableCell, owner: nil) as! CacheTableCellView
         let (itemId, size) = cacheList[row]
         let cacheItem = cacheList[itemId]!
         cell.updateFor(cacheItem: cacheItem, size: size, row: row)
@@ -63,4 +64,3 @@ extension TableViewHandler: CacheListDelegate {
         tableView.reloadData()
     }
 }
-

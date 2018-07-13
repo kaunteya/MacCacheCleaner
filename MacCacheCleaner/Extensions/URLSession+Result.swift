@@ -15,6 +15,7 @@ enum Result<Value> {
 
 extension URLSession {
 
+    /// Data fetched from URLSession is decoded using JSONDecoder
     func jsonDecodableTask<T: Decodable>(
         with url: URL,
         completion: @escaping (Result<T>) -> Void
@@ -38,6 +39,7 @@ extension URLSession {
         }
     }
 
+    /// Data fetched from URLSession is serialized using JSONSerialization
     func jsonSerializedTask<T>(
         with request: URL,
         completion: @escaping (Result<T>) -> Void
