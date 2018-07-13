@@ -151,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E309EC7720EE49B200D3D16F /* Log.swift */,
+				E389A46420EA98470044B20A /* CacheFetcher.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
 				E32B71DB20F11E6300158B7F /* Tagged.swift */,
 				E3B073B620F75E94009DA160 /* AutoStartSpinner.swift */,
@@ -176,7 +177,6 @@
 				E38C8D4D20F8E83000239225 /* Location.swift */,
 				E34E83112079D41500BA09DF /* CacheItem.swift */,
 				E389A46220EA651B0044B20A /* CacheList.swift */,
-				E389A46420EA98470044B20A /* CacheFetcher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
