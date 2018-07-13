@@ -8,6 +8,7 @@
 
 import AppKit
 
+/// Upon setting spinner to AutoStartSpinner, they will start spinning immediately after loaded
 class AutoStartSpinner: NSProgressIndicator {
     override func awakeFromNib() {
         super.awakeFromNib()

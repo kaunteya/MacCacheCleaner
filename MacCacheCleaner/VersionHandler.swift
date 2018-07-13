@@ -11,7 +11,7 @@ import AppKit
 struct VersionHandler {
     let githubURL: URL
 
-    private func latestVersionFromGithub(completion: @escaping (String) -> Void) {
+    private func latestVersion(completion: @escaping (String) -> Void) {
         URLSession.shared.jsonSerializedTask(with: githubURL) { (result: Result<[String: Any]>) in
             switch result {
             case .success(let json):
@@ -24,8 +24,8 @@ struct VersionHandler {
     }
 
     func showAlertForOldVersion() {
-        latestVersionFromGithub { version in
-            let current: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        latestVersion { version in
+            let current = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
             Log.info("Latest Version = \(version) current = \(current)")
             if version != current {
                 DispatchQueue.main.async {
@@ -35,11 +35,11 @@ struct VersionHandler {
                     alert.addButton(withTitle: "Close")
                     alert.addButton(withTitle: "Download")
 
-                    alert.messageText = "New version available!!"
-                    alert.informativeText = "Please update your app for latest features"
-                    let g = alert.runModal()
-                    print(g)
-                    if g == NSApplication.ModalResponse.alertSecondButtonReturn {
+                    alert.messageText = "New version \(version) available!!"
+                    alert.informativeText = "Please update your app for latest features & bug fixes"
+                    let response = alert.runModal()
+
+                    if response == .alertSecondButtonReturn {
                         NSWorkspace.shared.open("https://github.com/kaunteya/MacCacheCleaner")
                     }
                 }

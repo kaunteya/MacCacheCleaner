@@ -38,7 +38,7 @@ class CacheTableCellView: NSTableCellView {
         sizeLabel.stringValue = size.readable
         descriptionLabel.stringValue = cacheItem.description
         locationsLabel.stringValue = cacheItem.locations
-            .map { "  " + $0.rawValue.relativePath }
+            .map { "  " + $0 }
             .joined(separator: "\n")
 
         clearButton.isHidden = false

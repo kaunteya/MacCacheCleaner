@@ -8,6 +8,9 @@
 
 import Foundation
 
+// This would let us create URL directly from the string
+// Eg. let url: URL = "http://abc.com"
+// Note: Use this only when URL is local/hard coded. Dont use for URLs that can be in improper format
 extension URL : ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
 

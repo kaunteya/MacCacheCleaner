@@ -25,15 +25,14 @@ class CacheList {
     var mainList: [CacheItem]? {
         didSet {
             let qos: DispatchQoS.QoSClass = mainList == nil ? .default : .utility
-            updateSize(queue: DispatchQueue.global(qos: qos))
+            updateSize(queue: .global(qos: qos))
         }
     }
 
     weak var delegate: CacheListDelegate?
 
     subscript(id: CacheItem.ID) -> CacheItem? {
-        let item = mainList?.first(where: { $0.id == id })
-        return item
+        return mainList?.first(where: { $0.id == id })
     }
 }
 
@@ -50,7 +49,7 @@ extension CacheList {
         mainList.forEach { item in
             queue.async {
                 dispatchGroup.enter()
-                let size = item.calculateSize()
+                let size = item.size
                 DispatchQueue.main.async { [unowned self] in
                     dispatchGroup.leave()
                     if size.rawValue > 0 {
@@ -76,9 +75,14 @@ extension CacheList {
 
     func delete(_ id: CacheItem.ID) {
         let cacheItem = self[id]!
-        cacheItem.delete { [unowned self] in
-            self.listWithSizes = self.listWithSizes.filter { $0.id != id }
-            self.delegate?.itemRemovedCompleted(item: cacheItem)
+        // Delete on background queue and call completion on main queue
+        DispatchQueue.global(qos: .utility).async {
+            cacheItem.delete(onComplete: {
+                DispatchQueue.main.async {
+                    self.listWithSizes = self.listWithSizes.filter { $0.id != id }
+                    self.delegate?.itemRemovedCompleted(item: cacheItem)
+                }
+            })
         }
     }
 }

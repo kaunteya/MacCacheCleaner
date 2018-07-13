@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CacheItem: Decodable {
+struct CacheItem: Decodable, Equatable {
 
     typealias ID = Tagged<CacheItem, String>
     typealias FileSize = Tagged<CacheItem, Int64>
@@ -17,35 +17,34 @@ struct CacheItem: Decodable {
     let name: String
     let image: URL?
     let description: String
-    let locations: [Path]
+    let locations: [String]
 }
 
 extension CacheItem {
-    func calculateSize() -> FileSize {
+    private func locationToURL(str: String) -> URL {
+        let expandedPath = NSString(string: str).expandingTildeInPath
+        return URL(fileURLWithPath: expandedPath, isDirectory: true)
+    }
+
+    var size: FileSize {
         let sizeBytes = locations
-            .map { $0.rawValue }
+            .map(locationToURL)
             .map(FileManager.sizeOf)
             .reduce(0 as Int64, +)
         return FileSize(integerLiteral: sizeBytes)
     }
-
-    func delete(complete: (() -> Void)? = nil) {
-        DispatchQueue.global(qos: .utility).async {
-            try? self.locations
-                .map { $0.rawValue }
-                .forEach(FileManager.remove)
-            DispatchQueue.main.async { complete?() }
-        }
+    
+    func delete(onComplete complete: (() -> Void)? = nil) {
+        try? locations
+            .map(locationToURL)
+            .forEach(FileManager.remove)
+        complete?()
     }
 }
 
 extension CacheItem: Hashable {
     var hashValue: Int {
         return id.hashValue
-    }
-
-    static func == (lhs: CacheItem, rhs: CacheItem) -> Bool {
-        return lhs.id == rhs.id
     }
 }
 

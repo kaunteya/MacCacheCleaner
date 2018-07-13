@@ -13,9 +13,11 @@ protocol CacheTableViewDelegate: class {
 }
 
 class TableViewHandler: NSObject {
+    private let cacheCell = NSUserInterfaceItemIdentifier(rawValue: "cacheCell")
     var cacheList: CacheList!
-    @IBOutlet weak var tableView: NSTableView!
     weak var delegate: CacheTableViewDelegate?
+
+    @IBOutlet weak var tableView: NSTableView!
 
     func setCacheList(_ cacheList: CacheList) {
         self.cacheList = cacheList
@@ -29,7 +31,7 @@ extension TableViewHandler: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cacheCell"), owner: nil) as! CacheTableCellView
+        let cell = tableView.makeView(withIdentifier: cacheCell, owner: nil) as! CacheTableCellView
         let (itemId, size) = cacheList[row]
         let cacheItem = cacheList[itemId]!
         cell.updateFor(cacheItem: cacheItem, size: size, row: row)
@@ -49,7 +51,6 @@ extension TableViewHandler: CacheCellViewDelegate {
 }
 
 extension TableViewHandler: CacheListDelegate {
-
     func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus) {
         delegate?.cacheListUpdateStatusChanged(status: status)
     }
@@ -59,7 +60,6 @@ extension TableViewHandler: CacheListDelegate {
     }
 
     func gotSizeFor(item: CacheItem) {
-        Log.info("Delegate gotSizeFor \(item.name)")
         tableView.reloadData()
     }
 }
