@@ -68,7 +68,7 @@ class LocationView: NSStackView {
         button.bezelStyle = .roundRect
         self.addArrangedSubview(LocationLabel(location))
         self.addArrangedSubview(LocationLabel(size))
-        self.addArrangedSubview(button)
+//        self.addArrangedSubview(button)
         self.orientation = .horizontal
         self.spacing = 2
     }
