@@ -103,7 +103,6 @@
 			children = (
 				E34E83052079CD5400BA09DF /* Main.storyboard */,
 				E352B6B320E90E02004C276B /* CacheTableCellView.swift */,
-				E3B073B620F75E94009DA160 /* AutoStartSpinner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 				E309EC7720EE49B200D3D16F /* Log.swift */,
 				E3F728D820E3B1C1007B0CB0 /* Other.swift */,
 				E32B71DB20F11E6300158B7F /* Tagged.swift */,
+				E3B073B620F75E94009DA160 /* AutoStartSpinner.swift */,
 				E38C8D4B20F8B9BD00239225 /* StoryboardLoadable.swift */,
 			);
 			path = Others;
