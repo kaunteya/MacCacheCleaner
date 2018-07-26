@@ -16,3 +16,5 @@
 <a href="https://opensource.org/licenses/MIT" target="_blank">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"/>
 </a> 
+<br>
+<img src="/Images/AppWindow.png" alt="App Window" width="500">
