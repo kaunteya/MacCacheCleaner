@@ -30,6 +30,8 @@ class MainViewController: NSViewController, StoryboardLoadable {
 extension MainViewController: CacheTableViewDelegate {
     func cacheListUpdateStatusChanged(status: CacheList.UpdateStatus) {
         Log.info("Update status \(status)")
-        loadingView.isHidden = status == .completed
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView.isHidden = status == .completed
+        }
     }
 }
