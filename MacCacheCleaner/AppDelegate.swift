@@ -32,7 +32,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Log.info("Cache definitions fetch completed")
             self.cacheList.mainList = itemList
         }, failure: { error in
-            if let error = error { NSAlert(error: error).runModal() }
+            if let error = error {
+                DispatchQueue.main.async {
+                    NSAlert(error: error).runModal()
+                }
+            }
             Log.info("Network failed \(error?.localizedDescription ?? "")")
         })
     }
