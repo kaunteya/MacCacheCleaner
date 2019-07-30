@@ -68,7 +68,7 @@ extension CacheList {
     }
 
     private func updateListWithSizes(element: ItemAndSize) {
-        if let index = listWithSizes.index(where: { $0.id == element.id}) {
+        if let index = listWithSizes.firstIndex(where: { $0.id == element.id}) {
             listWithSizes[index] = element
         } else {
             listWithSizes.append(element)

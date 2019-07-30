@@ -63,7 +63,7 @@ class LocationView: NSStackView {
         self.strValue = location
         self.onDelete = onDelete
         super.init(frame: .zero)
-        let button = NSButton(image: NSImage(named: .touchBarDeleteTemplate)!, target: self, action: #selector(deleteAction))
+        let button = NSButton(image: NSImage(named: NSImage.touchBarDeleteTemplateName)!, target: self, action: #selector(deleteAction))
         button.isBordered = false
         button.bezelStyle = .roundRect
         self.addArrangedSubview(LocationLabel(location))

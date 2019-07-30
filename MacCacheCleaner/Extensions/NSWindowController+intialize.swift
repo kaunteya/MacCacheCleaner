@@ -16,7 +16,7 @@ extension NSWindowController {
         ) -> NSWindowController {
 
         let windowController = NSStoryboard.main?.instantiateController(
-            withIdentifier: NSStoryboard.SceneIdentifier(rawValue: sceneId)
+            withIdentifier: sceneId
             ) as! NSWindowController
 
         windowController.contentViewController = contentViewController

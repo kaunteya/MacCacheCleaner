@@ -21,7 +21,6 @@ extension StoryboardLoadable {
     }
 
     static func makeFromStoryboard() -> Self {
-        let sceneID = NSStoryboard.SceneIdentifier(rawValue:sceneIdentifier)
-        return storyboard.instantiateController(withIdentifier: sceneID) as! Self
+        return storyboard.instantiateController(withIdentifier: sceneIdentifier) as! Self
     }
 }

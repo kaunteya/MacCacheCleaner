@@ -27,7 +27,7 @@ extension CacheItem {
 }
 
 extension CacheItem: Hashable {
-    var hashValue: Int {
-        return id.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

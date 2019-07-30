@@ -26,8 +26,8 @@ extension Tagged: Equatable where RawValue: Equatable {
 }
 
 extension Tagged: Hashable where RawValue: Hashable {
-    var hashValue: Int {
-        return rawValue.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(rawValue)
     }
 }
 
