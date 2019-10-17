@@ -4,4 +4,4 @@
 </div>
 
 ### Add more Cache definitions
-If you would like to add a cache definition, that can be done by adding it in [Source.json](Source.json)
+More cache definitions can be added in [Source.json](Source.json)
